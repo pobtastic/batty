@@ -1,0 +1,15 @@
+; tap2sna.py file for Batty. Run
+;
+;   $ tap2sna.py @batty.t2s
+;
+; to create a Z80 snapshot.
+
+https://worldofspectrum.net/pub/sinclair/games/b/Batty.tzx.zip
+Batty.z80
+
+--tape-name "BATTY.TZX"
+--tape-sum b5bc4500b7a9c729cd9dea0dedccae07
+; This is the real entrypoint but we want to let the game decrypt itself.
+; --start 0xFEB1
+--start 0x6800
+--sim-load-config accelerator=speedlock

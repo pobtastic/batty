@@ -1,0 +1,9 @@
+; Copyright 2023 Paul Maddern (paul@arcadegeek.co.uk)
+
+[Page:Changelog]
+SectionType=BulletPoints
+
+[Changelog:20231129]
+-
+
+- Added CHANGELOG!
