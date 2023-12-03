@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 49409</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49395.html">49395</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49409">Map</a></td>
+<td class="next">
+Next: <a href="49430.html">49430</a>
+</td>
+</tr>
+</table>
+<div class="description">49409: Sounds: Metal Brick</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="46620.html">46620</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_Brick_Metal</td>
+<td class="address-2"><span id="49409"></span>49409</td>
+<td class="instruction">LD D,24</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=24.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49411"></span>49411</td>
+<td class="instruction">LD E,48</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=48.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49413"></span>49413</td>
+<td class="instruction">CALL <a href="49756.html">Sounds_PlaySquareWave_Loop</a></td>
+<td class="comment-1" rowspan="1">Call <a href="49756.html">Sounds_PlaySquareWave_Loop</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49416"></span>49416</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="2">Write 0 to *<a href="46620.html#47079">47079</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49417"></span>49417</td>
+<td class="instruction">LD (47079),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49420"></span>49420</td>
+<td class="instruction">LD A,128</td>
+<td class="comment-1" rowspan="2">Write 128 to *<a href="https://skoolkid.github.io/rom/asm/5C78.html">FRAMES</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49422"></span>49422</td>
+<td class="instruction">LD (23672),A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49425"></span>49425</td>
+<td class="instruction">LD (IX+0),0</td>
+<td class="comment-1" rowspan="1">Write 0 to *<span class="register">IX</span>+0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49429"></span>49429</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49395.html">49395</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49409">Map</a></td>
+<td class="next">
+Next: <a href="49430.html">49430</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../../asm/C101.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

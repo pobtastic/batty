@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 49664</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49645.html">49645</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49664">Map</a></td>
+<td class="next">
+Next: <a href="49693.html">49693</a>
+</td>
+</tr>
+</table>
+<div class="description">49664: Routine at C200</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="49664"></span>49664</td>
+<td class="instruction">LD A,(43103)</td>
+<td class="comment-1" rowspan="3">Return if *<a href="38730.html#43103">43103</a> is non-zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49667"></span>49667</td>
+<td class="instruction">AND A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49668"></span>49668</td>
+<td class="instruction">RET NZ</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49669"></span>49669</td>
+<td class="instruction">LD E,(IX+1)</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=*<span class="register">IX</span>+1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49672"></span>49672</td>
+<td class="instruction">LD D,1</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49674"></span>49674</td>
+<td class="instruction">CALL <a href="49756.html">Sounds_PlaySquareWave_Loop</a></td>
+<td class="comment-1" rowspan="1">Call <a href="49756.html">Sounds_PlaySquareWave_Loop</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="49677"></span>
+<div class="comments">
+<div class="paragraph">
+Subtract 11 from *<span class="register">IX</span>+1.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49677"></span>49677</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<span class="register">IX</span>+1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49680"></span>49680</td>
+<td class="instruction">SUB 11</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>-=11.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49682"></span>49682</td>
+<td class="instruction">LD (IX+1),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<span class="register">IX</span>+1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49685"></span>49685</td>
+<td class="instruction">CP 16</td>
+<td class="comment-1" rowspan="2">Return if <span class="register">A</span> is higher than 16.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49687"></span>49687</td>
+<td class="instruction">RET NC</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49688"></span>49688</td>
+<td class="instruction">LD (IX+0),0</td>
+<td class="comment-1" rowspan="1">Write 0 to *<span class="register">IX</span>+0.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49692"></span>49692</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49645.html">49645</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49664">Map</a></td>
+<td class="next">
+Next: <a href="49693.html">49693</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../../asm/C200.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 49442</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49430.html">49430</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49442">Map</a></td>
+<td class="next">
+Next: <a href="49462.html">49462</a>
+</td>
+</tr>
+</table>
+<div class="description">49442: Routine at C122</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="49430.html">Sounds_StartGame</a>, <a href="49512.html">49512</a> and <a href="49717.html">Sounds_Shot</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="49442"></span>49442</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<span class="register">C</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49443"></span>49443</td>
+<td class="instruction">XOR E</td>
+<td class="comment-1" rowspan="1">Reset the bits from <span class="register">E</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49444"></span>49444</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>+=<span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49445"></span>49445</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=<span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49446"></span>49446</td>
+<td class="instruction">AND %00001111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49448"></span>49448</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=<span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49449"></span>49449</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<span class="register">B</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49450"></span>49450</td>
+<td class="instruction">AND %00001100</td>
+<td class="comment-1" rowspan="1">Keep only bits 2-3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49452"></span>49452</td>
+<td class="instruction">ADD A,8</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>+=8.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49454"></span>49454</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=<span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49455"></span>49455</td>
+<td class="instruction">CALL <a href="49462.html">Sounds_PlayWave</a></td>
+<td class="comment-1" rowspan="1">Call <a href="49462.html">Sounds_PlayWave</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49458"></span>49458</td>
+<td class="instruction">DEC C</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">C</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49459"></span>49459</td>
+<td class="instruction">JR NZ,<a href="49442.html#49442">49442</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="49442.html">49442</a> until <span class="register">C</span> is zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49461"></span>49461</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49430.html">49430</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49442">Map</a></td>
+<td class="next">
+Next: <a href="49462.html">49462</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../../asm/C122.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

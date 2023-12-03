@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 49395</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49371.html">49371</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49395">Map</a></td>
+<td class="next">
+Next: <a href="49409.html">49409</a>
+</td>
+</tr>
+</table>
+<div class="description">49395: Sounds: Normal Brick</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_Brick_Normal</td>
+<td class="address-2"><span id="49395"></span>49395</td>
+<td class="instruction">LD DE,2116</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=2116.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49398"></span>49398</td>
+<td class="instruction">CALL <a href="49756.html">Sounds_PlaySquareWave_Loop</a></td>
+<td class="comment-1" rowspan="1">Call <a href="49756.html">Sounds_PlaySquareWave_Loop</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49401"></span>49401</td>
+<td class="instruction">DEC (IX+1)</td>
+<td class="comment-1" rowspan="1">Decrease *<span class="register">IX</span>+1 by one.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49404"></span>49404</td>
+<td class="instruction">LD (IX+0),0</td>
+<td class="comment-1" rowspan="1">Write 0 to *<span class="register">IX</span>+0.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="49408"></span>49408</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49371.html">49371</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49395">Map</a></td>
+<td class="next">
+Next: <a href="49409.html">49409</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../../asm/C0F3.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Batty: Data at 26699</title>
+<title>Batty: Routine at 26699</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
 <link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
@@ -15,11 +15,11 @@ gtag('js', new Date());
 gtag('config', 'G-75RERFCHBG');
 </script>
 </head>
-<body class="Asm-b">
+<body class="Asm-c">
 <table class="header">
 <tr>
 <td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
-<td class="page-header">Data</td>
+<td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
@@ -33,7 +33,7 @@ Next: <a href="26707.html">26707</a>
 </td>
 </tr>
 </table>
-<div class="description">26699: Data block at 684B</div>
+<div class="description">26699: Routine at 684B</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,9 +45,18 @@ Used by the routine at <a href="26624.html">26624</a>.
 </td>
 </tr>
 <tr>
-<td class="address-1"><span id="26699"></span>26699</td>
-<td class="instruction">DEFB 62,12,50,29,137,195,177,185</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-2"><span id="26699"></span>26699</td>
+<td class="instruction">LD A,12</td>
+<td class="comment-1" rowspan="2">Set the rocket height to 12 pixels.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="26701"></span>26701</td>
+<td class="instruction">LD (35101),A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="26704"></span>26704</td>
+<td class="instruction">JP <a href="47537.html">StartGame</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="47537.html">StartGame</a>.</td>
 </tr>
 </table>
 <table class="asm-navigation">

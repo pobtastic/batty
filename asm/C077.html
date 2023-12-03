@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at C077</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C064.html">C064</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c077">Map</a></td>
+<td class="next">
+Next: <a href="C0AB.html">C0AB</a>
+</td>
+</tr>
+</table>
+<div class="description">C077: Sounds: Play Queue</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="974A.html">974A</a> and <a href="B9B1.html">StartGame</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_PlayQueue</td>
+<td class="address-2"><span id="c077"></span>C077</td>
+<td class="instruction">LD IY,($B793)</td>
+<td class="comment-1" rowspan="1"><span class="register">IY</span>=*<a href="B61C.html#b793">B793</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c07b"></span>C07B</td>
+<td class="instruction">LD A,($5C78)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<a href="https://skoolkid.github.io/rom/asm/5C78.html">FRAMES</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c07e"></span>C07E</td>
+<td class="instruction">LD ($B7E7),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<a href="B61C.html#b7e7">B7E7</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c081"></span>C081</td>
+<td class="instruction">EI</td>
+<td class="comment-1" rowspan="1">Enable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c082"></span>C082</td>
+<td class="instruction">IM 1</td>
+<td class="comment-1" rowspan="1">Interrupt mode 1.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c084"></span>C084</td>
+<td class="instruction">LD A,($5CDD)</td>
+<td class="comment-1" rowspan="3">Call <a href="974A.html">974A</a> if *5CDD is not zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c087"></span>C087</td>
+<td class="instruction">AND A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c088"></span>C088</td>
+<td class="instruction">CALL NZ,<a href="974A.html">$974A</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c08b"></span>C08B</td>
+<td class="instruction">LD IX,$C0B8</td>
+<td class="comment-1" rowspan="1"><span class="register">IX</span>=<a href="C0B8.html">Sounds_Queue</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c08f"></span>C08F</td>
+<td class="instruction">LD B,$05</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=05 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_PlayQueue_Loop</td>
+<td class="address-2"><span id="c091"></span>C091</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Stash <span class="register">BC</span> on the stack.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c092"></span>C092</td>
+<td class="instruction">LD A,(IX+$00)</td>
+<td class="comment-1" rowspan="3">Call <a href="C0AB.html">Sounds_PlaySound</a> if *<span class="register">IX</span>+00 is not zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c095"></span>C095</td>
+<td class="instruction">AND A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c096"></span>C096</td>
+<td class="instruction">CALL NZ,<a href="C0AB.html">Sounds_PlaySound</a></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c099"></span>C099</td>
+<td class="instruction">LD BC,$0007</td>
+<td class="comment-1" rowspan="1"><span class="register">BC</span>=0007.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c09c"></span>C09C</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-1" rowspan="1"><span class="register">IX</span>+=<span class="register">BC</span>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c09e"></span>C09E</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> from the stack.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c09f"></span>C09F</td>
+<td class="instruction">DJNZ <a href="C077.html#c091">Sounds_PlayQueue_Loop</a></td>
+<td class="comment-1" rowspan="1">Decrease counter by one and loop back to <a href="C077.html#c091">Sounds_PlayQueue_Loop</a> until counter is zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0a1"></span>C0A1</td>
+<td class="instruction">LD A,($5C78)</td>
+<td class="comment-1" rowspan="2"><span class="register">B</span>=*<a href="https://skoolkid.github.io/rom/asm/5C78.html">FRAMES</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0a4"></span>C0A4</td>
+<td class="instruction">LD B,A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0a5"></span>C0A5</td>
+<td class="instruction">LD A,($B7E7)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<a href="B61C.html#b7e7">B7E7</a>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0a8"></span>C0A8</td>
+<td class="instruction">CP B</td>
+<td class="comment-1" rowspan="1">Compare <span class="register">A</span> with <span class="register">B</span>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0a9"></span>C0A9</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">Disable interrupts.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c0aa"></span>C0AA</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C064.html">C064</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c077">Map</a></td>
+<td class="next">
+Next: <a href="C0AB.html">C0AB</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../dec/asm/49271.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

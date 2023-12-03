@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 49615</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49576.html">49576</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49615">Map</a></td>
+<td class="next">
+Next: <a href="49645.html">49645</a>
+</td>
+</tr>
+</table>
+<div class="description">49615: Routine at C1CF</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="49615"></span>49615</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<span class="register">IX</span>+1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49618"></span>49618</td>
+<td class="instruction">AND %00000011</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-1.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49620"></span>49620</td>
+<td class="instruction">JR NZ,<a href="49615.html#49633">49633</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="49615.html#49633">49633</a> if <span class="register">A</span> is not zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49622"></span>49622</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-1" rowspan="3"><span class="register">E</span>=*<span class="register">IX</span>+1 + 20.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49625"></span>49625</td>
+<td class="instruction">ADD A,20</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49627"></span>49627</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49628"></span>49628</td>
+<td class="instruction">LD D,3</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49630"></span>49630</td>
+<td class="instruction">CALL <a href="49756.html">Sounds_PlaySquareWave_Loop</a></td>
+<td class="comment-1" rowspan="1">Call <a href="49756.html">Sounds_PlaySquareWave_Loop</a>.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="49633"></span>49633</td>
+<td class="instruction">DEC (IX+1)</td>
+<td class="comment-1" rowspan="2">Decrease *<span class="register">IX</span>+1 by two.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49636"></span>49636</td>
+<td class="instruction">DEC (IX+1)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49639"></span>49639</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-1" rowspan="1">Return if *<span class="register">IX</span>+1 is not zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49640"></span>49640</td>
+<td class="instruction">LD (IX+0),0</td>
+<td class="comment-1" rowspan="1">Write 0 to *<span class="register">IX</span>+0.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="49644"></span>49644</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="49576.html">49576</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#49615">Map</a></td>
+<td class="next">
+Next: <a href="49645.html">49645</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../../asm/C1CF.html">Switch to hexadecimal</a>.</div>
+</footer>
+</body>
+</html>

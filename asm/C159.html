@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at C159</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C151.html">C151</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c159">Map</a></td>
+<td class="next">
+Next: <a href="C168.html">C168</a>
+</td>
+</tr>
+</table>
+<div class="description">C159: Routine at C159</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c159"></span>C159</td>
+<td class="instruction">LD E,$E0</td>
+<td class="comment-1" rowspan="1"><span class="register">E</span>=E0.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c15b"></span>C15B</td>
+<td class="instruction">LD C,E</td>
+<td class="comment-1" rowspan="1"><span class="register">C</span>=<span class="register">E</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c15c"></span>C15C</td>
+<td class="instruction">LD D,$60</td>
+<td class="comment-1" rowspan="1"><span class="register">D</span>=60.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c15e"></span>C15E</td>
+<td class="instruction">LD B,C</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=<span class="register">C</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c15f"></span>C15F</td>
+<td class="instruction">CALL <a href="C136.html">Sounds_PlayWave</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C136.html">Sounds_PlayWave</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c162"></span>C162</td>
+<td class="instruction">DEC D</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">D</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c163"></span>C163</td>
+<td class="instruction">INC C</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">C</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c164"></span>C164</td>
+<td class="instruction">DEC E</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">E</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c165"></span>C165</td>
+<td class="instruction">JR NZ,<a href="C159.html#c15e">$C15E</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="C159.html#c15e">C15E</a> until <span class="register">E</span> is zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c167"></span>C167</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C151.html">C151</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c159">Map</a></td>
+<td class="next">
+Next: <a href="C168.html">C168</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../dec/asm/49497.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

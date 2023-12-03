@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at C064</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDCF.html">BDCF</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c064">Map</a></td>
+<td class="next">
+Next: <a href="C077.html">C077</a>
+</td>
+</tr>
+</table>
+<div class="description">C064: Sounds: Find Empty Slot</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="965D.html">965D</a> and <a href="974A.html">974A</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_FindEmptySlot</td>
+<td class="address-2"><span id="c064"></span>C064</td>
+<td class="instruction">LD IX,$C0B8</td>
+<td class="comment-1" rowspan="1"><span class="register">IX</span>=<a href="C0B8.html">Sounds_Queue</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="c068"></span>
+<div class="comments">
+<div class="paragraph">
+There are 05 slots in total, obviously the first slot is accounted for on the first pass, so only 04 loops are necessary.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c068"></span>C068</td>
+<td class="instruction">LD B,$04</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=04 (counter).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c06a"></span>C06A</td>
+<td class="instruction">LD DE,$0007</td>
+<td class="comment-1" rowspan="1">Each slot is 0007 bytes.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="c06d"></span>
+<div class="comments">
+<div class="paragraph">
+Found an empty slot, so return.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Sounds_FindEmptySlot_Loop</td>
+<td class="address-2"><span id="c06d"></span>C06D</td>
+<td class="instruction">LD A,(IX+$00)</td>
+<td class="comment-1" rowspan="3">Return if *<span class="register">IX</span>+00 is zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c070"></span>C070</td>
+<td class="instruction">AND A</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c071"></span>C071</td>
+<td class="instruction">RET Z</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c072"></span>C072</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-1" rowspan="1"><span class="register">IX</span>+=<span class="register">DE</span>.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c074"></span>C074</td>
+<td class="instruction">DJNZ <a href="C064.html#c06d">Sounds_FindEmptySlot_Loop</a></td>
+<td class="comment-1" rowspan="1">Decrease counter by one and loop back to <a href="C064.html#c06d">Sounds_FindEmptySlot_Loop</a> until counter is zero.</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="c076"></span>C076</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="BDCF.html">BDCF</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c064">Map</a></td>
+<td class="next">
+Next: <a href="C077.html">C077</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../dec/asm/49252.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

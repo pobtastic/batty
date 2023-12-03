@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at C18C</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C17A.html">C17A</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c18c">Map</a></td>
+<td class="next">
+Next: <a href="C1A8.html">C1A8</a>
+</td>
+</tr>
+</table>
+<div class="description">C18C: Routine at C18C</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c18c"></span>C18C</td>
+<td class="instruction">LD A,$18</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=18.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c18e"></span>C18E</td>
+<td class="instruction">LD L,$01</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span>=01.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c190"></span>C190</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-1" rowspan="1">Exchange the <span class="register">AF</span> register with the shadow <span class="register">AF</span> register.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c191"></span>C191</td>
+<td class="instruction">LD DE,$01FF</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=01FF.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="c194"></span>C194</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-1" rowspan="1">Stash <span class="register">DE</span> on the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c195"></span>C195</td>
+<td class="instruction">CALL <a href="C25C.html">Sounds_PlaySquareWave_Loop</a></td>
+<td class="comment-1" rowspan="1">Call <a href="C25C.html">Sounds_PlaySquareWave_Loop</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c198"></span>C198</td>
+<td class="instruction">POP DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> from the stack.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c199"></span>C199</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-1" rowspan="3"><span class="register">E</span>-=<span class="register">L</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c19a"></span>C19A</td>
+<td class="instruction">SUB L</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c19b"></span>C19B</td>
+<td class="instruction">LD E,A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c19c"></span>C19C</td>
+<td class="instruction">JR NC,<a href="C18C.html#c194">$C194</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="C18C.html#c194">C194</a> if the result is non-negative.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c19e"></span>C19E</td>
+<td class="instruction">LD A,$04</td>
+<td class="comment-1" rowspan="3"><span class="register">L</span>+=04.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a0"></span>C1A0</td>
+<td class="instruction">ADD A,L</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a1"></span>C1A1</td>
+<td class="instruction">LD L,A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a2"></span>C1A2</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-1" rowspan="1">Exchange the <span class="register">AF</span> register with the shadow <span class="register">AF</span> register.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a3"></span>C1A3</td>
+<td class="instruction">DEC A</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">A</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a4"></span>C1A4</td>
+<td class="instruction">JR NZ,<a href="C18C.html#c190">$C190</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="C18C.html#c190">C190</a> if <span class="register">A</span> is not zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a6"></span>C1A6</td>
+<td class="instruction">DI</td>
+<td class="comment-1" rowspan="1">Disable interrupts.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="c1a7"></span>C1A7</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="C17A.html">C17A</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#c18c">Map</a></td>
+<td class="next">
+Next: <a href="C1A8.html">C1A8</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../dec/asm/49548.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>
