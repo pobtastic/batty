@@ -1,0 +1,24 @@
+; Copyright 2023 Paul Maddern (paul@arcadegeek.co.uk)
+
+[Page:Sound]
+SectionPrefix=Audio
+
+[Audio:Start]
+
+#AUDIO(start.wav)(#INCLUDE(Start))
+
+[Audio:Shot]
+
+#AUDIO(shot.wav)(#INCLUDE(Shot))
+
+[Audio:Normal Brick]
+
+#AUDIO(normal.wav)(#INCLUDE(NormalBrick))
+
+[Audio:Metal Brick]
+
+#AUDIO(metal.wav)(#INCLUDE(MetalBrick))
+
+[Audio:Magnet]
+
+#AUDIO(magnet.wav)(#INCLUDE(Magnet))

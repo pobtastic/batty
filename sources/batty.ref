@@ -8,7 +8,7 @@
 
 [Config]
 Expand=#INCLUDE(Expand)
-RefFiles=bases.ref;analytics.ref;changelog.ref;pokes.ref
+RefFiles=bases.ref;analytics.ref;changelog.ref;data.ref;pokes.ref;sound.ref
 GameDir=batty
 
 [Game]
@@ -21,6 +21,9 @@ AddressAnchor={address#IF({base}==16)(:04x)}
 
 [PageHeaders]
 GameIndex=The complete<>RAM disassembly (work in progress)
+
+[Paths]
+Sound=sound/sound.html
 
 [Expand]
 #DEF(#COLOUR(id)
@@ -48,3 +51,24 @@ GameIndex=The complete<>RAM disassembly (work in progress)
       7:WHITE))
   #LET(bright=$id&$40)#IF({bright}>$00)((BRIGHT))
   #LET(flash=$id&$80)#IF({flash}>$00)(FLASH: ON))
+
+#DEF(#BLOCK(id)
+  #MAP($id)(
+   UNKNOWN,
+     6:Double-Hit<br>Black,
+     7:Double-Hit<br>Red,
+     8:Double-Hit<br>Magenta,
+     9:Double-Hit<br>Blue,
+    17:Single-Hit<br>Red,
+    18:Single-Hit<br>Blue,
+    19:Single-Hit<br>Magenta,
+    20:Single-Hit<br>Green,
+    21:Single-Hit<br>Yellow,
+    43:Indestructable<br>Black,
+    44:Indestructable<br>Red,
+    45:Indestructable<br>Blue,
+    46:Indestructable<br>Magenta,
+   192:Empty<br>Space))
+
+#DEF(#PRINT(id)
+  #IF($id<$0A)($id,#IF($id>35)(#MAP($id)(UNKNOWN,36:.,38: ,39:-,41:II,42:=),#CHR($id+$37))))
