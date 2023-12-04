@@ -22,3 +22,6 @@ SectionPrefix=Audio
 [Audio:Magnet]
 
 #AUDIO(magnet.wav)(#INCLUDE(Magnet))
+
+[Audio:Unknown]
+#AUDIO(unknown.wav)(#INCLUDE(Unknown))

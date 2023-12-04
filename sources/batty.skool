@@ -1057,78 +1057,184 @@ b$6A15 DEFB $7C,$E6,$D2,$CA,$E6,$7C ; #UDG#(#PC),scale=$04{$00,$00,$20,$18}(#PC)
  $6B0B DEFB $FE,$6C,$6C,$6C,$6C,$FE ; #UDG#(#PC),scale=$04{$00,$00,$20,$18}(#PC)
  $6B11 DEFB $00,$00,$FF,$00,$00,$FF ; #UDG#(#PC),scale=$04{$00,$00,$20,$18}(#PC)
 
-; Data block at 6B17
-b$6B17 DEFB $01,$20,$9F,$00,$00,$00,$00,$CF
- $6B1F DEFB $6E,$3C,$00,$00,$00,$00,$00,$00
- $6B27 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $6B2F DEFB $00,$00,$3C,$6E,$CF,$00,$00,$00
- $6B37 DEFB $00,$9F,$01,$04,$45,$47,$47,$45
+; Graphics: Unused
+;
+; .
+;
+; .
+;
+; #UDGARRAY$01,scale=$04,step=$01($6B19-$6B31-$01-$08)@$6B3B-$6B3E(unused)
+; .
+; Pixels:
+b$6B17 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B18 DEFB $20                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6B19 DEFB $9F,$00,$00,$00,$00,$CF,$6E,$3C ; {Graphic data.
+ $6B21 DEFB $00,$00,$00,$00,$00,$00,$00,$00 ;
+ $6B29 DEFB $00,$00,$00,$00,$00,$00,$00,$00 ;
+ $6B31 DEFB $3C,$6E,$CF,$00,$00,$00,$00,$9F ; }
+; Attributes:
+ $6B39 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B3A DEFB $04                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6B3B DEFB $45,$47,$47,$45                 ; Attribute data.
 
-; Data block at 6B3F
-b$6B3F DEFB $01,$20,$3C,$6E,$CF,$9F,$9F,$9F
- $6B47 DEFB $9F,$60,$9F,$9F,$9F,$9F,$9F,$9F
- $6B4F DEFB $9F,$9F,$9F,$9F,$9F,$9F,$9F,$9F
- $6B57 DEFB $9F,$9F,$60,$9F,$9F,$9F,$9F,$CF
- $6B5F DEFB $6E,$3C,$01,$04,$45,$05,$05,$45
- $6B67 DEFB $01,$20,$3C,$76,$F3,$F9,$F9,$F9
- $6B6F DEFB $F9,$06,$F9,$F9,$F9,$F9,$F9,$F9
- $6B77 DEFB $F9,$F9,$F9,$F9,$F9,$F9,$F9,$F9
- $6B7F DEFB $F9,$F9,$06,$F9,$F9,$F9,$F9,$F3
- $6B87 DEFB $76,$3C,$01,$04,$45,$05,$05,$45
-
-; Data block at 6B8F
-b$6B8F DEFB $01,$18,$00,$3C,$3C,$3C,$3C,$3C
- $6B97 DEFB $3C,$3C,$00,$5E,$5E,$5E,$5E,$5E
- $6B9F DEFB $5E,$00,$3C,$3C,$3C,$3C,$3C,$3C
- $6BA7 DEFB $3C,$00,$01,$03,$07,$47,$07
-
-; Data block at 6BAE
-b$6BAE DEFB $01,$18,$00,$3C,$3C,$3C,$3C,$3C
- $6BB6 DEFB $3C,$3C,$00,$7A,$7A,$7A,$7A,$7A
- $6BBE DEFB $7A,$00,$3C,$3C,$3C,$3C,$3C,$3C
- $6BC6 DEFB $3C,$00,$01,$03,$07,$47,$07
-
-; Data block at 6BCD
-b$6BCD DEFB $04,$08,$9E,$FF,$FF,$6C,$9D,$FF
- $6BD5 DEFB $FF,$6E,$9B,$FF,$FF,$6F,$97,$FF
- $6BDD DEFB $FF,$6F,$AF,$FF,$FF,$69,$D0,$00
- $6BE5 DEFB $00,$93,$A0,$00,$00,$96,$7F,$FF
- $6BED DEFB $FF,$6C,$04,$01,$05,$05,$05,$45
-
-; Data block at 6BF5
-b$6BF5 DEFB $04,$08,$00,$00,$00,$3E,$00,$7E
- $6BFD DEFB $00,$7E,$7F,$7E,$FE,$FE,$7F,$7E
- $6C05 DEFB $FE,$FE,$7F,$7E,$FE,$9E,$7F,$00
- $6C0D DEFB $FE,$C1,$00,$7E,$00,$61,$00,$00
- $6C15 DEFB $00,$3E,$04,$01,$07,$47,$07,$45
-
-; Data block at 6C1D
-b$6C1D DEFB $04,$08,$FF,$FF,$FF,$7C,$FF,$FF
- $6C25 DEFB $FF,$7E,$FF,$FF,$FF,$7F,$FF,$FF
- $6C2D DEFB $FF,$7F,$FF,$FF,$FF,$79,$00,$00
- $6C35 DEFB $00,$83,$00,$00,$00,$86,$FF,$FF
- $6C3D DEFB $FF,$7C,$04,$01,$05,$05,$05,$45
-
-; Data block at 6C45
-b$6C45 DEFB $04,$08,$7C,$00,$00,$00,$7E,$00
- $6C4D DEFB $7E,$00,$7F,$7F,$7E,$FE,$7F,$7F
- $6C55 DEFB $7E,$FE,$79,$7F,$7E,$FE,$83,$7F
- $6C5D DEFB $00,$FE,$86,$00,$7E,$00,$7C,$00
- $6C65 DEFB $00,$00,$04,$01,$45,$07,$47,$07
-
-; Data block at 6C6D
-b$6C6D DEFB $04,$08,$3E,$FF,$FF,$FF,$7E,$FF
- $6C75 DEFB $FF,$FF,$FE,$FF,$FF,$FF,$FE,$FF
- $6C7D DEFB $FF,$FF,$9E,$FF,$FF,$FF,$C1,$00
- $6C85 DEFB $00,$00,$61,$00,$00,$00,$3E,$FF
- $6C8D DEFB $FF,$FF,$04,$01,$45,$05,$05,$05
-
-; Data block at 6C95
-b$6C95 DEFB $04,$08,$36,$FF,$FF,$79,$76,$FF
- $6C9D DEFB $FF,$B9,$F6,$FF,$FF,$D9,$F6,$FF
- $6CA5 DEFB $FF,$E9,$96,$FF,$FF,$F5,$C9,$00
- $6CAD DEFB $00,$0B,$69,$00,$00,$05,$36,$FF
- $6CB5 DEFB $FF,$FE,$04,$01,$45,$05,$05,$05
+; Graphics: Frame
+;
+; .
+;
+; .
+;
+; #UDGARRAY$01,scale=$04,step=$01($6B41-$6B59-$01-$08)@$6B63-$6B66(frame-left-01)
+; .
+; Pixels:
+b$6B3F DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B40 DEFB $20                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6B41 DEFB $3C,$6E,$CF,$9F,$9F,$9F,$9F,$60 ; {Graphic data.
+ $6B49 DEFB $9F,$9F,$9F,$9F,$9F,$9F,$9F,$9F ;
+ $6B51 DEFB $9F,$9F,$9F,$9F,$9F,$9F,$9F,$9F ;
+ $6B59 DEFB $60,$9F,$9F,$9F,$9F,$CF,$6E,$3C ; }
+; Attributes:
+ $6B61 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B62 DEFB $04                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6B63 DEFB $45,$05,$05,$45                 ; Attribute data.
+; #UDGARRAY$01,scale=$04,step=$01($6B69-$6B81-$01-$08)@$6B8B-$6B8E(frame-right-01)
+; .
+; Pixels:
+ $6B67 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B68 DEFB $20                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6B69 DEFB $3C,$76,$F3,$F9,$F9,$F9,$F9,$06 ; {Graphic data.
+ $6B71 DEFB $F9,$F9,$F9,$F9,$F9,$F9,$F9,$F9 ;
+ $6B79 DEFB $F9,$F9,$F9,$F9,$F9,$F9,$F9,$F9 ;
+ $6B81 DEFB $06,$F9,$F9,$F9,$F9,$F3,$76,$3C ; }
+; Attributes:
+ $6B89 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B8A DEFB $04                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6B8B DEFB $45,$05,$05,$45                 ; Attribute data.
+; #UDGARRAY$01,scale=$04,step=$01($6B91-$6BA1-$01-$08)@$6BAB-$6BAD(frame-left-02)
+; .
+; Pixels:
+ $6B8F DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6B90 DEFB $18                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6B91 DEFB $00,$3C,$3C,$3C,$3C,$3C,$3C,$3C ; {Graphic data.
+ $6B99 DEFB $00,$5E,$5E,$5E,$5E,$5E,$5E,$00 ;
+ $6BA1 DEFB $3C,$3C,$3C,$3C,$3C,$3C,$3C,$00 ; }
+; Attributes:
+ $6BA9 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BAA DEFB $03                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6BAB DEFB $07,$47,$07                     ; Attribute data.
+; #UDGARRAY$01,scale=$04,step=$01($6BB0-$6BC0-$01-$08)@$6BCA-$6BCC(frame-right-02)
+; .
+; Pixels:
+ $6BAE DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BAF DEFB $18                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6BB0 DEFB $00,$3C,$3C,$3C,$3C,$3C,$3C,$3C ; {Graphic data.
+ $6BB8 DEFB $00,$7A,$7A,$7A,$7A,$7A,$7A,$00 ;
+ $6BC0 DEFB $3C,$3C,$3C,$3C,$3C,$3C,$3C,$00 ; }
+; Attributes:
+ $6BC8 DEFB $01                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BC9 DEFB $03                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6BCA DEFB $07,$47,$07                     ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6BCF-$6BE7-$01-$20)@$6BF1-$6BF4(frame-top-left)
+; .
+; Pixels:
+ $6BCD DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BCE DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6BCF DEFB $9E,$FF,$FF,$6C                 ; {Graphic data.
+ $6BD3 DEFB $9D,$FF,$FF,$6E                 ;
+ $6BD7 DEFB $9B,$FF,$FF,$6F                 ;
+ $6BDB DEFB $97,$FF,$FF,$6F                 ;
+ $6BDF DEFB $AF,$FF,$FF,$69                 ;
+ $6BE3 DEFB $D0,$00,$00,$93                 ;
+ $6BE7 DEFB $A0,$00,$00,$96                 ;
+ $6BEB DEFB $7F,$FF,$FF,$6C                 ; }
+; Attributes:
+ $6BEF DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BF0 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6BF1 DEFB $05,$05,$05,$45                 ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6BF7-$6C0F-$01-$20)@$6C19-$6C1C(frame-top-01)
+; .
+; Pixels:
+ $6BF5 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6BF6 DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6BF7 DEFB $00,$00,$00,$3E                 ; {Graphic data.
+ $6BFB DEFB $00,$7E,$00,$7E                 ;
+ $6BFF DEFB $7F,$7E,$FE,$FE                 ;
+ $6C03 DEFB $7F,$7E,$FE,$FE                 ;
+ $6C07 DEFB $7F,$7E,$FE,$9E                 ;
+ $6C0B DEFB $7F,$00,$FE,$C1                 ;
+ $6C0F DEFB $00,$7E,$00,$61                 ;
+ $6C13 DEFB $00,$00,$00,$3E                 ; }
+; Attributes:
+ $6C17 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C18 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6C19 DEFB $07,$47,$07,$45                 ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6C1F-$6C37-$01-$20)@$6C41-$6C44(frame-top-02)
+; .
+; Pixels:
+ $6C1D DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C1E DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6C1F DEFB $FF,$FF,$FF,$7C                 ; {Graphic data.
+ $6C23 DEFB $FF,$FF,$FF,$7E                 ;
+ $6C27 DEFB $FF,$FF,$FF,$7F                 ;
+ $6C2B DEFB $FF,$FF,$FF,$7F                 ;
+ $6C2F DEFB $FF,$FF,$FF,$79                 ;
+ $6C33 DEFB $00,$00,$00,$83                 ;
+ $6C37 DEFB $00,$00,$00,$86                 ;
+ $6C3B DEFB $FF,$FF,$FF,$7C                 ; }
+; Attributes:
+ $6C3F DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C40 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6C41 DEFB $05,$05,$05,$45                 ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6C47-$6C5F-$01-$20)@$6C69-$6C6C(frame-top-03)
+; .
+; Pixels:
+ $6C45 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C46 DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6C47 DEFB $7C,$00,$00,$00                 ; {Graphic data.
+ $6C4B DEFB $7E,$00,$7E,$00                 ;
+ $6C4F DEFB $7F,$7F,$7E,$FE                 ;
+ $6C53 DEFB $7F,$7F,$7E,$FE                 ;
+ $6C57 DEFB $79,$7F,$7E,$FE                 ;
+ $6C5B DEFB $83,$7F,$00,$FE                 ;
+ $6C5F DEFB $86,$00,$7E,$00                 ;
+ $6C63 DEFB $7C,$00,$00,$00                 ; }
+; Attributes:
+ $6C67 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C68 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6C69 DEFB $45,$07,$47,$07                 ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6C6F-$6C87-$01-$20)@$6C91-$6C94(frame-top-04)
+; .
+; Pixels:
+ $6C6D DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C6E DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6C6F DEFB $3E,$FF,$FF,$FF                 ; {Graphic data.
+ $6C73 DEFB $7E,$FF,$FF,$FF                 ;
+ $6C77 DEFB $FE,$FF,$FF,$FF                 ;
+ $6C7B DEFB $FE,$FF,$FF,$FF                 ;
+ $6C7F DEFB $9E,$FF,$FF,$FF                 ;
+ $6C83 DEFB $C1,$00,$00,$00                 ;
+ $6C87 DEFB $61,$00,$00,$00                 ;
+ $6C8B DEFB $3E,$FF,$FF,$FF                 ; }
+; Attributes:
+ $6C8F DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C90 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6C91 DEFB $45,$05,$05,$05                 ; Attribute data.
+; #UDGARRAY$04,scale=$04,step=$04($6C97-$6C9F-$01-$20)@$6CB9-$6CBC(frame-top-right)
+; .
+; Pixels:
+ $6C95 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6C96 DEFB $08                             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6C97 DEFB $36,$FF,$FF,$79                 ; {Graphic data.
+ $6C9B DEFB $76,$FF,$FF,$B9                 ;
+ $6C9F DEFB $F6,$FF,$FF,$D9                 ;
+ $6CA3 DEFB $F6,$FF,$FF,$E9                 ;
+ $6CA7 DEFB $96,$FF,$FF,$F5                 ;
+ $6CAB DEFB $C9,$00,$00,$0B                 ;
+ $6CAF DEFB $69,$00,$00,$05                 ;
+ $6CB3 DEFB $36,$FF,$FF,$FE                 ; }
+; Attributes:
+ $6CB7 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6CB8 DEFB $01                             ; Height: #N(#PEEK(#PC)) byte(s).
+ $6CB9 DEFB $45,$05,$05,$05                 ; Attribute data.
 
 ; Table: Levels
 @label=Table_Levels
@@ -2523,21 +2629,63 @@ b$891D DEFB $1B,$0C,$00,$01,$00,$80,$00,$1E
  $8D45 DEFB $00,$00,$00
 
 ; Data block at 8D48
-b$8D48 DEFB $17,$8E,$00,$80,$3E,$1E,$32,$39
- $8D50 DEFB $79,$3A,$EA,$B7,$87,$21,$06,$8E
- $8D58 DEFB $CD,$BB,$B5,$5E,$23,$56,$D5,$FD
- $8D60 DEFB $E1,$FD,$7E,$00,$32,$B7,$8D,$A7
- $8D68 DEFB $C8,$DD,$21,$B8,$8D,$F5,$DD,$36
- $8D70 DEFB $01,$06,$FD,$6E,$01,$FD,$66,$02
- $8D78 DEFB $FD,$23,$FD,$23,$DD,$75,$02,$DD
- $8D80 DEFB $74,$04,$CD,$84,$B6,$CD,$10,$99
- $8D88 DEFB $DD,$7E,$04,$C6,$05,$DD,$77,$04
- $8D90 DEFB $CD,$B4,$8E,$3A,$48,$8D,$1F,$38
- $8D98 DEFB $07,$DD,$36,$01,$07,$CD,$10,$99
- $8DA0 DEFB $DD,$7E,$02,$C6,$05,$DD,$77,$02
- $8DA8 DEFB $11,$10,$00,$DD,$19,$F1,$3D,$20
- $8DB0 DEFB $BC,$3E,$17,$32,$39,$79,$C9,$00
- $8DB8 DEFB $03,$06,$00,$00,$00,$00,$00,$00
+b$8D48 DEFB $17,$8E,$00,$80
+
+; Routine at 8D4C
+;
+; Used by the routine at #R$BDCF.
+c$8D4C LD A,$1E        ;
+ $8D4E LD ($7939),A    ;
+ $8D51 LD A,($B7EA)    ;
+ $8D54 ADD A,A         ;
+ $8D55 LD HL,$8E06     ;
+ $8D58 CALL $B5BB      ;
+ $8D5B LD E,(HL)       ;
+ $8D5C INC HL          ;
+ $8D5D LD D,(HL)       ;
+ $8D5E PUSH DE         ;
+ $8D5F POP IY          ;
+ $8D61 LD A,(IY+$00)   ;
+ $8D64 LD ($8DB7),A    ;
+ $8D67 AND A           ;
+ $8D68 RET Z           ;
+ $8D69 LD IX,$8DB8     ;
+*$8D6D PUSH AF         ;
+ $8D6E LD (IX+$01),$06 ;
+ $8D72 LD L,(IY+$01)   ;
+ $8D75 LD H,(IY+$02)   ;
+ $8D78 INC IY          ;
+ $8D7A INC IY          ;
+ $8D7C LD (IX+$02),L   ;
+ $8D7F LD (IX+$04),H   ;
+ $8D82 CALL $B684      ;
+ $8D85 CALL $9910      ;
+ $8D88 LD A,(IX+$04)   ;
+ $8D8B ADD A,$05       ;
+ $8D8D LD (IX+$04),A   ;
+ $8D90 CALL $8EB4      ;
+ $8D93 LD A,($8D48)    ;
+ $8D96 RRA             ;
+ $8D97 JR C,$8DA0      ;
+ $8D99 LD (IX+$01),$07 ;
+ $8D9D CALL $9910      ;
+*$8DA0 LD A,(IX+$02)   ;
+ $8DA3 ADD A,$05       ;
+ $8DA5 LD (IX+$02),A   ;
+ $8DA8 LD DE,$0010     ;
+ $8DAB ADD IX,DE       ;
+ $8DAD POP AF          ;
+ $8DAE DEC A           ;
+ $8DAF JR NZ,$8D6D     ;
+ $8DB1 LD A,$17        ;
+ $8DB3 LD ($7939),A    ;
+ $8DB6 RET             ;
+
+; Game status buffer entry at 8DB7
+g$8DB7 DEFB $00
+
+; Game status buffer entry at 8DB8
+g$8DB8 DEFB $03,$06,$00,$00,$00,$00,$00,$00
  $8DC0 DEFB $04,$1E,$00,$00,$0F,$0E,$00,$00
  $8DC8 DEFB $03,$06,$00,$00,$00,$00,$00,$00
  $8DD0 DEFB $04,$1E,$00,$00,$0F,$0E,$00,$00
@@ -2546,51 +2694,214 @@ b$8D48 DEFB $17,$8E,$00,$80,$3E,$1E,$32,$39
  $8DE8 DEFB $03,$06,$00,$00,$00,$00,$00,$00
  $8DF0 DEFB $04,$1E,$00,$00,$0F,$0E,$00,$00
  $8DF8 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $8E00 DEFB $00,$00,$00,$00,$00,$00,$6C,$8E
- $8E08 DEFB $6D,$8E,$6C,$8E,$69,$8E,$68,$8E
- $8E10 DEFB $61,$8E,$5C,$8E,$55,$8E,$4C,$8E
- $8E18 DEFB $49,$8E,$44,$8E,$3D,$8E,$34,$8E
- $8E20 DEFB $2B,$8E,$26,$8E,$26,$8E,$02,$4C
- $8E28 DEFB $82,$9C,$82,$04,$8C,$24,$C4,$24
- $8E30 DEFB $8C,$64,$C4,$64,$04,$10,$20,$D8
- $8E38 DEFB $20,$18,$6C,$D0,$6C,$03,$74,$08
- $8E40 DEFB $20,$44,$C8,$44,$02,$5C,$84,$8C
- $8E48 DEFB $84,$01,$74,$44,$04,$40,$3C,$A8
- $8E50 DEFB $3C,$54,$6C,$94,$6C,$03,$74,$18
- $8E58 DEFB $4C,$74,$9C,$74,$02,$30,$5C,$D8
- $8E60 DEFB $5C,$03,$74,$10,$48,$73,$A0,$73
- $8E68 DEFB $00,$01,$74,$7C,$00,$01,$74,$2C
- $8E70 DEFB $00,$00,$3A,$B7,$8D,$A7,$C8,$3D
- $8E78 DEFB $47,$C5,$CD,$B4,$8E,$3A,$48,$8D
- $8E80 DEFB $E6,$03,$C1,$B8,$28,$02,$30,$F1
- $8E88 DEFB $87,$87,$87,$87,$21,$B8,$8D,$CD
- $8E90 DEFB $BB,$B5,$22,$70,$8E,$E5,$DD,$E1
- $8E98 DEFB $DD,$7E,$01,$EE,$01,$DD,$77,$01
- $8EA0 DEFB $DD,$7E,$02,$F5,$D6,$05,$DD,$77
- $8EA8 DEFB $02,$CD,$10,$99,$F1,$DD,$77,$02
- $8EB0 DEFB $CD,$51,$C1,$C9,$ED,$5B,$48,$8D
- $8EB8 DEFB $2A,$4A,$8D,$7E,$C6,$05,$47,$3A
- $8EC0 DEFB $D9,$8E,$80,$83,$5F,$7E,$2F,$C6
- $8EC8 DEFB $16,$82,$85,$57,$ED,$53,$48,$8D
- $8ED0 DEFB $23,$7C,$E6,$9F,$67,$22,$4A,$8D
- $8ED8 DEFB $C9,$06,$36,$00,$23,$10,$FB,$C9
- $8EE0 DEFB $15,$C0,$E8,$8E,$10,$8F,$38,$8F
- $8EE8 DEFB $02,$10,$00,$00,$FF,$FE,$BB,$BA
- $8EF0 DEFB $FF,$FE,$FF,$FE,$BF,$FA,$FB,$FE
- $8EF8 DEFB $FB,$FE,$BB,$FA,$FB,$FE,$F8,$3E
- $8F00 DEFB $BF,$FA,$FF,$FE,$FF,$FE,$BB,$BA
- $8F08 DEFB $FF,$FE,$02,$02,$44,$44,$44,$44
- $8F10 DEFB $02,$10,$F7,$F7,$F7,$F7,$EF,$FB
- $8F18 DEFB $EF,$FB,$DF,$FD,$DF,$FD,$BF,$FE
- $8F20 DEFB $7F,$FF,$BF,$FE,$DF,$FD,$DF,$FD
- $8F28 DEFB $EF,$FB,$EF,$FB,$F7,$F7,$F7,$F7
- $8F30 DEFB $F8,$0F,$02,$02,$45,$45,$45,$45
- $8F38 DEFB $02,$10,$D7,$D7,$BB,$BB,$7D,$7D
- $8F40 DEFB $FE,$FE,$7F,$FD,$BF,$FB,$DF,$F7
- $8F48 DEFB $EF,$EF,$DF,$F7,$BF,$FB,$7F,$FD
- $8F50 DEFB $FE,$FE,$7D,$7D,$BB,$BB,$D7,$D7
- $8F58 DEFB $EF,$EF,$02,$02,$47,$47,$47,$47
-*$8F60 DEFB $21,$58,$A4,$CD,$7D,$B5,$0E,$20
+ $8E00 DEFB $00,$00,$00,$00,$00,$00
+
+; Game status buffer entry at 8E06
+g$8E06 DEFW $8E6C
+ $8E08 DEFW $8E6D
+ $8E0A DEFW $8E6C
+ $8E0C DEFW $8E69
+ $8E0E DEFW $8E68
+ $8E10 DEFW $8E61
+ $8E12 DEFW $8E5C
+ $8E14 DEFW $8E55
+ $8E16 DEFW $8E4C
+ $8E18 DEFW $8E49
+ $8E1A DEFW $8E44
+ $8E1C DEFW $8E3D
+ $8E1E DEFW $8E34
+ $8E20 DEFW $8E2B
+ $8E22 DEFW $8E26
+ $8E24 DEFW $8E26
+
+; Data block at 8E26
+b$8E26 DEFB $02,$4C,$82,$9C,$82,$04,$8C,$24
+ $8E2E DEFB $C4,$24,$8C,$64,$C4,$64,$04,$10
+ $8E36 DEFB $20,$D8,$20,$18,$6C,$D0,$6C,$03
+ $8E3E DEFB $74,$08,$20,$44,$C8,$44,$02,$5C
+ $8E46 DEFB $84,$8C,$84,$01,$74,$44,$04,$40
+ $8E4E DEFB $3C,$A8,$3C,$54,$6C,$94,$6C,$03
+ $8E56 DEFB $74,$18,$4C,$74,$9C,$74,$02,$30
+ $8E5E DEFB $5C,$D8,$5C,$03,$74,$10,$48,$73
+ $8E66 DEFB $A0,$73,$00,$01,$74,$7C,$00,$01
+ $8E6E DEFB $74,$2C,$00,$00
+
+; Routine at 8E72
+;
+; Used by the routine at #R$B9B1.
+c$8E72 LD A,($8DB7)  ;
+*$8E75 AND A         ;
+ $8E76 RET Z         ;
+*$8E77 DEC A         ;
+ $8E78 LD B,A        ;
+*$8E79 PUSH BC       ;
+ $8E7A CALL $8EB4    ;
+ $8E7D LD A,($8D48)  ;
+ $8E80 AND $03       ;
+ $8E82 POP BC        ;
+ $8E83 CP B          ;
+ $8E84 JR Z,$8E88    ;
+ $8E86 JR NC,$8E79   ;
+*$8E88 ADD A,A       ;
+ $8E89 ADD A,A       ;
+ $8E8A ADD A,A       ;
+ $8E8B ADD A,A       ;
+ $8E8C LD HL,$8DB8   ;
+ $8E8F CALL $B5BB    ;
+ $8E92 LD ($8E70),HL ;
+ $8E95 PUSH HL       ;
+ $8E96 POP IX        ;
+ $8E98 LD A,(IX+$01) ;
+ $8E9B XOR $01       ;
+ $8E9D LD (IX+$01),A ;
+ $8EA0 LD A,(IX+$02) ;
+ $8EA3 PUSH AF       ;
+ $8EA4 SUB $05       ;
+ $8EA6 LD (IX+$02),A ;
+ $8EA9 CALL $9910    ;
+ $8EAC POP AF        ;
+ $8EAD LD (IX+$02),A ;
+ $8EB0 CALL $C151    ;
+ $8EB3 RET           ;
+; This entry point is used by the routines at #R$8D4C, #R$93F8, #R$974A and
+; #R$B9B1.
+*$8EB4 LD DE,($8D48) ;
+ $8EB8 LD HL,($8D4A) ;
+ $8EBB LD A,(HL)     ;
+ $8EBC ADD A,$05     ;
+ $8EBE LD B,A        ;
+ $8EBF LD A,($8ED9)  ;
+ $8EC2 ADD A,B       ;
+ $8EC3 ADD A,E       ;
+ $8EC4 LD E,A        ;
+ $8EC5 LD A,(HL)     ;
+ $8EC6 CPL           ;
+ $8EC7 ADD A,$16     ;
+ $8EC9 ADD A,D       ;
+ $8ECA ADD A,L       ;
+ $8ECB LD D,A        ;
+ $8ECC LD ($8D48),DE ;
+ $8ED0 INC HL        ;
+ $8ED1 LD A,H        ;
+ $8ED2 AND $9F       ;
+ $8ED4 LD H,A        ;
+ $8ED5 LD ($8D4A),HL ;
+ $8ED8 RET           ;
+ $8ED9 LD B,$36      ;
+ $8EDB NOP           ;
+ $8EDC INC HL        ;
+ $8EDD DJNZ $8EDA    ;
+ $8EDF RET           ;
+ $8EE0 DEC D         ;
+ $8EE1 RET NZ        ;
+ $8EE2 RET PE        ;
+ $8EE3 ADC A,(HL)    ;
+ $8EE4 DJNZ $8E75    ;
+ $8EE6 JR C,$8E77    ;
+
+; Graphics: Background 1
+;
+; .
+;
+; .
+;
+; #UDGARRAY$02,scale=$04,step=$02($8EEA-$8F08-$01-$10)@$8F0C-$8F0F(background-01)
+; .
+; Pixels:
+b$8EE8 DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8EE9 DEFB $10      ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8EEA DEFB $00,$00  ; {Graphic data.
+ $8EEC DEFB $FF,$FE  ;
+ $8EEE DEFB $BB,$BA  ;
+ $8EF0 DEFB $FF,$FE  ;
+ $8EF2 DEFB $FF,$FE  ;
+ $8EF4 DEFB $BF,$FA  ;
+ $8EF6 DEFB $FB,$FE  ;
+ $8EF8 DEFB $FB,$FE  ;
+ $8EFA DEFB $BB,$FA  ;
+ $8EFC DEFB $FB,$FE  ;
+ $8EFE DEFB $F8,$3E  ;
+ $8F00 DEFB $BF,$FA  ;
+ $8F02 DEFB $FF,$FE  ;
+ $8F04 DEFB $FF,$FE  ;
+ $8F06 DEFB $BB,$BA  ;
+ $8F08 DEFB $FF,$FE  ; }
+; Attributes:
+ $8F0A DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8F0B DEFB $02      ; Height: #N(#PEEK(#PC)) byte(s).
+ $8F0C DEFB $44,$44  ; {Attribute data.
+ $8F0E DEFB $44,$44  ; }
+
+; Graphics: Background 2
+;
+; .
+;
+; .
+;
+; #UDGARRAY$02,scale=$04,step=$02($8F12-$8F30-$01-$10)@$8F34-$8F37(background-02)
+; .
+; Pixels:
+b$8F10 DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8F11 DEFB $10      ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8F12 DEFB $F7,$F7  ; {Graphic data.
+ $8F14 DEFB $F7,$F7  ;
+ $8F16 DEFB $EF,$FB  ;
+ $8F18 DEFB $EF,$FB  ;
+ $8F1A DEFB $DF,$FD  ;
+ $8F1C DEFB $DF,$FD  ;
+ $8F1E DEFB $BF,$FE  ;
+ $8F20 DEFB $7F,$FF  ;
+ $8F22 DEFB $BF,$FE  ;
+ $8F24 DEFB $DF,$FD  ;
+ $8F26 DEFB $DF,$FD  ;
+ $8F28 DEFB $EF,$FB  ;
+ $8F2A DEFB $EF,$FB  ;
+ $8F2C DEFB $F7,$F7  ;
+ $8F2E DEFB $F7,$F7  ;
+ $8F30 DEFB $F8,$0F  ; }
+; Attributes:
+ $8F32 DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8F33 DEFB $02      ; Height: #N(#PEEK(#PC)) byte(s).
+ $8F34 DEFB $45,$45  ; {Attribute data.
+ $8F36 DEFB $45,$45  ; }
+
+; Graphics: Background 3
+;
+; .
+;
+; .
+;
+; #UDGARRAY$02,scale=$04,step=$02($8F3A-$8F58-$01-$10)@$8F5C-$8F5F(background-03)
+; .
+; Pixels:
+b$8F38 DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8F39 DEFB $10      ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8F3A DEFB $D7,$D7  ; {Graphic data.
+ $8F3C DEFB $BB,$BB  ;
+ $8F3E DEFB $7D,$7D  ;
+ $8F40 DEFB $FE,$FE  ;
+ $8F42 DEFB $7F,$FD  ;
+ $8F44 DEFB $BF,$FB  ;
+ $8F46 DEFB $DF,$F7  ;
+ $8F48 DEFB $EF,$EF  ;
+ $8F4A DEFB $DF,$F7  ;
+ $8F4C DEFB $BF,$FB  ;
+ $8F4E DEFB $7F,$FD  ;
+ $8F50 DEFB $FE,$FE  ;
+ $8F52 DEFB $7D,$7D  ;
+ $8F54 DEFB $BB,$BB  ;
+ $8F56 DEFB $D7,$D7  ;
+ $8F58 DEFB $EF,$EF  ; }
+; Attributes:
+ $8F5A DEFB $02      ; Width: #N(#PEEK(#PC)) byte(s).
+ $8F5B DEFB $02      ; Height: #N(#PEEK(#PC)) byte(s).
+ $8F5C DEFB $47,$47  ; {Attribute data.
+ $8F5E DEFB $47,$47  ; }
+
+; Data block at 8F60
+;
+; Used by the routine at #R$B9B1.
+b$8F60 DEFB $21,$58,$A4,$CD,$7D,$B5,$0E,$20
  $8F68 DEFB $06,$0A,$E5,$36,$00,$2C,$10,$FB
  $8F70 DEFB $E1,$CD,$6E,$B5,$0D,$20,$F1,$3A
  $8F78 DEFB $EB,$B7,$3C,$47,$AF,$C6,$01,$27
@@ -3905,7 +4216,8 @@ c$974A XOR A           ;
  $990D ADD HL,BC       ;
  $990E DEC B           ;
  $990F RLCA            ;
-; This entry point is used by the routines at #R$965D and #R$BDCF.
+; This entry point is used by the routines at #R$8D4C, #R$8E72, #R$965D and
+; #R$BDCF.
 *$9910 LD A,(IX+$00)   ;
  $9913 BIT 7,A         ;
  $9915 RET NZ          ;
@@ -7784,7 +8096,8 @@ c$974A XOR A           ;
  $B5B7 ADD A,$58       ;
  $B5B9 LD H,A          ;
  $B5BA RET             ;
-; This entry point is used by the routines at #R$961C, #R$B61C and #R$BDCF.
+; This entry point is used by the routines at #R$8D4C, #R$8E72, #R$961C,
+; #R$B61C and #R$BDCF.
 *$B5BB ADD A,L         ;
  $B5BC LD L,A          ;
  $B5BD RET NC          ;
@@ -7925,7 +8238,8 @@ c$B61C PUSH HL         ;
  $B680 POP BC          ;
  $B681 DJNZ $B673      ;
  $B683 RET             ;
-; This entry point is used by the routines at #R$965D, #R$974A and #R$BDCF.
+; This entry point is used by the routines at #R$8D4C, #R$965D, #R$974A and
+; #R$BDCF.
 *$B684 LD L,(IX+$02)   ;
  $B687 LD H,(IX+$04)   ;
  $B68A CALL $C03D      ;
@@ -9382,6 +9696,8 @@ c$C143 LD E,$40      ; #REGe=#N$40.
  $C150 RET           ; Return.
 
 ; Routine at C151
+;
+; Used by the routine at #R$8E72.
 c$C151 LD E,$18      ; #REGe=#N$18.
  $C153 LD C,$18      ; #REGc=#N$18.
  $C155 LD D,$40      ; #REGd=#N$40.

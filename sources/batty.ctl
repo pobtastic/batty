@@ -67,25 +67,108 @@ b $6A15 Font
   $6A15,$06 #UDG#(#PC),scale=$04{$00,$00,$20,$18}(#PC)
 L $6A15,$06,$2B
 
-b $6B17
+b $6B17 Graphics: Unused
+N $6B17 #UDGARRAY$01,scale=$04,step=$01($6B19-$6B31-$01-$08)@$6B3B-$6B3E(unused)
+N $6B17 Pixels:
+  $6B17,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B18,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6B19,$20 Graphic data.
+N $6B39 Attributes:
+  $6B39,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B3A,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6B3B,$04 Attribute data.
 
-b $6B3F
-
-b $6B8F
-
-b $6BAE
-
-b $6BCD
-
-b $6BF5
-
-b $6C1D
-
-b $6C45
-
-b $6C6D
-
-b $6C95
+b $6B3F Graphics: Frame
+N $6B3F #UDGARRAY$01,scale=$04,step=$01($6B41-$6B59-$01-$08)@$6B63-$6B66(frame-left-01)
+N $6B3F Pixels:
+  $6B3F,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B40,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6B41,$20 Graphic data.
+N $6B61 Attributes:
+  $6B61,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B62,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6B63,$04 Attribute data.
+N $6B67 #UDGARRAY$01,scale=$04,step=$01($6B69-$6B81-$01-$08)@$6B8B-$6B8E(frame-right-01)
+N $6B67 Pixels:
+  $6B67,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B68,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6B69,$20 Graphic data.
+N $6B89 Attributes:
+  $6B89,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B8A,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6B8B,$04 Attribute data.
+N $6B8F #UDGARRAY$01,scale=$04,step=$01($6B91-$6BA1-$01-$08)@$6BAB-$6BAD(frame-left-02)
+N $6B8F Pixels:
+  $6B8F,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6B90,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6B91,$18 Graphic data.
+N $6BA9 Attributes:
+  $6BA9,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BAA,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6BAB,$03 Attribute data.
+N $6BAE #UDGARRAY$01,scale=$04,step=$01($6BB0-$6BC0-$01-$08)@$6BCA-$6BCC(frame-right-02)
+N $6BAE Pixels:
+  $6BAE,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BAF,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6BB0,$18 Graphic data.
+N $6BC8 Attributes:
+  $6BC8,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BC9,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6BCA,$03 Attribute data.
+N $6BCD #UDGARRAY$04,scale=$04,step=$04($6BCF-$6BE7-$01-$20)@$6BF1-$6BF4(frame-top-left)
+N $6BCD Pixels:
+  $6BCD,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BCE,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6BCF,$20,$04 Graphic data.
+N $6BEF Attributes:
+  $6BEF,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BF0,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6BF1,$04 Attribute data.
+N $6BF5 #UDGARRAY$04,scale=$04,step=$04($6BF7-$6C0F-$01-$20)@$6C19-$6C1C(frame-top-01)
+N $6BF5 Pixels:
+  $6BF5,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6BF6,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6BF7,$20,$04 Graphic data.
+N $6C17 Attributes:
+  $6C17,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C18,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6C19,$04 Attribute data.
+N $6C1D #UDGARRAY$04,scale=$04,step=$04($6C1F-$6C37-$01-$20)@$6C41-$6C44(frame-top-02)
+N $6C1D Pixels:
+  $6C1D,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C1E,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6C1F,$20,$04 Graphic data.
+N $6C3F Attributes:
+  $6C3F,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C40,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6C41,$04 Attribute data.
+N $6C45 #UDGARRAY$04,scale=$04,step=$04($6C47-$6C5F-$01-$20)@$6C69-$6C6C(frame-top-03)
+N $6C45 Pixels:
+  $6C45,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C46,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6C47,$20,$04 Graphic data.
+N $6C67 Attributes:
+  $6C67,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C68,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6C69,$04 Attribute data.
+N $6C6D #UDGARRAY$04,scale=$04,step=$04($6C6F-$6C87-$01-$20)@$6C91-$6C94(frame-top-04)
+N $6C6D Pixels:
+  $6C6D,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C6E,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6C6F,$20,$04 Graphic data.
+N $6C8F Attributes:
+  $6C8F,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C90,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6C91,$04 Attribute data.
+N $6C95 #UDGARRAY$04,scale=$04,step=$04($6C97-$6C9F-$01-$20)@$6CB9-$6CBC(frame-top-right)
+N $6C95 Pixels:
+  $6C95,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6C96,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6C97,$20,$04 Graphic data.
+N $6CB7 Attributes:
+  $6CB7,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6CB8,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $6CB9,$04 Attribute data.
 
 w $6CBD Table: Levels
 @ $6CBD label=Table_Levels
@@ -147,13 +230,63 @@ b $891D
 
 b $8D48
 
+c $8D4C
+
+g $8DB7
+B $8DB7
+
+g $8DB8
+B $8DB8
+
+g $8E06
+W $8E06
+
+b $8E26
+
+c $8E72
+
+b $8EE8 Graphics: Background 1
+N $8EE8 #UDGARRAY$02,scale=$04,step=$02($8EEA-$8F08-$01-$10)@$8F0C-$8F0F(background-01)
+N $8EE8 Pixels:
+  $8EE8,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8EE9,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8EEA,$20,$02 Graphic data.
+N $8F0A Attributes:
+  $8F0A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8F0B,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $8F0C,$04,$02 Attribute data.
+
+b $8F10 Graphics: Background 2
+N $8F10 #UDGARRAY$02,scale=$04,step=$02($8F12-$8F30-$01-$10)@$8F34-$8F37(background-02)
+N $8F10 Pixels:
+  $8F10,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8F11,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8F12,$20,$02 Graphic data.
+N $8F32 Attributes:
+  $8F32,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8F33,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $8F34,$04,$02 Attribute data.
+
+b $8F38 Graphics: Background 3
+N $8F38 #UDGARRAY$02,scale=$04,step=$02($8F3A-$8F58-$01-$10)@$8F5C-$8F5F(background-03)
+N $8F38 Pixels:
+  $8F38,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8F39,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8F3A,$20,$02 Graphic data.
+N $8F5A Attributes:
+  $8F5A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8F5B,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $8F5C,$04,$02 Attribute data.
+
+b $8F60
+
 t $8FB9 Messaging: Round #
 @ $8FB9 label=Messaging_Round
 B $8FB9,$01 X Co-ordinate.
 B $8FBA,$01 Y Co-ordinate.
 B $8FBB,$01 #COLOUR(#PEEK(#PC)).
 B $8FBC,$01 #LET(length=#PEEK(#PC)) Length: #N({length}).
-B $8FBD,$08  "#FOR($00,{length}-$01)(n,#PRINT(#PEEK(#PC+n)))".
+B $8FBD,$08 "#FOR($00,{length}-$01)(n,#PRINT(#PEEK(#PC+n)))".
 
 t $8FC5 Messaging: Game On
 @ $8FC5 label=Messaging_GameOn
