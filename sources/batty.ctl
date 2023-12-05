@@ -62,6 +62,24 @@ c $684B
 
 c $6853
 
+b $68ED
+N $68ED #UDGARRAY$06,scale=$04,step=$06($68EF-$6919-$01-$30)(1up) #UDGARRAY$03,scale=$04,step=$03($68EF-$6919-$01-$18)(1up-mask)
+N $68ED Pixels:
+  $68ED,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $68EE,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $68EF,$30,$06 Graphic data.
+
+b $691F
+N $691F #UDGARRAY$03,scale=$04,step=$03($6921-$6936-$01-$18)(2up)
+N $691F Pixels:
+  $691F,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6920,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6921,$18,$03 Graphic data.
+N $6939 #UDGARRAY$03,scale=$04,step=$03($6939-$694E-$01-$18)(2up-mask)
+  $6939,$18,$03 Graphic data.
+
+b $6951
+
 b $6A15 Font
 @ $6A15 label=Font
   $6A15,$06 #UDG#(#PC),scale=$04{$00,$00,$20,$18}(#PC)
@@ -160,7 +178,7 @@ N $6C8F Attributes:
   $6C8F,$01 Width: #N(#PEEK(#PC)) byte(s).
   $6C90,$01 Height: #N(#PEEK(#PC)) byte(s).
   $6C91,$04 Attribute data.
-N $6C95 #UDGARRAY$04,scale=$04,step=$04($6C97-$6C9F-$01-$20)@$6CB9-$6CBC(frame-top-right)
+N $6C95 #UDGARRAY$04,scale=$04,step=$04($6C97-$6CB3-$01-$20)@$6CB9-$6CBC(frame-top-right)
 N $6C95 Pixels:
   $6C95,$01 Width: #N(#PEEK(#PC)) byte(s).
   $6C96,$01 Height: #N(#PEEK(#PC)) pixel(s).
@@ -206,27 +224,142 @@ b $7796
 w $77BE
   $77BE,$12
 
-b $7A8C
-@ $7A8C label=Graphics_BallBig
+b $786A Graphics: Bombs
+N $786A #UDGARRAY$04,attr=$47,scale=$04,step=$04($786C-$78A8-$01-$20)(bombs)
+N $786A Pixels:
+  $786A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $786B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $786C,$40,$04 Graphic data.
 
-b $7B16
+b $78AC Graphics: Magnet
+N $78AC #UDGARRAY$06,attr=$47,scale=$04,step=$06($78AE-$7932-$01-$30){$00,$00,$00,$5C}(magnet-off)
+N $78AC Pixels:
+  $78AC,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $78AD,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $78AE,$8A,$06 Graphic data.
+N $7938 #UDGARRAY$08,attr=$47,scale=$04,step=$08($793A-$7A22-$01-$40){$00,$00,$00,$78}(magnet-on)
+N $7938 Pixels:
+  $7938,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7939,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $793A,$F0,$08 Graphic data.
+
+b $7A2A Graphics:
+N $7A2A #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A2C-$7A88-$01-$40)(dgfgffdfd)
+N $7A2A Pixels:
+  $7A2A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7A2B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7A2C,$60,$04 Graphic data.
+
+b $7A8C Graphics: Big Ball
+@ $7A8C label=Graphics_BallBig
+N $7A8C #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A8E-$7ABA-$01-$20){$00,$00,$00,$30}(big-ball)
+N $7A8C Pixels:
+  $7A8C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7A8D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7A8E,$30,$04 Graphic data.
+
+b $7ABE Graphics: 400
+@ $7ABE label=graphics_400
+N $7ABE #UDGARRAY$06,attr=$47,scale=$04,step=$06($7AC0-$7AF6-$01-$30){$00,$00,$00,$28}(400)
+N $7ABE #UDGARRAY$03,attr=$47,scale=$04,step=$02($7AC0-$7AF6-$02-$30){$00,$00,$00,$28}(400-2)
+N $7ABE Pixels:
+  $7ABE,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7ABF,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7AC0,$3C,$06 Graphic data.
+
+b $7AFC Graphics:
+
+b $7B16 Graphics:
 @ $7B16 label=Graphics_Ball
-b $7B48
+
+b $7B48 Graphics:
 @ $7B48 label=Graphics_Empty_1
-b $7B92
+N $7B92 Graphics:
 @ $7B92 label=Graphics_Empty_2
-b $7BDC
+N $7BDC Graphics:
 @ $7BDC label=Graphics_Empty_3
-b $7C26
+N $7C26 Graphics:
 @ $7C26 label=Graphics_Empty_4
-b $7C70
+N $7C70 Graphics:
 @ $7C70 label=Graphics_Empty_5
-b $7CBA
+N $7CBA Graphics:
 @ $7CBA label=Graphics_Empty_6
-b $7D04
+N $7D04 Graphics:
 @ $7D04 label=Graphics_Empty_7
 
-b $891D
+b $7D4E Graphics:
+
+b $7DD2 Graphics:
+N $7DE4
+N $7DF6
+N $7E04
+N $7E14
+N $7E26
+
+b $7E38 Graphics:
+N $7E38
+N $7EA2
+N $7EF2
+
+b $7F42 Graphics:
+
+b $7FE0 Graphics:
+N $7FE0
+N $804A
+N $80B4
+N $811E
+
+b $8188 Graphics:
+
+b $81F2 Graphics:
+
+b $828A Graphics:
+
+b $8342 Graphics:
+N $8370
+N $8386
+N $8398
+N $83A6
+
+b $83B0 Graphics:
+N $8406
+N $8462
+N $84C4
+N $852C
+N $859A
+
+b $860E Graphics:
+N $866A
+N $86C6
+N $8722
+N $8778
+
+b $87E6 Graphics:
+N $881C
+N $885E
+N $888C
+N $88CE
+
+b $891C Graphics:
+N $89C0
+
+b $8A6A Graphics:
+
+b $8AC6 Graphics:
+
+b $8B22 Graphics:
+
+b $8B6C Graphics:
+
+b $8BB0 Graphics:
+
+b $8C0C Graphics:
+
+b $8C44 Graphics:
+
+b $8C94 Graphics:
+
+b $8CEA Graphics:
 
 b $8D48
 
@@ -333,6 +466,44 @@ b $90E2
 
 c $9231 Draw Frame
 @ $9231 label=DrawFrame
+
+b $92C1 Graphics: Pointers
+N $92C1 #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($92C3-$92FF-$01-$20)(pointer-1)
+N $92C1 Pixels:
+  $92C1,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $92C2,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $92C3,$40,$04 Graphic data.
+N $9303 #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($9305-$9341-$01-$20)(pointer-2)
+N $9303 Pixels:
+  $9303,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $9304,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $9305,$40,$04 Graphic data.
+N $9345 #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($9347-$9383-$01-$20)(pointer-empty)
+N $9345 Pixels:
+  $9345,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $9346,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $9347,$40,$04 Graphic data.
+
+b $9387
+  $9387,$01
+  $9388,$01
+  $9389,$01 #COLOUR(#PEEK(#PC)).
+  $938A,$01
+  $938B,$01
+
+b $938C Graphics: Press "A"
+N $938C #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($938E-$93BE-$01-$20){$00,$0C}(press-a)
+N $938C Pixels:
+  $938C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $938D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $938E,$34,$04 Graphic data.
+
+b $93C2 Graphics: Press "B"
+N $93C2 #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($93C4-$93F4-$01-$20){$00,$0C}(press-b)
+N $93C2 Pixels:
+  $93C2,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $93C3,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $93C4,$34,$04 Graphic data.
 
 c $93F8
   $93F8,$06 Write #N($0000,$04,$04) to #N$938A.
@@ -475,6 +646,33 @@ c $965D
 
 c $974A
 
+b $AEFF Graphics: Bricks
+N $AEFF #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-01)
+N $AEFF Pixels:
+  $AEFF,$10,$08 Graphic data.
+N $AF0F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-02)
+N $AF0F Pixels:
+  $AF0F,$10,$08 Graphic data.
+N $AF1F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-03)
+N $AF1F Pixels:
+  $AF1F,$10,$08 Graphic data.
+N $AF2F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-04)
+N $AF2F Pixels:
+  $AF2F,$10,$08 Graphic data.
+N $AF3F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-05)
+N $AF3F Pixels:
+  $AF3F,$10,$08 Graphic data.
+N $AF4F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-06)
+N $AF4F Pixels:
+  $AF4F,$10,$08 Graphic data.
+N $AF5F #UDGARRAY$02,scale=$04,step=$02((#PC)-(#PC+$08)-$01-$10)(brick-07)
+N $AF5F Pixels:
+  $AF5F,$10,$08 Graphic data.
+
+b $AF6F
+
+c $B4EC
+
 c $B61C
 
 t $B989 Messaging: Kinnock Couldn't Run
@@ -524,6 +722,21 @@ B $BDBD,$0F "#FOR($00,{length}-$01)(n,#PRINT(#PEEK(#PC+n)))".
 b $BDCC
 
 c $BDCF
+
+b $C015
+N $C015 #UDGARRAY$02,scale=$04,step=$02($C017-$C02F-$01-$10)@$C039-$C03C(texture)
+N $C015 Pixels:
+  $C015,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $C016,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $C017,$20,$02 Graphic data.
+N $C037 Attributes:
+  $C037,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $C038,$01 Height: #N(#PEEK(#PC)) byte(s).
+  $C039,$04,$02 Attribute data.
+
+c $C03D
+
+c $C051
 
 c $C064 Sounds: Find Empty Slot
 @ $C064 label=Sounds_FindEmptySlot
