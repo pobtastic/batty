@@ -225,52 +225,110 @@ w $77BE
   $77BE,$12
 
 b $786A Graphics: Bombs
-N $786A #UDGARRAY$04,attr=$47,scale=$04,step=$04($786C-$78A8-$01-$20)(bombs)
+D $786A #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($786C-$78A8-$02-$20)(bombs-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($786D-$78A9-$02-$20)(bombs) }
+. UDGTABLE#
 N $786A Pixels:
   $786A,$01 Width: #N(#PEEK(#PC)) byte(s).
   $786B,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $786C,$40,$04 Graphic data.
+  $786C,$40,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($786C-$78A8-$01-$20)(bombs-full) }
+. UDGTABLE#
 
 b $78AC Graphics: Magnet
-N $78AC #UDGARRAY$06,attr=$47,scale=$04,step=$06($78AE-$7932-$01-$30){$00,$00,$00,$5C}(magnet-off)
+D $78AC #UDGTABLE(default,centre,centre)
+. { =h,c2 Magnet Off }
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($78AE-$7932-$02-$30){$00,$00,$00,$5C}(magnet-off-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($78AF-$7933-$02-$30){$00,$00,$00,$5C}(magnet-off) }
+. { =h,c2 Magnet On }
+. { =h Mask | #UDGARRAY$04,attr=$47,scale=$04,step=$08($793A-$7A22-$02-$40){$00,$00,$00,$78}(magnet-on-mask) }
+. { =h Graphic | #UDGARRAY$04,attr=$47,scale=$04,step=$08($793B-$7A23-$02-$40){$00,$00,$00,$78}(magnet-on) }
+. UDGTABLE#
 N $78AC Pixels:
   $78AC,$01 Width: #N(#PEEK(#PC)) byte(s).
   $78AD,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $78AE,$8A,$06 Graphic data.
-N $7938 #UDGARRAY$08,attr=$47,scale=$04,step=$08($793A-$7A22-$01-$40){$00,$00,$00,$78}(magnet-on)
+  $78AE,$8A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($78AE-$7932-$01-$30){$00,$00,$00,$5C}(magnet-off-full) }
+. UDGTABLE#
 N $7938 Pixels:
   $7938,$01 Width: #N(#PEEK(#PC)) byte(s).
   $7939,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $793A,$F0,$08 Graphic data.
+  $793A,$F0,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($793A-$7A22-$01-$40){$00,$00,$00,$78}(magnet-on-full) }
+. UDGTABLE#
 
 b $7A2A Graphics:
-N $7A2A #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A2C-$7A88-$01-$40)(dgfgffdfd)
+D $7A2A #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7A2C-$7A88-$02-$40)(dgfgffdfd-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7A2D-$7A89-$02-$40)(dgfgffdfd) }
+. UDGTABLE#
 N $7A2A Pixels:
   $7A2A,$01 Width: #N(#PEEK(#PC)) byte(s).
   $7A2B,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $7A2C,$60,$04 Graphic data.
+  $7A2C,$60,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A2C-$7A88-$01-$40)(dgfgffdfd-full) }
+. UDGTABLE#
 
 b $7A8C Graphics: Big Ball
 @ $7A8C label=Graphics_BallBig
-N $7A8C #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A8E-$7ABA-$01-$20){$00,$00,$00,$30}(big-ball)
+D $7A8C #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7A8E-$7ABA-$02-$20){$00,$00,$00,$30}(big-ball-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7A8F-$7ABB-$02-$20){$00,$00,$00,$30}(big-ball) }
+. UDGTABLE#
 N $7A8C Pixels:
   $7A8C,$01 Width: #N(#PEEK(#PC)) byte(s).
   $7A8D,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $7A8E,$30,$04 Graphic data.
+  $7A8E,$30,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($7A8E-$7ABA-$01-$20){$00,$00,$00,$30}(big-ball-full) }
+. UDGTABLE#
 
 b $7ABE Graphics: 400
 @ $7ABE label=graphics_400
-N $7ABE #UDGARRAY$06,attr=$47,scale=$04,step=$06($7AC0-$7AF6-$01-$30){$00,$00,$00,$28}(400)
-N $7ABE #UDGARRAY$03,attr=$47,scale=$04,step=$02($7AC0-$7AF6-$02-$30){$00,$00,$00,$28}(400-2)
+D $7ABE #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($7AC0-$7AF6-$02-$30){$00,$00,$00,$28}(400-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($7AC1-$7AF7-$02-$30){$00,$00,$00,$28}(400) }
+. UDGTABLE#
 N $7ABE Pixels:
   $7ABE,$01 Width: #N(#PEEK(#PC)) byte(s).
   $7ABF,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $7AC0,$3C,$06 Graphic data.
+  $7AC0,$3C,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($7AC0-$7AF6-$01-$30){$00,$00,$00,$28}(400-full) }
+. UDGTABLE#
 
-b $7AFC Graphics:
+b $7AFC Graphics: Lives
+@ $7AFC label=graphics_lives
+D $7AFC #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7AFE-$7B12-$02-$20){$00,$00,$00,$18}(lives-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7AFF-$7B13-$02-$20){$00,$00,$00,$18}(lives) }
+. UDGTABLE#
+N $7AFC Pixels:
+  $7AFC,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7AFD,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7AFE,$18,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($7AFE-$7B12-$01-$20){$00,$00,$00,$18}(lives-full) }
+. UDGTABLE#
 
-b $7B16 Graphics:
+b $7B16 Graphics: Ball
 @ $7B16 label=Graphics_Ball
+D $7B16 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7B18-$7B44-$02-$20){$00,$00,$00,$30}(ball-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($7B19-$7B45-$02-$20){$00,$00,$00,$30}(ball) }
+. UDGTABLE#
+N $7B16 Pixels:
+  $7B16,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7B17,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7B18,$30,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($7B18-$7B44-$01-$20){$00,$00,$00,$30}(ball-full) }
+. UDGTABLE#
 
 b $7B48 Graphics:
 @ $7B48 label=Graphics_Empty_1
@@ -289,27 +347,189 @@ N $7D04 Graphics:
 
 b $7D4E Graphics:
 
-b $7DD2 Graphics:
-N $7DE4
-N $7DF6
-N $7E04
-N $7E14
-N $7E26
+b $7DD2 Graphics: Bullet
+@ $7DD2 label=Graphics_Bullet1
+D $7DD2 #UDGTABLE(default,centre,centre,centre,centre,centre,centre,centre)
+. { =h Bullet | =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 | =h #N$06 }
+. { =h Mask |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DD4-$7DE2-$02-$10)(bullet1-mask) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DE6-$7DF4-$02-$10)(bullet2-mask) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DF8-$7E06-$02-$10){$00,$00,$00,$18}(bullet3-mask) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E06-$7E14-$02-$10){$00,$00,$00,$1C}(bullet4-mask) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E16-$7E24-$02-$10)(bullet5-mask) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E28-$7E36-$02-$10)(bullet6-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DD5-$7DE3-$02-$10)(bullet1) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DE7-$7DF5-$02-$10)(bullet2) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7DF9-$7E07-$02-$10){$00,$00,$00,$18}(bullet3) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E07-$7E15-$02-$10){$00,$00,$00,$1C}(bullet4) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E17-$7E25-$02-$10)(bullet5) |
+. #UDGARRAY$01,attr=$47,scale=$04,step=$02($7E29-$7E37-$02-$10)(bullet6)
+. }
+. UDGTABLE#
+N $7DD2 Pixels:
+  $7DD2,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7DD3,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7DD4,$10,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7DD4-$7DE2-$01-$10)(bullet1-full) }
+. UDGTABLE#
+@ $7DE4 label=Graphics_Bullet2
+N $7DE4 Pixels:
+  $7DE4,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7DE5,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7DE6,$10,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7DE6-$7DF4-$01-$10)(bullet2-full) }
+. UDGTABLE#
+@ $7DF6 label=Graphics_Bullet3
+N $7DF6 Pixels:
+  $7DF6,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7DF7,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7DF8,$0C,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7DF8-$7E06-$01-$10){$00,$00,$00,$18}(bullet3-full) }
+. UDGTABLE#
+@ $7E04 label=Graphics_Bullet4
+N $7E04 Pixels:
+  $7E04,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7E05,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7E06,$0E,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7E06-$7E14-$01-$10){$00,$00,$00,$1C}(bullet4-full) }
+. UDGTABLE#
+@ $7E14 label=Graphics_Bullet5
+N $7E14 Pixels:
+  $7E14,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7E15,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7E16,$10,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7E16-$7E24-$01-$10)(bullet5-full) }
+. UDGTABLE#
+@ $7E26 label=Graphics_Bullet6
+N $7E26 Pixels:
+  $7E26,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7E27,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7E28,$10,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($7E28-$7E36-$01-$10)(bullet6-full) }
+. UDGTABLE#
 
-b $7E38 Graphics:
-N $7E38
-N $7EA2
-N $7EF2
+b $7E38 Graphics: Bat
+@ $7E38 label=Graphics_Bat
+D $7E38 #UDGTABLE(default,centre,centre,centre,centre)
+. { =h Bat | =h Graphic | =h Right | =h Left }
+. { =h Mask |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($7E3A-$7E9A-$02-$40){$00,$00,$00,$34}(bat-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($7EA4-$7EEC-$02-$30){$00,$00,$00,$34}(bat-right-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($7EF4-$7F3C-$02-$30){$00,$00,$00,$34}(bat-left-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($7E3B-$7E9B-$02-$40){$00,$00,$00,$34}(bat) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($7EA5-$7EED-$02-$30){$00,$00,$00,$34}(bat-right) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($7EF5-$7F3D-$02-$30){$00,$00,$00,$34}(bat-left)
+. }
+. UDGTABLE#
+N $7E38 Pixels:
+  $7E38,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7E39,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7E3A,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($7E3A-$7E9A-$01-$40){$00,$00,$00,$34}(bat-full) }
+. UDGTABLE#
+N $7EA2 Pixels:
+  $7EA2,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7EA3,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7EA4,$4E,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($7EA4-$7EEC-$01-$30){$00,$00,$00,$34}(bat-right-full) }
+. UDGTABLE#
+N $7EF2 Pixels:
+  $7EF2,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7EF3,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7EF4,$4E,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($7EF4-$7F3C-$01-$30){$00,$00,$00,$34}(bat-left-full) }
+. UDGTABLE#
 
-b $7F42 Graphics:
+b $7F42 Graphics: Big Bat
+@ $7F42 label=Graphics_BatBig
+D $7F42 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$06,attr=$47,scale=$04,step=$0C($7F44-$7FD4-$02-$60){$00,$00,$00,$34}(bat-big-mask) }
+. { =h Graphic | #UDGARRAY$06,attr=$47,scale=$04,step=$0C($7F45-$7FD6-$02-$60){$00,$00,$00,$34}(bat-big) }
+. UDGTABLE#
+N $7F42 Pixels:
+  $7F42,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7F43,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7F44,$9C,$0C Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$0C,attr=$47,scale=$04,step=$0C($7F44-$7FD4-$01-$60){$00,$00,$00,$34}(bat-big-full) }
+. UDGTABLE#
 
-b $7FE0 Graphics:
-N $7FE0
-N $804A
-N $80B4
-N $811E
+b $7FE0 Graphics: Gun Bat
+@ $7FE0 label=Graphics_BatGun1
+D $7FE0 #UDGTABLE(default,centre,centre,centre,centre,centre)
+. { =h,r2 Type | =h,c4 Frame }
+. { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 }
+. { =h Mask |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($7FE2-$8042-$02-$40){$00,$00,$00,$34}(bat-gun-1-mask) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($804C-$80AC-$02-$40){$00,$00,$00,$34}(bat-gun-2-mask) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($80B6-$8116-$02-$40){$00,$00,$00,$34}(bat-gun-3-mask) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($8120-$8180-$02-$40){$00,$00,$00,$34}(bat-gun-4-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($7FE3-$8043-$02-$40){$00,$00,$00,$34}(bat-gun-1) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($804D-$80AD-$02-$40){$00,$00,$00,$34}(bat-gun-2) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($80B7-$8117-$02-$40){$00,$00,$00,$34}(bat-gun-3) |
+. #UDGARRAY$04,attr=$47,scale=$04,step=$08($8121-$8181-$02-$40){$00,$00,$00,$34}(bat-gun-4)
+. }
+. UDGTABLE#
+N $7FE0 Pixels:
+  $7FE0,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $7FE1,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $7FE2,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($7FE2-$8042-$01-$40){$00,$00,$00,$34}(bat-gun-1-full) }
+. UDGTABLE#
+@ $804A label=Graphics_BatGun2
+N $804A Pixels:
+  $804A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $804B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $804C,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($804C-$80AC-$01-$40){$00,$00,$00,$34}(bat-gun-2-full) }
+. UDGTABLE#
+@ $80B4 label=Graphics_BatGun3
+N $80B4 Pixels:
+  $80B4,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $80B5,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $80B6,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($80B6-$8116-$01-$40){$00,$00,$00,$34}(bat-gun-3-full) }
+. UDGTABLE#
+@ $811E label=Graphics_BatGun4
+N $811E Pixels:
+  $811E,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $811F,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8120,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($8120-$8180-$01-$40){$00,$00,$00,$34}(bat-gun-4-full) }
+. UDGTABLE#
 
-b $8188 Graphics:
+b $8188 Graphics: Bat Gun
+@ $8188 label=Graphics_BatGun
+D $8188 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$04,attr=$47,scale=$04,step=$08($818A-$81EA-$02-$40){$00,$00,$00,$34}(bat-gun-mask) }
+. { =h Graphic | #UDGARRAY$04,attr=$47,scale=$04,step=$08($818B-$81EB-$02-$40){$00,$00,$00,$34}(bat-gun) }
+. UDGTABLE#
+N $8188 Pixels:
+  $8188,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8189,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $818A,$68,$08 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$08,attr=$47,scale=$04,step=$08($818A-$81EA-$01-$40){$00,$00,$00,$34}(bat-gun-full) }
+. UDGTABLE#
 
 b $81F2 Graphics:
 
@@ -361,6 +581,8 @@ b $8C94 Graphics:
 
 b $8CEA Graphics:
 
+w $8D46
+
 b $8D48
 
 c $8D4C
@@ -411,7 +633,54 @@ N $8F5A Attributes:
   $8F5B,$01 Height: #N(#PEEK(#PC)) byte(s).
   $8F5C,$04,$02 Attribute data.
 
-b $8F60
+c $8F60
+  $8F60,$03 #REGhl=#N$A458 (screen co-ordinates).
+  $8F63,$03 Call #R$B57D.
+  $8F66,$02 #REGc=#N$20.
+  $8F68,$02 #REGb=#N$0A.
+  $8F6A,$01 Stash #REGhl on the stack.
+  $8F6B,$02 Write #N$00 to *#REGhl.
+  $8F6D,$01 Increment #REGl by one.
+  $8F6E,$02 Decrease counter by one and loop back to #R$8F6B until counter is zero.
+  $8F70,$01 Restore #REGhl from the stack.
+  $8F71,$03 Call #R$B56E.
+  $8F74,$01 Decrease #REGc by one.
+  $8F75,$02 Jump to #R$8F68 until #REGc is zero.
+  $8F77,$03 #REGa=*#R$B7EB.
+  $8F7A,$01 Increment #REGa by one.
+  $8F7B,$01 #REGb=#REGa.
+  $8F7C,$01 #REGa=#N$00.
+  $8F7D,$02 #REGa+=#N$01.
+  $8F7F,$01 DAA.
+  $8F80,$02 Decrease counter by one and loop back to #R$8F7D until counter is zero.
+  $8F82,$01 #REGb=#REGa.
+  $8F83,$01 RRA.
+  $8F84,$01 RRA.
+  $8F85,$01 RRA.
+  $8F86,$01 RRA.
+  $8F87,$02,b$01 Keep only bits 0-3.
+  $8F89,$03 Write #REGa to *#R$8FBD(#N$8FC3).
+  $8F8C,$01 #REGa=#REGb.
+  $8F8D,$02,b$01 Keep only bits 0-3.
+  $8F8F,$03 Write #REGa to *#R$8FBD(#N$8FC4).
+  $8F92,$03 #REGa=*#R$B7E6.
+  $8F95,$01 Increment #REGa by one.
+  $8F96,$03 Write #REGa to *#R$8FB1(#N$8FB8).
+  $8F99,$03 #REGde=#R$8FAD.
+  $8F9C,$02 #REGb=#N$02.
+  $8F9E,$03 Call #R$B796.
+  $8FA1,$03 #REGa=*#R$B7E5.
+  $8FA4,$03 Return if #REGa is not equal to #N$02.
+  $8FA7,$03 #REGde=#R$8FC5.
+  $8FAA,$03 Jump to #R$B4EC.
+
+t $8FAD Messaging: Player #
+@ $8FAD label=Messaging_Player
+B $8FAD,$01 X Co-ordinate.
+B $8FAE,$01 Y Co-ordinate.
+B $8FAF,$01 #COLOUR(#PEEK(#PC)).
+B $8FB0,$01 #LET(length=#PEEK(#PC)) Length: #N({length}).
+B $8FB1,$08 "#FOR($00,{length}-$01)(n,#PRINT(#PEEK(#PC+n)))".
 
 t $8FB9 Messaging: Round #
 @ $8FB9 label=Messaging_Round
@@ -463,9 +732,219 @@ B $90C6,$0C "#FOR($00,{length}-$01)(n,#PRINT(#PEEK(#PC+n)))".
 L $90C2,$10,$02
 
 b $90E2
+W $90E8
+  $90F5
+
+c $910C
+  $910C,$01 Disable interrupts.
+  $910D,$04 #REGix=#R$90B4.
+  $9111,$03 #REGhl=#R$B7EE.
+  $9114,$03 #REGde=#R$90E2.
+  $9117,$02 #REGb=#N$03.
+  $9119,$01 #REGa=*#REGhl.
+  $911A,$01 RRA.
+  $911B,$01 RRA.
+  $911C,$01 RRA.
+  $911D,$01 RRA.
+  $911E,$02,b$01 Keep only bits 0-3.
+  $9120,$01 Write #REGa to *#REGde.
+  $9121,$01 Increment #REGde by one.
+  $9122,$01 #REGa=*#REGhl.
+  $9123,$02,b$01 Keep only bits 0-3.
+  $9125,$01 Write #REGa to *#REGde.
+  $9126,$01 Increment #REGde by one.
+  $9127,$01 Decrease #REGhl by one.
+  $9128,$02 Decrease counter by one and loop back to #R$9119 until counter is zero.
+  $912A,$04 #REGiy=#R$90E2.
+  $912E,$02 #REGd=#N$0B.
+  $9130,$02 #REGb=#N$06.
+  $9132,$02 Stash #REGiy on the stack.
+  $9134,$02 Stash #REGix on the stack.
+  $9136,$03 #REGa=*#REGix+#N$00.
+  $9139,$03
+  $913C,$02 Jump to #R$9150 if {} is lower.
+  $913E,$02 Jump to #R$9146 if {} is not zero.
+  $9140,$02 Increment #REGix by one.
+  $9142,$02 Increment #REGiy by one.
+  $9144,$02 Decrease counter by one and loop back to #R$9136 until counter is zero.
+  $9146,$02 Restore #REGix from the stack.
+  $9148,$02 Restore #REGiy from the stack.
+  $914A,$01 #REGa=#REGd.
+  $914B,$03 Return if #REGa equals #N$0B.
+  $914E,$02 Jump to #R$915E.
+  $9150,$01 Decrease #REGd by one.
+  $9151,$02 Restore #REGix from the stack.
+  $9153,$02 Restore #REGiy from the stack.
+  $9155,$03 #REGbc=#N$FFEE.
+  $9158,$02 #REGix+=#REGbc.
+  $915A,$01 #REGa=#REGd.
+  $915B,$01 Decrease #REGa by one.
+  $915C,$02 Jump to #R$9130 if #REGa is not zero.
+  $915E,$02 #REGa=#N$0A.
+  $9160,$01 #REGa-=#REGd.
+  $9161,$02 Jump to #R$9179 if #REGa is zero.
+  $9163,$03 #REGde=#R$90C2(#N$90C1).
+  $9166,$03 #REGhl=#R$90AA(#N$90AF).
+  $9169,$03 #REGbc=#N($000E,$04,$04).
+  $916C,$02 LDDR.
+  $916E,$04 Decrease #REGhl by four.
+  $9172,$04 Decrease #REGde by four.
+  $9176,$01 Decrease #REGa by one.
+  $9177,$02 Jump to #R$9169 until #REGa is zero.
+  $9179,$03 #REGde=#N($0012,$04,$04).
+  $917C,$02 #REGix+=#REGde.
+  $917E,$02 Stash #REGix on the stack.
+  $9180,$01 Restore #REGde from the stack.
+  $9181,$03 #REGhl=#R$90E2.
+  $9184,$03 #REGbc=#N($0006,$04,$04).
+  $9187,$02 LDIR.
+  $9189,$02 #REGc=#N$26.
+  $918B,$04 Write #N$09 to *#REGix+#N$09.
+  $918F,$03 Write #REGc to *#REGix+#N$0A.
+  $9192,$03 Write #REGc to *#REGix+#N$0B.
+  $9195,$03 Write #REGc to *#REGix+#N$0C.
+  $9198,$03 Write #REGc to *#REGix+#N$0D.
+  $919B,$03 Call #R$97AD.
+  $919E,$03 Call #R$97BC.
+  $91A1,$03 Call #R$926B.
+  $91A4,$03 #REGa=*#R$B7E6.
+  $91A7,$01 Increment #REGa by one.
+  $91A8,$03 Write #REGa to *#R$90F5.
+  $91AB,$03 #REGde=#R$90E8.
+  $91AE,$03 Call #R$B4EC.
+  $91B1,$03 Call #R$B4EC.
+  $91B4,$02 Stash #REGix on the stack.
+  $91B6,$01 Restore #REGhl from the stack.
+  $91B7,$04 Decrease #REGhl by four.
+  $91BB,$03 Write #REGhl to *#R$9229.
+  $91BE,$02 #REGb=#N$05.
+  $91C0,$02 #REGc=#N$0A.
+  $91C2,$01 Stash #REGbc on the stack.
+  $91C3,$03 Call #R$A1DB.
+  $91C6,$03 #REGa=*#R$8ED9.
+  $91C9,$02,b$01 Keep only bits 0-1, 4.
+  $91CB,$02 Jump to #R$91C3 if #REGa is zero.
+  $91CD,$04 Jump to #R$91FF if bit 4 of #REGa is set.
+  $91D1,$04 Jump to #R$91C3 if #REGa is equal to #N$03.
+  $91D5,$01 Restore #REGbc from the stack.
+  $91D6,$01 RRA.
+  $91D7,$02 Jump to #R$91E3 if {} is higher.
+  $91D9,$01 Increment #REGc by one.
+  $91DA,$01 #REGa=#REGc.
+  $91DB,$04 Jump to #R$91EA if #REGa is not equal to #N$28.
+  $91DF,$02 #REGc=#N$00.
+  $91E1,$02 Jump to #R$91EA.
+  $91E3,$01 Decrease #REGc by one.
+  $91E4,$04 Jump to #R$91EA if bit 7 of #REGc is not set.
+  $91E8,$02 #REGc=#N$27.
+  $91EA,$03 Write #REGc to *#REGix+#N$09.
+  $91ED,$01 Stash #REGbc on the stack.
+  $91EE,$04 #REGde=*#R$9229.
+  $91F2,$03 Call #R$B4EC.
+  $91F5,$03 Call #R$C159.
+  $91F8,$02 #REGd=#N$20.
+  $91FA,$03 Call #R$97D3.
+  $91FD,$02 Jump to #R$91C3.
+  $91FF,$03 Call #R$C168.
+  $9202,$01 Restore #REGbc from the stack.
+  $9203,$01 Decrease #REGb by one.
+  $9204,$02 Jump to #R$9221 if #REGb is zero.
+  $9206,$02 Increment #REGix by one.
+  $9208,$04 Write #N$09 to *#REGix+#N$09.
+  $920C,$01 Stash #REGbc on the stack.
+  $920D,$04 #REGde=*#R$9229.
+  $9211,$03 Call #R$B4EC.
+  $9214,$03 Call #R$A1DB.
+  $9217,$03 #REGa=*#R$8ED9.
+  $921A,$02,b$01 Keep only bits 4.
+  $921C,$02 Jump to #R$9214 if #REGa is not zero.
+  $921E,$01 Restore #REGbc from the stack.
+  $921F,$02 Jump to #R$91C0.
+  $9221,$03 Call #R$926B.
+  $9224,$02 #REGb=#N$0A.
+  $9226,$03 Jump to #R$B7DC.
+
+w $9229
+
+b $922B
+  $922B,$03
+  $922E,$03
 
 c $9231 Draw Frame
 @ $9231 label=DrawFrame
+  $9231,$06 Write #N($0000,$04,$04) to *#R$8D46.
+  $9237,$03 Call #R$97AD.
+  $923A,$03 Call #R$97BC.
+  $923D,$03 #REGhl=#N$57E0 (screen buffer location).
+  $9240,$03 #REGde=#N$57FF (screen buffer location).
+  $9243,$02 #REGb=#N$C0.
+  $9245,$02 Write #N$C0 to *#REGhl.
+  $9247,$03 Write #N$03 to *#REGde.
+  $924A,$03 Call #R$B56E.
+  $924D,$01 Exchange the #REGde register with the shadow #REGhl register.
+  $924E,$03 Call #R$B56E.
+  $9251,$01 Restore the #REGde register from the shadow #REGhl register.
+  $9252,$02 Decrease counter by one and loop back to #R$9245 until counter is zero.
+  $9254,$03 #REGhl=#N$56E0 (screen buffer location).
+  $9257,$03 #REGde=#N$4000.
+  $925A,$02 #REGb=#N$20.
+  $925C,$02 #REGa=#N$FF.
+  $925E,$01 Write #REGa to *#REGhl.
+  $925F,$01 Increment #REGh by one.
+  $9260,$01 Write #REGa to *#REGhl.
+  $9261,$01 Decrease #REGh by one.
+  $9262,$01 Write #REGa to *#REGde.
+  $9263,$01 Increment #REGd by one.
+  $9264,$01 Write #REGa to *#REGde.
+  $9265,$01 Decrease #REGd by one.
+  $9266,$01 Increment #REGl by one.
+  $9267,$01 Increment #REGe by one.
+  $9268,$02 Decrease counter by one and loop back to #R$925E until counter is zero.
+  $926A,$01 Return.
+
+c $926B
+  $926B,$03 Call #R$9231.
+  $926E,$03 #REGhl=#R$BF00.
+  $9271,$03 #REGde=#R$922E.
+  $9274,$03 Call #R$B61C.
+  $9277,$03 #REGde=#R$8FD1.
+  $927A,$02 #REGb=#N$16.
+  $927C,$03 Jump to #R$B796.
+  $927F,$03 Call #R$926B.
+  $9282,$02 #REGa=#N$EF.
+  $9284,$03 Call #R$97A7.
+  $9287,$01 RRA.
+  $9288,$01 Return if {} is lower.
+  $9289,$01 Reset the bits from #REGa.
+  $928A,$03 Call #R$97A7.
+  $928D,$03 Jump to #R$93F8 if #REGa is not zero.
+  $9290,$02 #REGa=#N$80.
+  $9292,$01 Decrease #REGa by one.
+  $9293,$02 Jump to #R$9292 until #REGa is zero.
+  $9295,$03 #REGhl=*#R$8D46.
+  $9298,$01 Increment #REGhl by one.
+  $9299,$03 Write #REGhl to *#R$8D46.
+  $929C,$05 Jump to #R$93F8 if bit 6 of #REGh is set.
+  $92A1,$02 Jump to #R$9282.
+  $92A3,$02 #REGb=#N$03.
+  $92A5,$01 #REGa=*#REGhl.
+  $92A6,$01 RRA.
+  $92A7,$01 RRA.
+  $92A8,$01 RRA.
+  $92A9,$01 RRA.
+  $92AA,$02,b$01 Keep only bits 0-3.
+  $92AC,$01 Write #REGa to *#REGde.
+  $92AD,$01 Increment #REGde by one.
+  $92AE,$01 #REGa=*#REGhl.
+  $92AF,$02,b$01 Keep only bits 0-3.
+  $92B1,$01 Write #REGa to *#REGde.
+  $92B2,$01 Increment #REGde by one.
+  $92B3,$01 Decrease #REGhl by one.
+  $92B4,$02 Decrease counter by one and loop back to #R$92A5 until counter is zero.
+  $92B6,$01 Return.
+
+b $92B7
+  $92B7,$0A,$01
 
 b $92C1 Graphics: Pointers
 N $92C1 #UDGARRAY$04,attr=$47,flip=$02,scale=$04,step=$04($92C3-$92FF-$01-$20)(pointer-1)
@@ -506,11 +985,129 @@ N $93C2 Pixels:
   $93C4,$34,$04 Graphic data.
 
 c $93F8
-  $93F8,$06 Write #N($0000,$04,$04) to #N$938A.
+  $93F8,$06 Write #N($0000,$04,$04) to #R$938A.
   $93FE,$03 Call #R$9231.
   $9401,$03 #REGhl=#N$BF00 (screen co-ordinates).
-  $9404,$03 #REGde=#N$922B.
+  $9404,$03 #REGde=#R$922B.
   $9407,$03 Call #R$B61C.
+  $940A,$03 #REGhl=#N$B708 (screen co-ordinates).
+  $940D,$03 #REGde=#R$9387.
+  $9410,$03 Call #R$B61C.
+  $9413,$03 #REGhl=#N$4718 (screen buffer location).
+  $9416,$03 #REGde=#R$938C.
+  $9419,$03 Call #R$B5F8.
+  $941C,$03 #REGhl=#N$47C8 (screen buffer location).
+  $941F,$03 #REGde=#R$93C2.
+  $9422,$03 Call #R$B5F8.
+  $9425,$03 #REGhl=#R$B7EE.
+  $9428,$03 #REGde=#R$9561.
+  $942B,$03 Call #R$92A3.
+  $942E,$03 #REGhl=#R$B7F6.
+  $9431,$03 #REGde=#R$956B.
+  $9434,$03 Call #R$92A3.
+  $9437,$03 #REGde=#R$954D.
+  $943A,$02 #REGb=#N$0F.
+  $943C,$03 Call #R$B796.
+  $943F,$03 #REGhl=*#R$92BD.
+  $9442,$03 #REGde=#R$92C1.
+  $9445,$03 Call #R$B5F8.
+  $9448,$03 #REGhl=*#R$92BF.
+  $944B,$03 #REGde=#R$9303.
+  $944E,$03 Call #R$B5F8.
+  $9451,$03 #REGhl=*#R$8D46.
+  $9454,$01 Increment #REGhl by one.
+  $9455,$03 Write #REGhl to *#R$8D46.
+  $9458,$05 Jump to #R$927F if bit 6 of #REGh is set.
+  $945D,$03 Call #R$8EB4.
+  $9460,$04 #REGde=*#R$B7E5.
+  $9464,$02 #REGa=#N$F7.
+  $9466,$03 Call #R$97A7.
+  $9469,$04 Jump to #R$9478 if bit 0 of #REGa is not set.
+  $946D,$04 Jump to #R$94B1 if #REGe is zero.
+  $9471,$02 #REGe=#N$00.
+  $9473,$03 #REGhl=#R$9571.
+  $9476,$02 Jump to #R$9494.
+  $9478,$04 Jump to #R$9488 if bit 2 of #REGa is not set.
+  $947C,$01 #REGa=#REGe.
+  $947D,$04 Jump to #R$94B1 if #REGa is equal to #N$02.
+  $9481,$02 #REGe=#N$02.
+  $9483,$03 #REGhl=#R$9592.
+  $9486,$02 Jump to #R$9494.
+  $9488,$04 Jump to #R$94B1 if bit 1 of #REGa is not set.
+  $948C,$01 Decrease #REGe by one.
+  $948D,$02 Jump to #R$94B1 until #REGe is zero.
+  $948F,$02 #REGe=#N$01.
+  $9491,$03 #REGhl=#R$9581.
+  $9494,$04 Write #REGe to *#R$B7E5.
+  $9498,$07 #REGe=#N$2F+#REGe*#N$10.
+  $949F,$02 #REGd=#N$00.
+  $94A1,$04 Write #REGde to *#R$9618.
+  $94A5,$01 Stash #REGhl on the stack.
+  $94A6,$04 #REGde=*#R$9614.
+  $94AA,$03 Call #R$B4EC.
+  $94AD,$01 Restore #REGhl from the stack.
+  $94AE,$03 Write #REGhl to *#R$9614.
+  $94B1,$03 #REGa=*#R$938A.
+  $94B4,$01 Set flags.
+  $94B5,$02 Jump to #R$94BD if {} is zero.
+  $94B7,$01 Decrease #REGa by one.
+  $94B8,$03 Write #REGa to *#R$938A.
+  $94BB,$02 Jump to #R$94F6.
+  $94BD,$02 #REGa=#N$FD.
+  $94BF,$03 Call #R$97A7.
+  $94C2,$01 RRA.
+  $94C3,$02 Jump to #R$94F6 if {} is higher.
+  $94C5,$03 #REGa=*#R$B7EF.
+  $94C8,$01 Increment #REGa by one.
+  $94C9,$02,b$01 Keep only bits 0-1.
+  $94CB,$03 Write #REGa to *#R$B7EF.
+  $94CE,$03 #REGhl=*#R$92BD.
+  $94D1,$03 #REGde=#R$9345.
+  $94D4,$03 Call #R$B5F8.
+  $94D7,$03 #REGa=*#R$92BE.
+  $94DA,$02 #REGa+=#N$10.
+  $94DC,$04 Jump to #R$94E2 if #REGa is lower than #N$A0.
+  $94E0,$02 #REGa=#N$6C.
+  $94E2,$03 Write #REGa to *#R$92BE.
+  $94E5,$03 #REGhl=*#R$92BD.
+  $94E8,$03 #REGde=#R$92C1.
+  $94EB,$03 Call #R$B5F8.
+  $94EE,$02 #REGa=#N$FF.
+  $94F0,$03 Write #REGa to *#R$938A.
+  $94F3,$03 Call #R$C143.
+  $94F6,$06 Jump to #R$9502 if *#R$938B is zero.
+  $94FC,$01 Decrease #REGa by one.
+  $94FD,$03 Write #REGa to *#R$938B.
+  $9500,$02 Jump to #R$953C.
+  $9502,$02 #REGa=#N$7F.
+  $9504,$03 Call #R$97A7.
+  $9507,$02,b$01 Keep only bits 4.
+  $9509,$02 Jump to #R$953C if the result is zero.
+  $950B,$03 #REGa=*#R$B7F7.
+  $950E,$01 Increment #REGa by one.
+  $950F,$02,b$01 Keep only bits 0-1.
+  $9511,$03 Write #REGa to *#R$B7F7.
+  $9514,$03 #REGhl=*#R$92BF.
+  $9517,$03 #REGde=#R$9345.
+  $951A,$03 Call #R$B5F8.
+  $951D,$03 #REGa=*#R$92C0.
+  $9520,$02 #REGa+=#N$10.
+  $9522,$04 Jump to #R$9528 if #REGa is lower than #N$A0.
+  $9526,$02 #REGa=#N$6C.
+  $9528,$03 Write #REGa to *#R$92C0.
+  $952B,$03 #REGhl=*#R$92BF.
+  $952E,$03 #REGde=#R$9303.
+  $9531,$03 Call #R$B5F8.
+  $9534,$02 #REGa=#N$FF.
+  $9536,$03 Write #REGa to *#R$938B.
+  $9539,$03 Call #R$C143.
+  $953C,$03 #REGde=#R$9618.
+  $953F,$03 Call #R$961C.
+  $9542,$02 #REGa=#N$EF.
+  $9544,$03 Call #R$97A7.
+  $9547,$02,b$01 Keep only bits 0.
+  $9549,$01 Return if the result is not zero.
+  $954A,$03 Jump to #R$9451.
 
 t $954D Messaging: 1UP
 @ $954D label=Messaging_1UP
@@ -671,9 +1268,63 @@ N $AF5F Pixels:
 
 b $AF6F
 
-c $B4EC
+c $B4EC Print Line
+@ $B4EC label=PrintLine
 
 c $B61C
+  $B61C,$01 Stash #REGhl on the stack.
+  $B61D,$03 Call #R$B5A4.
+  $B620,$01 #REGa=*#REGde.
+  $B621,$03 Write #REGa to *#R$B632(#N$B633).
+  $B624,$02 #REGa+=#N$1E.
+  $B626,$01 Invert the bits in #REGa.
+  $B627,$03 Write #REGa to *#R$B63A(#N$B63B).
+  $B62A,$01 Increment #REGde by one.
+  $B62B,$01 #REGa=*#REGde.
+  $B62C,$01 #REGc=#REGa.
+  $B62D,$01 Increment #REGde by one.
+  $B62E,$01 #REGa=*#REGde.
+  $B62F,$03 Write #REGa to *#R$B634(#N$B635).
+  $B632,$02 #REGb=#N$00.
+  $B634,$02 Write #N$00 to *#REGhl.
+  $B636,$01 Increment #REGl by one.
+  $B637,$02 Decrease counter by one and loop back to #R$B634 until counter is zero.
+  $B639,$01 Decrease #REGl by one.
+  $B63A,$03 #REGde=#N$FF00.
+  $B63D,$01 #REGhl+=#REGde.
+  $B63E,$01 Decrease #REGc by one.
+  $B63F,$02 Jump to #R$B632 until #REGc is zero.
+  $B641,$01 Restore #REGhl from the stack.
+  $B642,$01 Return.
+
+c $B643
+
+c $B66A
+
+c $B684
+
+c $B694
+
+c $B717
+
+c $B765
+
+g $B7E5 Game Mode
+@ $B7E5 label=GameMode
+B $B7E5,$01
+
+b $B7E7
+b $B7EB
+b $B7EE
+b $B7EF
+b $B7F6
+b $B7F7
+
+c $B7F8
+
+c $B8B9
+
+c $B8E6
 
 t $B989 Messaging: Kinnock Couldn't Run
 @ $B989 label=Messaging_Kinnock
