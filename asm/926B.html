@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batty: Routine at 926B</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
+<link rel="stylesheet" type="text/css" href="../skoolkit-wide.css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-75RERFCHBG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-75RERFCHBG');
+</script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9231.html">9231</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#926b">Map</a></td>
+<td class="next">
+Next: <a href="92B7.html">92B7</a>
+</td>
+</tr>
+</table>
+<div class="description">926B: Routine at 926B</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="5">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="910C.html">910C</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="926b"></span>926B</td>
+<td class="instruction">CALL <a href="9231.html">DrawFrame</a></td>
+<td class="comment-1" rowspan="1">Call <a href="9231.html">DrawFrame</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="926e"></span>926E</td>
+<td class="instruction">LD HL,$BF00</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=<a href="BDCF.html#bf00">BF00</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9271"></span>9271</td>
+<td class="instruction">LD DE,$922E</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="922B.html#922e">922E</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9274"></span>9274</td>
+<td class="instruction">CALL <a href="B61C.html">$B61C</a></td>
+<td class="comment-1" rowspan="1">Call <a href="B61C.html">B61C</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9277"></span>9277</td>
+<td class="instruction">LD DE,$8FD1</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="8FD1.html">Messaging_HighScoreTable</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="927a"></span>927A</td>
+<td class="instruction">LD B,$16</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=16.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="927c"></span>927C</td>
+<td class="instruction">JP <a href="B765.html#b796">$B796</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="B765.html#b796">B796</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="927f"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="93F8.html">93F8</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="927f"></span>927F</td>
+<td class="instruction">CALL <a href="926B.html#926b">$926B</a></td>
+<td class="comment-1" rowspan="1">Call <a href="926B.html">926B</a>.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="9282"></span>9282</td>
+<td class="instruction">LD A,$EF</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=EF.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9284"></span>9284</td>
+<td class="instruction">CALL <a href="974A.html#97a7">$97A7</a></td>
+<td class="comment-1" rowspan="1">Call <a href="974A.html#97a7">97A7</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9287"></span>9287</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9288"></span>9288</td>
+<td class="instruction">RET C</td>
+<td class="comment-1" rowspan="1">Return if {} is lower.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9289"></span>9289</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1">Reset the bits from <span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="928a"></span>928A</td>
+<td class="instruction">CALL <a href="974A.html#97a7">$97A7</a></td>
+<td class="comment-1" rowspan="1">Call <a href="974A.html#97a7">97A7</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="928d"></span>928D</td>
+<td class="instruction">JP NZ,<a href="93F8.html">$93F8</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="93F8.html">93F8</a> if <span class="register">A</span> is not zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9290"></span>9290</td>
+<td class="instruction">LD A,$80</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=80.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="9292"></span>9292</td>
+<td class="instruction">DEC A</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">A</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9293"></span>9293</td>
+<td class="instruction">JR NZ,<a href="926B.html#9292">$9292</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="926B.html#9292">9292</a> until <span class="register">A</span> is zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9295"></span>9295</td>
+<td class="instruction">LD HL,($8D46)</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=*<a href="8D46.html">8D46</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9298"></span>9298</td>
+<td class="instruction">INC HL</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">HL</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="9299"></span>9299</td>
+<td class="instruction">LD ($8D46),HL</td>
+<td class="comment-1" rowspan="1">Write <span class="register">HL</span> to *<a href="8D46.html">8D46</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="929c"></span>929C</td>
+<td class="instruction">BIT 6,H</td>
+<td class="comment-1" rowspan="2">Jump to <a href="93F8.html">93F8</a> if bit 6 of <span class="register">H</span> is set.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="929e"></span>929E</td>
+<td class="instruction">JP NZ,<a href="93F8.html">$93F8</a></td>
+</tr>
+<tr>
+<td class="address-1"><span id="92a1"></span>92A1</td>
+<td class="instruction">JR <a href="926B.html#9282">$9282</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="926B.html#9282">9282</a>.</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="92a3"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="93F8.html">93F8</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="92a3"></span>92A3</td>
+<td class="instruction">LD B,$03</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=03.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="92a5"></span>92A5</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<span class="register">HL</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92a6"></span>92A6</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92a7"></span>92A7</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92a8"></span>92A8</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92a9"></span>92A9</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92aa"></span>92AA</td>
+<td class="instruction">AND %00001111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92ac"></span>92AC</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<span class="register">DE</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92ad"></span>92AD</td>
+<td class="instruction">INC DE</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">DE</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92ae"></span>92AE</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<span class="register">HL</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92af"></span>92AF</td>
+<td class="instruction">AND %00001111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92b1"></span>92B1</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<span class="register">DE</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92b2"></span>92B2</td>
+<td class="instruction">INC DE</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">DE</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92b3"></span>92B3</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">HL</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92b4"></span>92B4</td>
+<td class="instruction">DJNZ <a href="926B.html#92a5">$92A5</a></td>
+<td class="comment-1" rowspan="1">Decrease counter by one and loop back to <a href="926B.html#92a5">92A5</a> until counter is zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="92b6"></span>92B6</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return.</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev">
+Prev: <a href="9231.html">9231</a>
+</td>
+<td class="up">Up: <a href="../maps/all.html#926b">Map</a></td>
+<td class="next">
+Next: <a href="92B7.html">92B7</a>
+</td>
+</tr>
+</table>
+<footer>
+<div class="release"></div>
+<div class="copyright">&copy; 1987 Elite Systems &copy; 2023 ArcadeGeek LTD.</div>
+<div class="created">Created using <a href="https://skoolkit.ca">SkoolKit</a> 9.0.</div>
+<div class="repository">Link to <a href="https://github.com/pobtastic/batty/">Source code</a>.</div>
+<div><a href="../dec/asm/37483.html">Switch to decimal</a>.</div>
+</footer>
+</body>
+</html>

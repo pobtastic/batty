@@ -33,448 +33,535 @@ Next: <a href="B61C.html">B61C</a>
 </td>
 </tr>
 </table>
-<div class="description">B4EC: Routine at B4EC</div>
+<div class="description">B4EC: Print Line</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="93F8.html">93F8</a>, <a href="B61C.html">B61C</a> and <a href="BDB3.html">BDB3</a>.
+Used by the routines at <a href="8F60.html">8F60</a>, <a href="910C.html">910C</a>, <a href="93F8.html">93F8</a>, <a href="B765.html">B765</a> and <a href="BDB3.html">BDB3</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine</td>
 <td class="address-2"><span id="b4ec"></span>B4EC</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4ed"></span>B4ED</td>
 <td class="instruction">LD E,(HL)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4ee"></span>B4EE</td>
 <td class="instruction">INC HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4ef"></span>B4EF</td>
 <td class="instruction">LD D,(HL)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f0"></span>B4F0</td>
 <td class="instruction">INC HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f1"></span>B4F1</td>
 <td class="instruction">LD A,(HL)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f2"></span>B4F2</td>
 <td class="instruction">LD ($B618),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f5"></span>B4F5</td>
 <td class="instruction">INC HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f6"></span>B4F6</td>
 <td class="instruction">LD B,(HL)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f7"></span>B4F7</td>
 <td class="instruction">INC HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f8"></span>B4F8</td>
 <td class="instruction">XOR A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4f9"></span>B4F9</td>
 <td class="instruction">LD ($B550),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4fc"></span>B4FC</td>
 <td class="instruction">INC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b4fd"></span>B4FD</td>
 <td class="instruction">LD ($B617),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b500"></span>B500</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b501"></span>B501</td>
 <td class="instruction">AND $3F</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b503"></span>B503</td>
 <td class="instruction">LD ($B616),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b506"></span>B506</td>
 <td class="instruction">BIT 7,B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b508"></span>B508</td>
-<td class="instruction">JR Z,<a href="B4EC.html#b51a">$B51A</a></td>
+<td class="instruction">JR Z,<a href="B4EC.html#b51a">PrintLine_0</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b50a"></span>B50A</td>
 <td class="instruction">BIT 6,B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b50c"></span>B50C</td>
-<td class="instruction">JR NZ,<a href="B4EC.html#b51a">$B51A</a></td>
+<td class="instruction">JR NZ,<a href="B4EC.html#b51a">PrintLine_0</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b50e"></span>B50E</td>
 <td class="instruction">LD A,$0C</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b510"></span>B510</td>
 <td class="instruction">LD ($B550),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b513"></span>B513</td>
 <td class="instruction">LD A,$02</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b515"></span>B515</td>
 <td class="instruction">LD ($B617),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b518"></span>B518</td>
-<td class="instruction">JR <a href="B4EC.html#b51a">$B51A</a></td>
+<td class="instruction">JR <a href="B4EC.html#b51a">PrintLine_0</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_0</td>
 <td class="address-2"><span id="b51a"></span>B51A</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b51b"></span>B51B</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b51c"></span>B51C</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b51d"></span>B51D</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b51e"></span>B51E</td>
 <td class="instruction">SUB $03</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b520"></span>B520</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b521"></span>B521</td>
-<td class="instruction">CALL <a href="B4EC.html#b619">$B619</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b619">PrintLine_18</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b524"></span>B524</td>
 <td class="instruction">POP DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b525"></span>B525</td>
 <td class="instruction">POP BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b526"></span>B526</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b527"></span>B527</td>
 <td class="instruction">ADD A,$03</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b529"></span>B529</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b52a"></span>B52A</td>
-<td class="instruction">CALL <a href="B4EC.html#b57d">$B57D</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b57d">PrintLine_7</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b52d"></span>B52D</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b52e"></span>B52E</td>
 <td class="instruction">AND $3F</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b530"></span>B530</td>
 <td class="instruction">LD B,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_1</td>
 <td class="address-2"><span id="b531"></span>B531</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b532"></span>B532</td>
-<td class="instruction">CALL <a href="B4EC.html#b53a">$B53A</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b53a">PrintLine_2</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b535"></span>B535</td>
 <td class="instruction">POP BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b536"></span>B536</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b537"></span>B537</td>
-<td class="instruction">DJNZ <a href="B4EC.html#b531">$B531</a></td>
+<td class="instruction">DJNZ <a href="B4EC.html#b531">PrintLine_1</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b539"></span>B539</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_2</td>
 <td class="address-2"><span id="b53a"></span>B53A</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b53b"></span>B53B</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b53c"></span>B53C</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b53d"></span>B53D</td>
 <td class="instruction">PUSH DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b53e"></span>B53E</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b53f"></span>B53F</td>
 <td class="instruction">LD H,$00</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b541"></span>B541</td>
 <td class="instruction">ADD HL,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b542"></span>B542</td>
 <td class="instruction">LD E,L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b543"></span>B543</td>
 <td class="instruction">LD D,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b544"></span>B544</td>
 <td class="instruction">ADD HL,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b545"></span>B545</td>
 <td class="instruction">ADD HL,DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b546"></span>B546</td>
 <td class="instruction">LD DE,$6A1A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b549"></span>B549</td>
 <td class="instruction">ADD HL,DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b54a"></span>B54A</td>
 <td class="instruction">POP DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b54b"></span>B54B</td>
 <td class="instruction">EX DE,HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b54c"></span>B54C</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b54d"></span>B54D</td>
 <td class="instruction">LD B,$06</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_3</td>
 <td class="address-2"><span id="b54f"></span>B54F</td>
-<td class="instruction">JR <a href="B4EC.html#b54f">$B54F</a></td>
+<td class="instruction">JR <a href="B4EC.html#b54f">PrintLine_3</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_4</td>
 <td class="address-2"><span id="b551"></span>B551</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b552"></span>B552</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b553"></span>B553</td>
 <td class="instruction">DEC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b554"></span>B554</td>
-<td class="instruction">CALL <a href="B4EC.html#b56e">$B56E</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b56e">PrintLine_6</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b557"></span>B557</td>
-<td class="instruction">DJNZ <a href="B4EC.html#b551">$B551</a></td>
+<td class="instruction">DJNZ <a href="B4EC.html#b551">PrintLine_4</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b559"></span>B559</td>
 <td class="instruction">POP HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b55a"></span>B55A</td>
 <td class="instruction">INC L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b55b"></span>B55B</td>
 <td class="instruction">POP DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b55c"></span>B55C</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_5</td>
 <td class="address-2"><span id="b55d"></span>B55D</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b55e"></span>B55E</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b55f"></span>B55F</td>
-<td class="instruction">CALL <a href="B4EC.html#b56e">$B56E</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b56e">PrintLine_6</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b562"></span>B562</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b563"></span>B563</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b564"></span>B564</td>
-<td class="instruction">CALL <a href="B4EC.html#b56e">$B56E</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b56e">PrintLine_6</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b567"></span>B567</td>
 <td class="instruction">DEC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b568"></span>B568</td>
-<td class="instruction">DJNZ <a href="B4EC.html#b55d">$B55D</a></td>
+<td class="instruction">DJNZ <a href="B4EC.html#b55d">PrintLine_5</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b56a"></span>B56A</td>
 <td class="instruction">POP HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b56b"></span>B56B</td>
 <td class="instruction">INC L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b56c"></span>B56C</td>
 <td class="instruction">POP DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b56d"></span>B56D</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -484,67 +571,79 @@ Used by the routines at <a href="93F8.html">93F8</a>, <a href="B61C.html">B61C</
 <span id="b56e"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="9231.html">DrawFrame</a>.
+This entry point is used by the routines at <a href="8F60.html">8F60</a> and <a href="9231.html">DrawFrame</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_6</td>
 <td class="address-2"><span id="b56e"></span>B56E</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b56f"></span>B56F</td>
 <td class="instruction">DEC H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b570"></span>B570</td>
 <td class="instruction">AND $07</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b572"></span>B572</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b573"></span>B573</td>
 <td class="instruction">LD A,L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b574"></span>B574</td>
 <td class="instruction">SUB $20</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b576"></span>B576</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b577"></span>B577</td>
 <td class="instruction">RET C</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b578"></span>B578</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b579"></span>B579</td>
 <td class="instruction">ADD A,$08</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b57b"></span>B57B</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b57c"></span>B57C</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -554,137 +653,163 @@ This entry point is used by the routine at <a href="9231.html">DrawFrame</a>.
 <span id="b57d"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="974A.html">974A</a>.
+This entry point is used by the routines at <a href="8F60.html">8F60</a> and <a href="974A.html">974A</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_7</td>
 <td class="address-2"><span id="b57d"></span>B57D</td>
 <td class="instruction">LD A,L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b57e"></span>B57E</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b580"></span>B580</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b582"></span>B582</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b584"></span>B584</td>
 <td class="instruction">AND $1F</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b586"></span>B586</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b587"></span>B587</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b588"></span>B588</td>
 <td class="instruction">RLC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b58a"></span>B58A</td>
 <td class="instruction">RLC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b58c"></span>B58C</td>
 <td class="instruction">AND $E0</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b58e"></span>B58E</td>
 <td class="instruction">OR L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b58f"></span>B58F</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b590"></span>B590</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b591"></span>B591</td>
 <td class="instruction">AND $07</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b593"></span>B593</td>
 <td class="instruction">EX AF,AF'</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b594"></span>B594</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b595"></span>B595</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b597"></span>B597</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b599"></span>B599</td>
 <td class="instruction">RRC A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b59b"></span>B59B</td>
 <td class="instruction">AND $18</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b59d"></span>B59D</td>
 <td class="instruction">OR $40</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b59f"></span>B59F</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a0"></span>B5A0</td>
 <td class="instruction">EX AF,AF'</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a1"></span>B5A1</td>
 <td class="instruction">OR H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a2"></span>B5A2</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a3"></span>B5A3</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -700,66 +825,79 @@ This entry point is used by the routines at <a href="961C.html">961C</a> and <a 
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_8</td>
 <td class="address-2"><span id="b5a4"></span>B5A4</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a6"></span>B5A6</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5a8"></span>B5A8</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5aa"></span>B5AA</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ac"></span>B5AC</td>
 <td class="instruction">RR L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ae"></span>B5AE</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b0"></span>B5B0</td>
 <td class="instruction">RR L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b2"></span>B5B2</td>
 <td class="instruction">SRL H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b4"></span>B5B4</td>
 <td class="instruction">RR L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b6"></span>B5B6</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b7"></span>B5B7</td>
 <td class="instruction">ADD A,$58</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5b9"></span>B5B9</td>
 <td class="instruction">LD H,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ba"></span>B5BA</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -769,32 +907,37 @@ This entry point is used by the routines at <a href="961C.html">961C</a> and <a 
 <span id="b5bb"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a href="8D4C.html">8D4C</a>, <a href="8E72.html">8E72</a>, <a href="961C.html">961C</a>, <a href="974A.html">974A</a>, <a href="B61C.html">B61C</a> and <a href="BDCF.html">BDCF</a>.
+This entry point is used by the routines at <a href="8D4C.html">8D4C</a>, <a href="8E72.html">8E72</a>, <a href="961C.html">961C</a>, <a href="974A.html">974A</a>, <a href="B8E6.html">B8E6</a> and <a href="BDCF.html">BDCF</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_9</td>
 <td class="address-2"><span id="b5bb"></span>B5BB</td>
 <td class="instruction">ADD A,L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5bc"></span>B5BC</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5bd"></span>B5BD</td>
 <td class="instruction">RET NC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5be"></span>B5BE</td>
 <td class="instruction">INC H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5bf"></span>B5BF</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -810,201 +953,241 @@ This entry point is used by the routine at <a href="BDCF.html">BDCF</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_10</td>
 <td class="address-2"><span id="b5c0"></span>B5C0</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5c1"></span>B5C1</td>
 <td class="instruction">CALL <a href="C03D.html">$C03D</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5c4"></span>B5C4</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5c5"></span>B5C5</td>
 <td class="instruction">LD ($B5D9),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5c8"></span>B5C8</td>
 <td class="instruction">ADD A,$1F</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ca"></span>B5CA</td>
 <td class="instruction">LD ($B5E3),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5cd"></span>B5CD</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ce"></span>B5CE</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5cf"></span>B5CF</td>
 <td class="instruction">POP BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d0"></span>B5D0</td>
 <td class="instruction">PUSH BC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d1"></span>B5D1</td>
 <td class="instruction">CP B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d2"></span>B5D2</td>
-<td class="instruction">JR C,<a href="B4EC.html#b5d6">$B5D6</a></td>
+<td class="instruction">JR C,<a href="B4EC.html#b5d6">PrintLine_11</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d4"></span>B5D4</td>
 <td class="instruction">INC B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d5"></span>B5D5</td>
 <td class="instruction">LD A,B</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_11</td>
 <td class="address-2"><span id="b5d6"></span>B5D6</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5d7"></span>B5D7</td>
 <td class="instruction">LD C,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_12</td>
 <td class="address-2"><span id="b5d8"></span>B5D8</td>
 <td class="instruction">LD B,$00</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_13</td>
 <td class="address-2"><span id="b5da"></span>B5DA</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5db"></span>B5DB</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5dc"></span>B5DC</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5dd"></span>B5DD</td>
 <td class="instruction">INC L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5de"></span>B5DE</td>
-<td class="instruction">DJNZ <a href="B4EC.html#b5da">$B5DA</a></td>
+<td class="instruction">DJNZ <a href="B4EC.html#b5da">PrintLine_13</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e0"></span>B5E0</td>
 <td class="instruction">DEC L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e1"></span>B5E1</td>
 <td class="instruction">LD A,L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e2"></span>B5E2</td>
 <td class="instruction">SUB $00</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e4"></span>B5E4</td>
 <td class="instruction">LD L,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e5"></span>B5E5</td>
-<td class="instruction">JP NC,<a href="B4EC.html#b5e9">$B5E9</a></td>
+<td class="instruction">JP NC,<a href="B4EC.html#b5e9">PrintLine_14</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5e8"></span>B5E8</td>
 <td class="instruction">DEC H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_14</td>
 <td class="address-2"><span id="b5e9"></span>B5E9</td>
 <td class="instruction">DEC C</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ea"></span>B5EA</td>
-<td class="instruction">JR NZ,<a href="B4EC.html#b5d8">$B5D8</a></td>
+<td class="instruction">JR NZ,<a href="B4EC.html#b5d8">PrintLine_12</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ec"></span>B5EC</td>
 <td class="instruction">POP HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ed"></span>B5ED</td>
 <td class="instruction">LD A,H</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5ee"></span>B5EE</td>
 <td class="instruction">CP $17</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f0"></span>B5F0</td>
 <td class="instruction">RET NZ</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f1"></span>B5F1</td>
 <td class="instruction">LD A,$08</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f3"></span>B5F3</td>
 <td class="instruction">ADD A,E</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f4"></span>B5F4</td>
 <td class="instruction">LD E,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f5"></span>B5F5</td>
 <td class="instruction">RET NC</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f6"></span>B5F6</td>
 <td class="instruction">INC D</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f7"></span>B5F7</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
@@ -1020,126 +1203,151 @@ This entry point is used by the routine at <a href="93F8.html">93F8</a>.
 </td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_15</td>
 <td class="address-2"><span id="b5f8"></span>B5F8</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5f9"></span>B5F9</td>
-<td class="instruction">CALL <a href="B4EC.html#b57d">$B57D</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b57d">PrintLine_7</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5fc"></span>B5FC</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b5fd"></span>B5FD</td>
 <td class="instruction">LD ($B606),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b600"></span>B600</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b601"></span>B601</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b602"></span>B602</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b603"></span>B603</td>
 <td class="instruction">LD C,A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_16</td>
 <td class="address-2"><span id="b604"></span>B604</td>
 <td class="instruction">PUSH HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b605"></span>B605</td>
 <td class="instruction">LD B,$00</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_17</td>
 <td class="address-2"><span id="b607"></span>B607</td>
 <td class="instruction">LD A,(DE)</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b608"></span>B608</td>
 <td class="instruction">LD (HL),A</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b609"></span>B609</td>
 <td class="instruction">INC DE</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b60a"></span>B60A</td>
 <td class="instruction">INC L</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b60b"></span>B60B</td>
-<td class="instruction">DJNZ <a href="B4EC.html#b607">$B607</a></td>
+<td class="instruction">DJNZ <a href="B4EC.html#b607">PrintLine_17</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b60d"></span>B60D</td>
 <td class="instruction">POP HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b60e"></span>B60E</td>
-<td class="instruction">CALL <a href="B4EC.html#b56e">$B56E</a></td>
+<td class="instruction">CALL <a href="B4EC.html#b56e">PrintLine_6</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b611"></span>B611</td>
 <td class="instruction">DEC C</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b612"></span>B612</td>
-<td class="instruction">JR NZ,<a href="B4EC.html#b604">$B604</a></td>
+<td class="instruction">JR NZ,<a href="B4EC.html#b604">PrintLine_16</a></td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b614"></span>B614</td>
 <td class="instruction">POP HL</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b615"></span>B615</td>
 <td class="instruction">RET</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b616"></span>B616</td>
 <td class="instruction">NOP</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b617"></span>B617</td>
 <td class="instruction">NOP</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="b618"></span>B618</td>
 <td class="instruction">NOP</td>
 <td class="comment-0" rowspan="1"></td>
 </tr>
 <tr>
+<td class="asm-label">PrintLine_18</td>
 <td class="address-2"><span id="b619"></span>B619</td>
 <td class="instruction">LD DE,$B616</td>
 <td class="comment-0" rowspan="1"></td>

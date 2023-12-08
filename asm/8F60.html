@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Batty: Data at 8F60</title>
+<title>Batty: Routine at 8F60</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
 <link rel="stylesheet" type="text/css" href="../skoolkit-dark.css" />
@@ -15,11 +15,11 @@ gtag('js', new Date());
 gtag('config', 'G-75RERFCHBG');
 </script>
 </head>
-<body class="Asm-b">
+<body class="Asm-c">
 <table class="header">
 <tr>
 <td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
-<td class="page-header">Data</td>
+<td class="page-header">Routines</td>
 </tr>
 </table>
 <table class="asm-navigation">
@@ -29,11 +29,11 @@ Prev: <a href="8F38.html">8F38</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#8f60">Map</a></td>
 <td class="next">
-Next: <a href="8FB9.html">8FB9</a>
+Next: <a href="8FAD.html">8FAD</a>
 </td>
 </tr>
 </table>
-<div class="description">8F60: Data block at 8F60</div>
+<div class="description">8F60: Routine at 8F60</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
@@ -45,64 +45,203 @@ Used by the routine at <a href="B9B1.html">StartGame</a>.
 </td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f60"></span>8F60</td>
-<td class="instruction">DEFB $21,$58,$A4,$CD,$7D,$B5,$0E,$20</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-2"><span id="8f60"></span>8F60</td>
+<td class="instruction">LD HL,$A458</td>
+<td class="comment-1" rowspan="1"><span class="register">HL</span>=A458 (screen co-ordinates).</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f68"></span>8F68</td>
-<td class="instruction">DEFB $06,$0A,$E5,$36,$00,$2C,$10,$FB</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f63"></span>8F63</td>
+<td class="instruction">CALL <a href="B4EC.html#b57d">PrintLine_7</a></td>
+<td class="comment-1" rowspan="1">Call <a href="B4EC.html#b57d">PrintLine_7</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f66"></span>8F66</td>
+<td class="instruction">LD C,$20</td>
+<td class="comment-1" rowspan="1"><span class="register">C</span>=20.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="8f68"></span>8F68</td>
+<td class="instruction">LD B,$0A</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=0A.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f6a"></span>8F6A</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">Stash <span class="register">HL</span> on the stack.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="8f6b"></span>8F6B</td>
+<td class="instruction">LD (HL),$00</td>
+<td class="comment-1" rowspan="1">Write 00 to *<span class="register">HL</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f6d"></span>8F6D</td>
+<td class="instruction">INC L</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">L</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f6e"></span>8F6E</td>
+<td class="instruction">DJNZ <a href="8F60.html#8f6b">$8F6B</a></td>
+<td class="comment-1" rowspan="1">Decrease counter by one and loop back to <a href="8F60.html#8f6b">8F6B</a> until counter is zero.</td>
 </tr>
 <tr>
 <td class="address-1"><span id="8f70"></span>8F70</td>
-<td class="instruction">DEFB $E1,$CD,$6E,$B5,$0D,$20,$F1,$3A</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> from the stack.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f78"></span>8F78</td>
-<td class="instruction">DEFB $EB,$B7,$3C,$47,$AF,$C6,$01,$27</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f71"></span>8F71</td>
+<td class="instruction">CALL <a href="B4EC.html#b56e">PrintLine_6</a></td>
+<td class="comment-1" rowspan="1">Call <a href="B4EC.html#b56e">PrintLine_6</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f74"></span>8F74</td>
+<td class="instruction">DEC C</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">C</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f75"></span>8F75</td>
+<td class="instruction">JR NZ,<a href="8F60.html#8f68">$8F68</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="8F60.html#8f68">8F68</a> until <span class="register">C</span> is zero.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f77"></span>8F77</td>
+<td class="instruction">LD A,($B7EB)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<a href="B7EB.html">B7EB</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f7a"></span>8F7A</td>
+<td class="instruction">INC A</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">A</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f7b"></span>8F7B</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=<span class="register">A</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f7c"></span>8F7C</td>
+<td class="instruction">XOR A</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=00.</td>
+</tr>
+<tr>
+<td class="address-2"><span id="8f7d"></span>8F7D</td>
+<td class="instruction">ADD A,$01</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>+=01.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f7f"></span>8F7F</td>
+<td class="instruction">DAA</td>
+<td class="comment-1" rowspan="1">DAA.</td>
 </tr>
 <tr>
 <td class="address-1"><span id="8f80"></span>8F80</td>
-<td class="instruction">DEFB $10,$FB,$47,$1F,$1F,$1F,$1F,$E6</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DJNZ <a href="8F60.html#8f7d">$8F7D</a></td>
+<td class="comment-1" rowspan="1">Decrease counter by one and loop back to <a href="8F60.html#8f7d">8F7D</a> until counter is zero.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f88"></span>8F88</td>
-<td class="instruction">DEFB $0F,$32,$C3,$8F,$78,$E6,$0F,$32</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f82"></span>8F82</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=<span class="register">A</span>.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f90"></span>8F90</td>
-<td class="instruction">DEFB $C4,$8F,$3A,$E6,$B7,$3C,$32,$B8</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f83"></span>8F83</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8f98"></span>8F98</td>
-<td class="instruction">DEFB $8F,$11,$AD,$8F,$06,$02,$CD,$96</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f84"></span>8F84</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8fa0"></span>8FA0</td>
-<td class="instruction">DEFB $B7,$3A,$E5,$B7,$FE,$02,$C0,$11</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f85"></span>8F85</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8fa8"></span>8FA8</td>
-<td class="instruction">DEFB $C5,$8F,$C3,$EC,$B4,$60,$8F,$47</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f86"></span>8F86</td>
+<td class="instruction">RRA</td>
+<td class="comment-1" rowspan="1">RRA.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8fb0"></span>8FB0</td>
-<td class="instruction">DEFB $08,$19,$15,$0A,$22,$0E,$1B,$26</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f87"></span>8F87</td>
+<td class="instruction">AND %00001111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-3.</td>
 </tr>
 <tr>
-<td class="address-1"><span id="8fb8"></span>8FB8</td>
-<td class="instruction">DEFB $00</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="address-1"><span id="8f89"></span>8F89</td>
+<td class="instruction">LD ($8FC3),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<a href="8FB9.html#8fbd">8FC3</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f8c"></span>8F8C</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=<span class="register">B</span>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f8d"></span>8F8D</td>
+<td class="instruction">AND %00001111</td>
+<td class="comment-1" rowspan="1">Keep only bits 0-3.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f8f"></span>8F8F</td>
+<td class="instruction">LD ($8FC4),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<a href="8FB9.html#8fbd">8FC4</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f92"></span>8F92</td>
+<td class="instruction">LD A,($B7E6)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<a href="B7E5.html#b7e6">B7E6</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f95"></span>8F95</td>
+<td class="instruction">INC A</td>
+<td class="comment-1" rowspan="1">Increment <span class="register">A</span> by one.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f96"></span>8F96</td>
+<td class="instruction">LD ($8FB8),A</td>
+<td class="comment-1" rowspan="1">Write <span class="register">A</span> to *<a href="8FAD.html#8fb1">8FB8</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f99"></span>8F99</td>
+<td class="instruction">LD DE,$8FAD</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="8FAD.html">Messaging_Player</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f9c"></span>8F9C</td>
+<td class="instruction">LD B,$02</td>
+<td class="comment-1" rowspan="1"><span class="register">B</span>=02.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8f9e"></span>8F9E</td>
+<td class="instruction">CALL <a href="B765.html#b796">$B796</a></td>
+<td class="comment-1" rowspan="1">Call <a href="B765.html#b796">B796</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8fa1"></span>8FA1</td>
+<td class="instruction">LD A,($B7E5)</td>
+<td class="comment-1" rowspan="1"><span class="register">A</span>=*<a href="B7E5.html">GameMode</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8fa4"></span>8FA4</td>
+<td class="instruction">CP $02</td>
+<td class="comment-1" rowspan="2">Return if <span class="register">A</span> is not equal to 02.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8fa6"></span>8FA6</td>
+<td class="instruction">RET NZ</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8fa7"></span>8FA7</td>
+<td class="instruction">LD DE,$8FC5</td>
+<td class="comment-1" rowspan="1"><span class="register">DE</span>=<a href="8FC5.html">Messaging_GameOn</a>.</td>
+</tr>
+<tr>
+<td class="address-1"><span id="8faa"></span>8FAA</td>
+<td class="instruction">JP <a href="B4EC.html">PrintLine</a></td>
+<td class="comment-1" rowspan="1">Jump to <a href="B4EC.html">PrintLine</a>.</td>
 </tr>
 </table>
 <table class="asm-navigation">
@@ -112,7 +251,7 @@ Prev: <a href="8F38.html">8F38</a>
 </td>
 <td class="up">Up: <a href="../maps/all.html#8f60">Map</a></td>
 <td class="next">
-Next: <a href="8FB9.html">8FB9</a>
+Next: <a href="8FAD.html">8FAD</a>
 </td>
 </tr>
 </table>
