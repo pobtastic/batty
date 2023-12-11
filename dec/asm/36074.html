@@ -33,73 +33,127 @@ Next: <a href="36166.html">36166</a>
 </td>
 </tr>
 </table>
-<div class="description">36074: Graphics:</div>
+<div class="description">36074: Graphics: Bonus Multi-Ball</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
 <div class="details">
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Mask</th>
+<td class="centre" colspan="1" rowspan="1"><img alt="bonus-multi-mask" src="../../images/udgs/bonus-multi-mask.png" /></td>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">Graphic</th>
+<td class="centre" colspan="1" rowspan="1"><img alt="bonus-multi" src="../../images/udgs/bonus-multi.png" /></td>
+</tr>
+</table>
+</div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="routine-comment" colspan="5">
+<span id="36074"></span>
+<div class="comments">
+<div class="paragraph">
+Pixels:
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label">Graphics_BonusMultiBall</td>
 <td class="address-1"><span id="36074"></span>36074</td>
-<td class="instruction">DEFB 3,15,0,0,32,0,0,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DEFB 3</td>
+<td class="comment-1" rowspan="1">Width: 3 byte(s).</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36075"></span>36075</td>
+<td class="instruction">DEFB 15</td>
+<td class="comment-1" rowspan="1">Height: 15 pixel(s).</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36076"></span>36076</td>
+<td class="instruction">DEFB 0,0,32,0,0,0</td>
+<td class="comment-1" rowspan="15">Graphic data, arranged as: <table class="default">
+<tr>
+<td class="" colspan="1" rowspan="1"><img alt="bonus-multi-full" src="../../images/udgs/bonus-multi-full.png" /></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="36082"></span>36082</td>
-<td class="instruction">DEFB 0,0,112,32,0,0,31,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DEFB 0,0,112,32,0,0</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36090"></span>36090</td>
-<td class="instruction">DEFB 255,112,192,0,63,30,255,251</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36088"></span>36088</td>
+<td class="instruction">DEFB 31,0,255,112,192,0</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36098"></span>36098</td>
-<td class="instruction">DEFB 224,192,63,28,255,33,224,192</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36094"></span>36094</td>
+<td class="instruction">DEFB 63,30,255,251,224,192</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36100"></span>36100</td>
+<td class="instruction">DEFB 63,28,255,33,224,192</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="36106"></span>36106</td>
-<td class="instruction">DEFB 63,28,255,33,224,192,63,18</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DEFB 63,28,255,33,224,192</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36114"></span>36114</td>
-<td class="instruction">DEFB 255,34,224,64,27,1,254,4</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36112"></span>36112</td>
+<td class="instruction">DEFB 63,18,255,34,224,64</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36122"></span>36122</td>
-<td class="instruction">DEFB 64,0,1,0,252,0,0,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36118"></span>36118</td>
+<td class="instruction">DEFB 27,1,254,4,64,0</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36124"></span>36124</td>
+<td class="instruction">DEFB 1,0,252,0,0,0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="36130"></span>36130</td>
-<td class="instruction">DEFB 0,0,248,112,0,0,1,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DEFB 0,0,248,112,0,0</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36138"></span>36138</td>
-<td class="instruction">DEFB 252,152,0,0,1,0,252,184</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36136"></span>36136</td>
+<td class="instruction">DEFB 1,0,252,152,0,0</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36146"></span>36146</td>
-<td class="instruction">DEFB 0,0,1,0,252,184,0,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36142"></span>36142</td>
+<td class="instruction">DEFB 1,0,252,184,0,0</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36148"></span>36148</td>
+<td class="instruction">DEFB 1,0,252,184,0,0</td>
+</tr>
+<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="36154"></span>36154</td>
-<td class="instruction">DEFB 0,0,248,112,0,0,0,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="instruction">DEFB 0,0,248,112,0,0</td>
 </tr>
 <tr>
-<td class="address-1"><span id="36162"></span>36162</td>
-<td class="instruction">DEFB 112,0,0,0</td>
-<td class="comment-0" rowspan="1"></td>
+<td class="asm-label"></td>
+<td class="address-1"><span id="36160"></span>36160</td>
+<td class="instruction">DEFB 0,0,112,0,0,0</td>
 </tr>
 </table>
 <table class="asm-navigation">

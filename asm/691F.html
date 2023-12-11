@@ -33,11 +33,23 @@ Next: <a href="6951.html">6951</a>
 </td>
 </tr>
 </table>
-<div class="description">691F: Data block at 691F</div>
+<div class="description">691F: Graphics: 2UP</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
 <div class="details">
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Mask</th>
+<td class="centre" colspan="1" rowspan="1"><img alt="2up-mask" src="../images/udgs/2up-mask.png" /></td>
+</tr>
+<tr>
+<th colspan="1" rowspan="1">Graphic</th>
+<td class="centre" colspan="1" rowspan="1"><img alt="2up" src="../images/udgs/2up.png" /></td>
+</tr>
+</table>
+</div>
 </div>
 </td>
 </tr>
@@ -46,99 +58,67 @@ Next: <a href="6951.html">6951</a>
 <span id="691f"></span>
 <div class="comments">
 <div class="paragraph">
-<img alt="2up" src="../images/udgs/2up.png" />
-</div>
-<div class="paragraph">
 Pixels:
 </div>
 </div>
 </td>
 </tr>
 <tr>
+<td class="asm-label">Graphics_2UP</td>
 <td class="address-1"><span id="691f"></span>691F</td>
 <td class="instruction">DEFB $03</td>
 <td class="comment-1" rowspan="1">Width: 03 byte(s).</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6920"></span>6920</td>
 <td class="instruction">DEFB $08</td>
 <td class="comment-1" rowspan="1">Height: 08 pixel(s).</td>
 </tr>
 <tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6921"></span>6921</td>
-<td class="instruction">DEFB $7C,$00,$FE</td>
-<td class="comment-1" rowspan="8">Graphic data.</td>
+<td class="instruction">DEFB $7C,$00,$FE,$00,$FE,$00</td>
+<td class="comment-1" rowspan="8">Graphic data, arranged as: <table class="default">
+<tr>
+<td class="" colspan="1" rowspan="1"><img alt="2up-full" src="../images/udgs/2up-full.png" /></td>
+</tr>
+</table></td>
 </tr>
 <tr>
-<td class="address-1"><span id="6924"></span>6924</td>
-<td class="instruction">DEFB $00,$FE,$00</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6927"></span>6927</td>
-<td class="instruction">DEFB $FE,$38,$FE</td>
+<td class="instruction">DEFB $FE,$38,$FE,$6C,$FF,$7C</td>
 </tr>
 <tr>
-<td class="address-1"><span id="692a"></span>692A</td>
-<td class="instruction">DEFB $6C,$FF,$7C</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="692d"></span>692D</td>
-<td class="instruction">DEFB $FE,$7C,$FE</td>
+<td class="instruction">DEFB $FE,$7C,$FE,$6C,$FF,$66</td>
 </tr>
 <tr>
-<td class="address-1"><span id="6930"></span>6930</td>
-<td class="instruction">DEFB $6C,$FF,$66</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6933"></span>6933</td>
-<td class="instruction">DEFB $FE,$6C,$FE</td>
+<td class="instruction">DEFB $FE,$6C,$FE,$6C,$FF,$66</td>
 </tr>
 <tr>
-<td class="address-1"><span id="6936"></span>6936</td>
-<td class="instruction">DEFB $6C,$FF,$66</td>
-</tr>
-<tr>
-<td class="routine-comment" colspan="5">
-<span id="6939"></span>
-<div class="comments">
-<div class="paragraph">
-<img alt="2up-mask" src="../images/udgs/2up-mask.png" />
-</div>
-</div>
-</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6939"></span>6939</td>
-<td class="instruction">DEFB $FE,$18,$FE</td>
-<td class="comment-1" rowspan="8">Graphic data.</td>
+<td class="instruction">DEFB $FE,$18,$FE,$6C,$FF,$7C</td>
 </tr>
 <tr>
-<td class="address-1"><span id="693c"></span>693C</td>
-<td class="instruction">DEFB $6C,$FF,$7C</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="693f"></span>693F</td>
-<td class="instruction">DEFB $FE,$30,$FE</td>
+<td class="instruction">DEFB $FE,$30,$FE,$7C,$FE,$60</td>
 </tr>
 <tr>
-<td class="address-1"><span id="6942"></span>6942</td>
-<td class="instruction">DEFB $7C,$FE,$60</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="6945"></span>6945</td>
-<td class="instruction">DEFB $FE,$7C,$FE</td>
+<td class="instruction">DEFB $FE,$7C,$FE,$38,$F0,$60</td>
 </tr>
 <tr>
-<td class="address-1"><span id="6948"></span>6948</td>
-<td class="instruction">DEFB $38,$F0,$60</td>
-</tr>
-<tr>
+<td class="asm-label"></td>
 <td class="address-1"><span id="694b"></span>694B</td>
-<td class="instruction">DEFB $FE,$00,$7C</td>
-</tr>
-<tr>
-<td class="address-1"><span id="694e"></span>694E</td>
-<td class="instruction">DEFB $00,$F0,$00</td>
+<td class="instruction">DEFB $FE,$00,$7C,$00,$F0,$00</td>
 </tr>
 </table>
 <table class="asm-navigation">
