@@ -1,1 +1,27 @@
 ; Copyright 2023 Paul Maddern (paul@arcadegeek.co.uk)
+
+[Poke:Infinite Lives]
+<code>
+POKE #R$BD36(#N$BD38),#N$00
+</code>
+
+[Poke:Lives]
+<code>
+POKE #R$BA10(#N$BA11),<em>nn</em>
+</code>
+
+This alters the default value on this line.
+
+<table>
+  <tbody>
+    <tr>
+      <td class="address-1">#R$BA10</td>
+      <td class="instruction">LD #REGa,#N$03</td>
+    </tr>
+  </tbody>
+</table>
+
+[Poke:Easter egg (at start)]
+<code>
+POKE #R$B973,#N$00
+</code>

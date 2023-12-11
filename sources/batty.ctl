@@ -62,23 +62,56 @@ c $684B
 
 c $6853
 
-b $68ED
-N $68ED #UDGARRAY$06,scale=$04,step=$06($68EF-$6919-$01-$30)(1up) #UDGARRAY$03,scale=$04,step=$03($68EF-$6919-$01-$18)(1up-mask)
+b $68ED Graphics: 1UP
+@ $68ED label=Graphics_1UP
+D $68ED #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($68EF-$6919-$02-$30)(1up-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($68F0-$691A-$02-$30)(1up) }
+. UDGTABLE#
 N $68ED Pixels:
   $68ED,$01 Width: #N(#PEEK(#PC)) byte(s).
   $68EE,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $68EF,$30,$06 Graphic data.
+  $68EF,$30,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($68EF-$6919-$01-$30)(1up-full) }
+. UDGTABLE#
 
-b $691F
-N $691F #UDGARRAY$03,scale=$04,step=$03($6921-$6936-$01-$18)(2up)
+b $691F Graphics: 2UP
+@ $691F label=Graphics_2UP
+D $691F #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($6921-$694B-$02-$30)(2up-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($6922-$694C-$02-$30)(2up) }
+. UDGTABLE#
 N $691F Pixels:
   $691F,$01 Width: #N(#PEEK(#PC)) byte(s).
   $6920,$01 Height: #N(#PEEK(#PC)) pixel(s).
-  $6921,$18,$03 Graphic data.
-N $6939 #UDGARRAY$03,scale=$04,step=$03($6939-$694E-$01-$18)(2up-mask)
-  $6939,$18,$03 Graphic data.
+  $6921,$30,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($6921-$694B-$01-$30)(2up-full) }
+. UDGTABLE#
 
-b $6951
+b $6951 Graphics: HI
+@ $6951 label=Graphics_HI
+D $6951 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($6953-$696F-$02-$20)(hi-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($6954-$6970-$02-$20)(hi) }
+. UDGTABLE#
+N $6951 Pixels:
+  $6951,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6952,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6953,$20,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($6953-$696F-$01-$20)(hi-full) }
+. UDGTABLE#
+
+b $6973 Graphics:
+N $6973 Pixels:
+  $6973,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $6974,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $6975,$A0,$14 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$14,attr=$47,scale=$04,step=$14($6975-$6A01-$01-$A0)(efeffd-full) }
+. UDGTABLE#
 
 b $6A15 Font
 @ $6A15 label=Font
@@ -517,7 +550,7 @@ N $811E Pixels:
 . { #UDGARRAY$08,attr=$47,scale=$04,step=$08($8120-$8180-$01-$40){$00,$00,$00,$34}(bat-gun-4-full) }
 . UDGTABLE#
 
-b $8188 Graphics: Bat Gun
+b $8188 Graphics: Gun Bat
 @ $8188 label=Graphics_BatGun
 D $8188 #UDGTABLE(default,centre,centre)
 . { =h Mask | #UDGARRAY$04,attr=$47,scale=$04,step=$08($818A-$81EA-$02-$40){$00,$00,$00,$34}(bat-gun-mask) }
@@ -536,50 +569,377 @@ b $81F2 Graphics:
 b $828A Graphics:
 
 b $8342 Graphics:
-N $8370
-N $8386
-N $8398
-N $83A6
+D $8342 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($8344-$836C-$02-$20){$00,$00,$00,$2C}(aaaa-mask) }
+. { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($8345-$836D-$02-$20){$00,$00,$00,$2C}(aaaa) }
+. UDGTABLE#
+N $8342 Pixels:
+  $8342,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8343,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8344,$2C,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($8344-$836C-$01-$20){$00,$00,$00,$2C}(aaaa-full) }
+. UDGTABLE#
+N $8370 Pixels:
+  $8370,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8371,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8372,$14,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($8372-$8384-$01-$08){$00,$00,$00,$28}(aaaa1-full) }
+. UDGTABLE#
+N $8386 Pixels:
+  $8386,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8387,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8388,$10,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($8388-$8396-$01-$08)(aaaa2-full) }
+. UDGTABLE#
+N $8398 Pixels:
+  $8398,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8399,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $839A,$0C,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($839A-$83A4-$01-$08){$00,$00,$00,$18}(aaaa3-full) }
+. UDGTABLE#
+N $83A6 Pixels:
+  $83A6,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $83A7,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $83A8,$08,$02 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$02,attr=$47,scale=$04,step=$02($83A8-$83AE-$01-$08){$00,$00,$00,$10}(aaaa4-full) }
+. UDGTABLE#
 
-b $83B0 Graphics:
-N $8406
-N $8462
-N $84C4
-N $852C
-N $859A
+b $83B0 Graphics: UFO
+@ $83B0 label=Graphics_UFO
+D $83B0 #UDGTABLE(default,centre,centre,centre,centre,centre,centre,centre)
+. { =h,r2 Type | =h,c6 Frame }
+. { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 | =h #N$06 }
+. { =h Mask |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($83B2-$8400-$02-$30){$00,$00,$00,$38}(ufo1-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8408-$845C-$02-$30){$00,$00,$00,$3C}(ufo2-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8464-$84BE-$02-$30)(ufo3-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($84C6-$8526-$02-$30){$00,$00,$00,$44}(ufo4-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($852E-$8594-$02-$30){$00,$00,$00,$48}(ufo5-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($859C-$8608-$02-$30){$00,$00,$00,$4C}(ufo6-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($83B3-$8401-$02-$30){$00,$00,$00,$38}(ufo1) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8409-$845D-$02-$30){$00,$00,$00,$3C}(ufo2) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8465-$84BF-$02-$30)(ufo3) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($84C7-$8527-$02-$30){$00,$00,$00,$44}(ufo4) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($852F-$8595-$02-$30){$00,$00,$00,$48}(ufo5) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($859D-$8609-$02-$30){$00,$00,$00,$4C}(ufo6)
+. }
+. UDGTABLE#
+N $83B0 Pixels:
+  $83B0,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $83B1,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $83B2,$54,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($83B2-$8400-$01-$30){$00,$00,$00,$38}(ufo1-full) }
+. UDGTABLE#
+N $8406 Pixels:
+  $8406,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8407,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8408,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8408-$845C-$01-$30){$00,$00,$00,$3C}(ufo2-full) }
+. UDGTABLE#
+N $8462 Pixels:
+  $8462,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8463,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8464,$60,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8464-$84BE-$01-$30)(ufo3-full) }
+. UDGTABLE#
+N $84C4 Pixels:
+  $84C4,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $84C5,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $84C6,$66,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($84C6-$8526-$01-$30){$00,$00,$00,$44}(ufo4-full) }
+. UDGTABLE#
+N $852C Pixels:
+  $852C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $852D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $852E,$6C,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($852E-$8594-$01-$30){$00,$00,$00,$48}(ufo5-full) }
+. UDGTABLE#
+N $859A Pixels:
+  $859A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $859B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $859C,$72,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($859C-$8608-$01-$30){$00,$00,$00,$4C}(ufo6-full) }
+. UDGTABLE#
 
-b $860E Graphics:
-N $866A
-N $86C6
-N $8722
-N $8778
+b $860E Graphics: Bird
+@ $860E label=Graphics_Bird
+D $860E #UDGTABLE(default,centre,centre,centre,centre,centre,centre)
+. { =h,r2 Type | =h,c5 Frame }
+. { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 }
+. { =h Mask |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8610-$8664-$02-$30){$00,$00,$00,$3C}(bird1-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($866C-$86C0-$02-$30){$00,$00,$00,$3C}(bird2-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($86C8-$871C-$02-$30){$00,$00,$00,$3C}(bird3-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8724-$8772-$02-$30){$00,$00,$00,$38}(bird4-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($877A-$87E0-$02-$30){$00,$00,$00,$48}(bird5-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8611-$8665-$02-$30){$00,$00,$00,$3C}(bird1) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($866D-$86C1-$02-$30){$00,$00,$00,$3C}(bird2) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($86C9-$871D-$02-$30){$00,$00,$00,$3C}(bird3) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($8725-$8773-$02-$30){$00,$00,$00,$38}(bird4) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($877B-$87E1-$02-$30){$00,$00,$00,$48}(bird5)
+. }
+. UDGTABLE#
+N $860E Pixels:
+  $860E,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $860F,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8610,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8610-$8664-$01-$30){$00,$00,$00,$3C}(bird1-full) }
+. UDGTABLE#
+N $866A Pixels:
+  $866A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $866B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $866C,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($866C-$86C0-$01-$30){$00,$00,$00,$3C}(bird2-full) }
+. UDGTABLE#
+N $86C6 Pixels:
+  $86C6,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $86C7,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $86C8,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($86C8-$871C-$01-$30){$00,$00,$00,$3C}(bird3-full) }
+. UDGTABLE#
+N $8722 Pixels:
+  $8722,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8723,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8724,$54,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8724-$8772-$01-$30){$00,$00,$00,$38}(bird4-full) }
+. UDGTABLE#
+N $8778 Pixels:
+  $8778,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8779,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $877A,$6C,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($877A-$87E0-$01-$30){$00,$00,$00,$48}(bird5-full) }
+. UDGTABLE#
 
-b $87E6 Graphics:
-N $881C
-N $885E
-N $888C
-N $88CE
+b $87E6 Graphics: Blast
+@ $87E6 label=Graphics_Blast
+D $87E6 #UDGTABLE(default,centre,centre,centre,centre,centre,centre)
+. { =h,r2 Type | =h,c5 Frame }
+. { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 }
+. { =h Mask |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($87E8-$8818-$02-$20){$00,$00,$00,$34}(blast1-mask) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($881E-$884E-$02-$20){$00,$00,$00,$34}(blast2-mask) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($8854-$8888-$02-$20){$00,$00,$00,$38}(blast3-mask) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($888E-$88CA-$02-$20)(blast4-mask) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($88D0-$8918-$02-$20){$00,$00,$00,$4C}(blast5-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($87E9-$8819-$02-$20){$00,$00,$00,$34}(blast1) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($881F-$884F-$02-$20){$00,$00,$00,$34}(blast2) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($8855-$8889-$02-$20){$00,$00,$00,$38}(blast3) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($888F-$88CB-$02-$20)(blast4) |
+. #UDGARRAY$02,attr=$47,scale=$04,step=$04($88D1-$8919-$02-$20){$00,$00,$00,$4C}(blast5)
+. }
+. UDGTABLE#
+N $87E6 Pixels:
+  $87E6,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $87E7,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $87E8,$34,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($87E8-$8818-$01-$20){$00,$00,$00,$34}(blast1-full) }
+. UDGTABLE#
+N $881C Pixels:
+  $881C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $881D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $881E,$34,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($881E-$884E-$01-$20){$00,$00,$00,$34}(blast2-full) }
+. UDGTABLE#
+N $8852 Pixels:
+  $8852,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8853,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8854,$38,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($8854-$8888-$01-$20){$00,$00,$00,$38}(blast3-full) }
+. UDGTABLE#
+N $888C Pixels:
+  $888C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $888D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $888E,$40,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($888E-$88CA-$01-$20)(blast4-full) }
+. UDGTABLE#
+N $88CE Pixels:
+  $88CE,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $88CF,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $88D0,$4C,$04 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$04,attr=$47,scale=$04,step=$04($88D0-$8918-$01-$20){$00,$00,$00,$4C}(blast5-full) }
+. UDGTABLE#
 
-b $891C Graphics:
-N $89C0
+b $891C Graphics: Rocket
+@ $891C label=Graphics_Rocket
+D $891C #UDGTABLE(default,centre,centre,centre)
+. { =h,r2 Type | =h,c5 Frame }
+. { =h #N$01 | =h #N$02 }
+. { =h Mask |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($891E-$89BA-$02-$30){$00,$00,$00,$6C}(rocket1-mask) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($89C2-$8A64-$02-$30){$00,$00,$00,$70}(rocket2-mask)
+. }
+. { =h Graphic |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($891F-$89BB-$02-$30){$00,$00,$00,$6C}(rocket1) |
+. #UDGARRAY$03,attr=$47,scale=$04,step=$06($89C3-$8A65-$02-$30){$00,$00,$00,$70}(rocket2)
+. }
+. UDGTABLE#
+N $891C Pixels:
+  $891C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $891D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $891E,$A2,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($891E-$89BA-$01-$30){$00,$00,$00,$6C}(rocket1-full) }
+. UDGTABLE#
+N $89C0 Pixels:
+  $89C0,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $89C1,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $89C2,$A8,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($89C2-$8A64-$01-$30){$00,$00,$00,$70}(rocket2-full) }
+. UDGTABLE#
 
-b $8A6A Graphics:
+b $8A6A Graphics: Smash
+@ $8A6A label=Graphics_Smash
+D $8A6A #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8A6C-$8AC0-$02-$30){$00,$00,$00,$3C}(smash-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8A6D-$8AC1-$02-$30){$00,$00,$00,$3C}(smash) }
+. UDGTABLE#
+N $8A6A Pixels:
+  $8A6A,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8A6B,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8A6C,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8A6C-$8AC0-$01-$30){$00,$00,$00,$3C}(smash-full) }
+. UDGTABLE#
 
-b $8AC6 Graphics:
+b $8AC6 Graphics: Kill Aliens
+@ $8AC6 label=Graphics_KillAliens
+D $8AC6 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8AC8-$8B1C-$02-$30){$00,$00,$00,$3C}(kill-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8AC9-$8B1D-$02-$30){$00,$00,$00,$3C}(kill) }
+. UDGTABLE#
+N $8AC6 Pixels:
+  $8AC6,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8AC7,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8AC8,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8AC8-$8B1C-$01-$30){$00,$00,$00,$3C}(kill-full) }
+. UDGTABLE#
 
-b $8B22 Graphics:
+b $8B22 Graphics: Hand
+@ $8B22 label=Graphics_Hand
+D $8B22 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B24-$8B66-$02-$30){$00,$00,$00,$30}(hand-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B25-$8B67-$02-$30){$00,$00,$00,$30}(hand) }
+. UDGTABLE#
+N $8B22 Pixels:
+  $8B22,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8B23,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8B24,$48,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8B24-$8B66-$01-$30){$00,$00,$00,$30}(hand-full) }
+. UDGTABLE#
 
-b $8B6C Graphics:
+b $8B6C Graphics: Bonus Size
+@ $8B6C label=Graphics_BonusSize
+D $8B6C #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B6E-$8BAA-$02-$30){$00,$00,$00,$2C}(bonus-size-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B6F-$8BAB-$02-$30){$00,$00,$00,$2C}(bonus-size) }
+. UDGTABLE#
+N $8B6C Pixels:
+  $8B6C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8B6D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8B6E,$42,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8B6E-$8BAA-$01-$30){$00,$00,$00,$2C}(bonus-size-full) }
+. UDGTABLE#
 
-b $8BB0 Graphics:
+b $8BB0 Graphics: Bonus Slow
+@ $8BB0 label=Graphics_BonusSlow
+D $8BB0 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8BB2-$8C06-$02-$30){$00,$00,$00,$3C}(bonus-slow-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8BB3-$8C07-$02-$30){$00,$00,$00,$3C}(bonus-slow) }
+. UDGTABLE#
+N $8BB0 Pixels:
+  $8BB0,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8BB1,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8BB2,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8BB2-$8C06-$01-$30){$00,$00,$00,$3C}(bonus-slow-full) }
+. UDGTABLE#
 
-b $8C0C Graphics:
+b $8C0C Graphics: Bonus Gun
+@ $8C0C label=Graphics_BonusGun
+D $8C0C #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C0E-$8C3E-$02-$30){$00,$00,$00,$24}(bonus-gun-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C0F-$8C3F-$02-$30){$00,$00,$00,$24}(bonus-gun) }
+. UDGTABLE#
+N $8C0C Pixels:
+  $8C0C,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8C0D,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8C0E,$36,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C0E-$8C3E-$01-$30){$00,$00,$00,$24}(bonus-gun-full) }
+. UDGTABLE#
 
-b $8C44 Graphics:
+b $8C44 Graphics: Bonus Life
+@ $8C44 label=Graphics_BonusLife
+D $8C44 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C46-$8C8E-$02-$30){$00,$00,$00,$34}(bonus-life-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C47-$8C8F-$02-$30){$00,$00,$00,$34}(bonus-life) }
+. UDGTABLE#
+N $8C44 Pixels:
+  $8C44,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8C45,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8C46,$4E,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C46-$8C8E-$01-$30){$00,$00,$00,$34}(bonus-live-full) }
+. UDGTABLE#
 
-b $8C94 Graphics:
+b $8C94 Graphics: Bonus 5000 Points
+@ $8C94 label=Graphics_Bonus5000
+D $8C94 #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C96-$8CE4-$02-$30){$00,$00,$00,$38}(bonus-5000-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C97-$8CE5-$02-$30){$00,$00,$00,$38}(bonus-5000) }
+. UDGTABLE#
+N $8C94 Pixels:
+  $8C94,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8C95,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8C96,$54,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C96-$8CE4-$01-$30){$00,$00,$00,$38}(bonus-5000-full) }
+. UDGTABLE#
 
-b $8CEA Graphics:
+b $8CEA Graphics: Bonus Multi-Ball
+@ $8CEA label=Graphics_BonusMultiBall
+D $8CEA #UDGTABLE(default,centre,centre)
+. { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8CEC-$8D40-$02-$30){$00,$00,$00,$3C}(bonus-multi-mask) }
+. { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8CED-$8D41-$02-$30){$00,$00,$00,$3C}(bonus-multi) }
+. UDGTABLE#
+N $8CEA Pixels:
+  $8CEA,$01 Width: #N(#PEEK(#PC)) byte(s).
+  $8CEB,$01 Height: #N(#PEEK(#PC)) pixel(s).
+  $8CEC,$5A,$06 Graphic data, arranged as:
+. #UDGTABLE(default)
+. { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8CEC-$8D40-$01-$30){$00,$00,$00,$3C}(bonus-multi-full) }
+. UDGTABLE#
 
 w $8D46
 
@@ -1448,6 +1808,7 @@ w $C0DB Table: Sounds
 
 c $C0F3 Sounds: Normal Brick
 @ $C0F3 label=Sounds_Brick_Normal
+D $C0F3 #AUDIO(normal.wav)(#INCLUDE(NormalBrick))
   $C0F3,$03 #REGde=#N($0844,$04,$04).
   $C0F6,$03 Call #R$C25C.
   $C0F9,$03 Decrease *#REGix+#N$01 by one.
@@ -1456,6 +1817,7 @@ c $C0F3 Sounds: Normal Brick
 
 c $C101 Sounds: Metal Brick
 @ $C101 label=Sounds_Brick_Metal
+D $C101 #AUDIO(metal.wav)(#INCLUDE(MetalBrick))
   $C101,$02 #REGd=#N$18.
   $C103,$02 #REGe=#N$30.
   $C105,$03 Call #R$C25C.
@@ -1466,6 +1828,7 @@ c $C101 Sounds: Metal Brick
 
 c $C116 Sounds: Start Game
 @ $C116 label=Sounds_StartGame
+D $C116 #AUDIO(start.wav)(#INCLUDE(Start))
   $C116,$02 #REGc=#N$09.
   $C118,$02 #REGe=#N$14.
   $C11A,$03 Call #R$C122.

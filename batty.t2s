@@ -13,3 +13,6 @@ Batty.z80
 ; --start 0xFEB1
 --start 0x6800
 --sim-load-config accelerator=speedlock
+
+; Incorrect height for bird graphic frame 4.
+--ram poke=0x8723,0x0E

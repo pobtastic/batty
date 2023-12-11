@@ -807,82 +807,93 @@ c$6853 LD IX,$68D7   ;
  $68EB NOP           ;
  $68EC NOP           ;
 
-; Data block at 68ED
+; Graphics: 1UP
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($68EF-$6919-$02-$30)(1up-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($68F0-$691A-$02-$30)(1up) }
+; UDGTABLE#
 ;
 ; .
 ;
-; .
-;
-; #UDGARRAY$06,scale=$04,step=$06($68EF-$6919-$01-$30)(1up)
-; #UDGARRAY$03,scale=$04,step=$03($68EF-$6919-$01-$18)(1up-mask)
-; .
 ; Pixels:
+@label=Graphics_1UP
 b$68ED DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
  $68EE DEFB $08                     ; Height: #N(#PEEK(#PC)) pixel(s).
- $68EF DEFB $3C,$00,$FE,$00,$FC,$00 ; {Graphic data.
- $68F5 DEFB $7C,$18,$FE,$6C,$FF,$7C ;
- $68FB DEFB $7C,$38,$FE,$6C,$FF,$66 ;
- $6901 DEFB $7C,$18,$FE,$6C,$FF,$66 ;
+ $68EF DEFB $3C,$00,$FE,$00,$FC,$00 ; {Graphic data, arranged as:
+ $68F5 DEFB $7C,$18,$FE,$6C,$FF,$7C ; #UDGTABLE(default)
+ $68FB DEFB $7C,$38,$FE,$6C,$FF,$66 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($68EF-$6919-$01-$30)(1up-full) }
+ $6901 DEFB $7C,$18,$FE,$6C,$FF,$66 ; UDGTABLE#
  $6907 DEFB $3C,$18,$FE,$6C,$FF,$7C ;
  $690D DEFB $7E,$18,$FE,$7C,$FE,$60 ;
  $6913 DEFB $7E,$3C,$FE,$38,$F0,$60 ;
  $6919 DEFB $7E,$00,$7C,$00,$F0,$00 ; }
 
-; Data block at 691F
+; Graphics: 2UP
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($6921-$694B-$02-$30)(2up-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($6922-$694C-$02-$30)(2up) }
+; UDGTABLE#
 ;
 ; .
 ;
-; .
-;
-; #UDGARRAY$03,scale=$04,step=$03($6921-$6936-$01-$18)(2up)
-; .
 ; Pixels:
-b$691F DEFB $03         ; Width: #N(#PEEK(#PC)) byte(s).
- $6920 DEFB $08         ; Height: #N(#PEEK(#PC)) pixel(s).
- $6921 DEFB $7C,$00,$FE ; {Graphic data.
- $6924 DEFB $00,$FE,$00 ;
- $6927 DEFB $FE,$38,$FE ;
- $692A DEFB $6C,$FF,$7C ;
- $692D DEFB $FE,$7C,$FE ;
- $6930 DEFB $6C,$FF,$66 ;
- $6933 DEFB $FE,$6C,$FE ;
- $6936 DEFB $6C,$FF,$66 ; }
-; #UDGARRAY$03,scale=$04,step=$03($6939-$694E-$01-$18)(2up-mask)
- $6939 DEFB $FE,$18,$FE ; {Graphic data.
- $693C DEFB $6C,$FF,$7C ;
- $693F DEFB $FE,$30,$FE ;
- $6942 DEFB $7C,$FE,$60 ;
- $6945 DEFB $FE,$7C,$FE ;
- $6948 DEFB $38,$F0,$60 ;
- $694B DEFB $FE,$00,$7C ;
- $694E DEFB $00,$F0,$00 ; }
+@label=Graphics_2UP
+b$691F DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $6920 DEFB $08                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6921 DEFB $7C,$00,$FE,$00,$FE,$00 ; {Graphic data, arranged as:
+ $6927 DEFB $FE,$38,$FE,$6C,$FF,$7C ; #UDGTABLE(default)
+ $692D DEFB $FE,$7C,$FE,$6C,$FF,$66 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($6921-$694B-$01-$30)(2up-full) }
+ $6933 DEFB $FE,$6C,$FE,$6C,$FF,$66 ; UDGTABLE#
+ $6939 DEFB $FE,$18,$FE,$6C,$FF,$7C ;
+ $693F DEFB $FE,$30,$FE,$7C,$FE,$60 ;
+ $6945 DEFB $FE,$7C,$FE,$38,$F0,$60 ;
+ $694B DEFB $FE,$00,$7C,$00,$F0,$00 ; }
 
-; Data block at 6951
-b$6951 DEFB $02,$08,$7F,$00,$BC,$00,$7F,$33
- $6959 DEFB $BC,$18,$7F,$33,$BC,$18,$7F,$3F
- $6961 DEFB $BC,$18,$7F,$3F,$BC,$18,$7F,$33
- $6969 DEFB $BC,$18,$7F,$33,$BC,$18,$7F,$00
- $6971 DEFB $BC,$00,$0A,$08,$7C,$00,$FE,$38
- $6979 DEFB $FE,$6C,$FE,$6C,$FE,$6C,$FE,$6C
- $6981 DEFB $FE,$38,$7C,$00,$3C,$00,$7C,$18
- $6989 DEFB $7C,$38,$7C,$18,$3C,$18,$7E,$18
- $6991 DEFB $7E,$3C,$7E,$00,$7C,$00,$FE,$38
- $6999 DEFB $FE,$7C,$FE,$6C,$FE,$18,$FE,$30
- $69A1 DEFB $FE,$7C,$FE,$00,$7C,$00,$FE,$38
- $69A9 DEFB $FE,$6C,$FE,$18,$FE,$18,$FE,$6C
- $69B1 DEFB $FE,$38,$7C,$00,$3C,$00,$7C,$18
- $69B9 DEFB $7C,$38,$FC,$28,$FE,$68,$FE,$7C
- $69C1 DEFB $FE,$18,$3C,$00,$FE,$00,$FE,$7C
- $69C9 DEFB $FE,$60,$FE,$78,$FE,$0C,$FE,$6C
- $69D1 DEFB $FE,$38,$7C,$00,$3C,$00,$7C,$18
- $69D9 DEFB $FC,$30,$FE,$78,$FE,$6C,$FE,$6C
- $69E1 DEFB $FE,$38,$7C,$00,$FE,$00,$FE,$7C
- $69E9 DEFB $FE,$7C,$FE,$18,$7C,$38,$7C,$30
- $69F1 DEFB $78,$30,$78,$00,$7C,$00,$FE,$38
- $69F9 DEFB $FE,$6C,$FE,$38,$FE,$6C,$FE,$6C
- $6A01 DEFB $FE,$38,$7C,$00,$7C,$00,$FE,$38
- $6A09 DEFB $FE,$6C,$FE,$6C,$FE,$3C,$7E,$18
- $6A11 DEFB $7C,$30,$78,$00
+; Graphics: HI
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($6953-$696F-$02-$20)(hi-mask) }
+; { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($6954-$6970-$02-$20)(hi) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_HI
+b$6951 DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $6952 DEFB $08             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $6953 DEFB $7F,$00,$BC,$00 ; {Graphic data, arranged as:
+ $6957 DEFB $7F,$33,$BC,$18 ; #UDGTABLE(default)
+ $695B DEFB $7F,$33,$BC,$18 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($6953-$696F-$01-$20)(hi-full) }
+ $695F DEFB $7F,$3F,$BC,$18 ; UDGTABLE#
+ $6963 DEFB $7F,$3F,$BC,$18 ;
+ $6967 DEFB $7F,$33,$BC,$18 ;
+ $696B DEFB $7F,$33,$BC,$18 ;
+ $696F DEFB $7F,$00,$BC,$00 ; }
+
+; Graphics:
+;
+; .
+;
+; .
+;
+; Pixels:
+b$6973 DEFB $0A                                                                             ; Width:
+                                                                                            ; #N(#PEEK(#PC))
+                                                                                            ; byte(s).
+ $6974 DEFB $08                                                                             ; Height:
+                                                                                            ; #N(#PEEK(#PC))
+                                                                                            ; pixel(s).
+ $6975 DEFB $7C,$00,$FE,$38,$FE,$6C,$FE,$6C,$FE,$6C,$FE,$6C,$FE,$38,$7C,$00,$3C,$00,$7C,$18 ; {Graphic data, arranged as:
+ $6989 DEFB $7C,$38,$7C,$18,$3C,$18,$7E,$18,$7E,$3C,$7E,$00,$7C,$00,$FE,$38,$FE,$7C,$FE,$6C ; #UDGTABLE(default)
+ $699D DEFB $FE,$18,$FE,$30,$FE,$7C,$FE,$00,$7C,$00,$FE,$38,$FE,$6C,$FE,$18,$FE,$18,$FE,$6C ; { #UDGARRAY$14,attr=$47,scale=$04,step=$14($6975-$6A01-$01-$A0)(efeffd-full) }
+ $69B1 DEFB $FE,$38,$7C,$00,$3C,$00,$7C,$18,$7C,$38,$FC,$28,$FE,$68,$FE,$7C,$FE,$18,$3C,$00 ; UDGTABLE#
+ $69C5 DEFB $FE,$00,$FE,$7C,$FE,$60,$FE,$78,$FE,$0C,$FE,$6C,$FE,$38,$7C,$00,$3C,$00,$7C,$18 ;
+ $69D9 DEFB $FC,$30,$FE,$78,$FE,$6C,$FE,$6C,$FE,$38,$7C,$00,$FE,$00,$FE,$7C,$FE,$7C,$FE,$18 ;
+ $69ED DEFB $7C,$38,$7C,$30,$78,$30,$78,$00,$7C,$00,$FE,$38,$FE,$6C,$FE,$38,$FE,$6C,$FE,$6C ;
+ $6A01 DEFB $FE,$38,$7C,$00,$7C,$00,$FE,$38,$FE,$6C,$FE,$6C,$FE,$3C,$7E,$18,$7C,$30,$78,$00 ; }
 
 ; Font
 @label=Font
@@ -2214,7 +2225,7 @@ b$7FE0 DEFB $04                             ; Width: #N(#PEEK(#PC)) byte(s).
  $8178 DEFB $05,$00,$55,$00,$55,$00,$54,$00 ;
  $8180 DEFB $02,$00,$AA,$00,$AA,$00,$A8,$00 ; }
 
-; Graphics: Bat Gun
+; Graphics: Gun Bat
 ;
 ; #UDGTABLE(default,centre,centre)
 ; { =h Mask | #UDGARRAY$04,attr=$47,scale=$04,step=$08($818A-$81EA-$02-$40){$00,$00,$00,$34}(bat-gun-mask) }
@@ -2288,366 +2299,769 @@ b$828A DEFB $00,$00,$00,$00,$00,$00,$00,$00
  $833A DEFB $00,$00,$00,$00,$00,$00,$00,$00
 
 ; Graphics:
-b$8342 DEFB $02,$0B,$10,$00,$00,$00,$38,$10
- $834A DEFB $00,$00,$7C,$10,$00,$00,$FE,$7C
- $8352 DEFB $00,$00,$7C,$10,$00,$00,$38,$10
- $835A DEFB $00,$00,$10,$00,$80,$00,$00,$00
- $8362 DEFB $80,$00,$03,$00,$E0,$00,$00,$00
- $836A DEFB $80,$00,$00,$00,$80,$00
- $8370 DEFB $01,$0A,$20,$00,$70,$20,$70,$20
- $8378 DEFB $F8,$70,$70,$20,$72,$20,$22,$00
- $8380 DEFB $07,$00,$02,$00,$02,$00
- $8386 DEFB $01,$08,$20,$00,$70,$20,$F8,$70
- $838E DEFB $70,$20,$20,$00,$02,$00,$07,$00
- $8396 DEFB $02,$00
- $8398 DEFB $01,$06,$40,$00,$E0,$40,$E0,$40
- $83A0 DEFB $40,$00,$08,$00,$08,$00
- $83A6 DEFB $01,$04,$40,$00,$E0,$40,$40,$00
- $83AE DEFB $10,$00
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$02,attr=$47,scale=$04,step=$04($8344-$836C-$02-$20){$00,$00,$00,$2C}(aaaa-mask) }
+; { =h Graphic | #UDGARRAY$02,attr=$47,scale=$04,step=$04($8345-$836D-$02-$20){$00,$00,$00,$2C}(aaaa) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+b$8342 DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $8343 DEFB $0B             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8344 DEFB $10,$00,$00,$00 ; {Graphic data, arranged as:
+ $8348 DEFB $38,$10,$00,$00 ; #UDGTABLE(default)
+ $834C DEFB $7C,$10,$00,$00 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($8344-$836C-$01-$20){$00,$00,$00,$2C}(aaaa-full) }
+ $8350 DEFB $FE,$7C,$00,$00 ; UDGTABLE#
+ $8354 DEFB $7C,$10,$00,$00 ;
+ $8358 DEFB $38,$10,$00,$00 ;
+ $835C DEFB $10,$00,$80,$00 ;
+ $8360 DEFB $00,$00,$80,$00 ;
+ $8364 DEFB $03,$00,$E0,$00 ;
+ $8368 DEFB $00,$00,$80,$00 ;
+ $836C DEFB $00,$00,$80,$00 ; }
+; Pixels:
+ $8370 DEFB $01             ; Width: #N(#PEEK(#PC)) byte(s).
+ $8371 DEFB $0A             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8372 DEFB $20,$00         ; {Graphic data, arranged as:
+ $8374 DEFB $70,$20         ; #UDGTABLE(default)
+ $8376 DEFB $70,$20         ; { #UDGARRAY$02,attr=$47,scale=$04,step=$02($8372-$8384-$01-$08){$00,$00,$00,$28}(aaaa1-full) }
+ $8378 DEFB $F8,$70         ; UDGTABLE#
+ $837A DEFB $70,$20         ;
+ $837C DEFB $72,$20         ;
+ $837E DEFB $22,$00         ;
+ $8380 DEFB $07,$00         ;
+ $8382 DEFB $02,$00         ;
+ $8384 DEFB $02,$00         ; }
+; Pixels:
+ $8386 DEFB $01             ; Width: #N(#PEEK(#PC)) byte(s).
+ $8387 DEFB $08             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8388 DEFB $20,$00         ; {Graphic data, arranged as:
+ $838A DEFB $70,$20         ; #UDGTABLE(default)
+ $838C DEFB $F8,$70         ; { #UDGARRAY$02,attr=$47,scale=$04,step=$02($8388-$8396-$01-$08)(aaaa2-full) }
+ $838E DEFB $70,$20         ; UDGTABLE#
+ $8390 DEFB $20,$00         ;
+ $8392 DEFB $02,$00         ;
+ $8394 DEFB $07,$00         ;
+ $8396 DEFB $02,$00         ; }
+; Pixels:
+ $8398 DEFB $01             ; Width: #N(#PEEK(#PC)) byte(s).
+ $8399 DEFB $06             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $839A DEFB $40,$00         ; {Graphic data, arranged as:
+ $839C DEFB $E0,$40         ; #UDGTABLE(default)
+ $839E DEFB $E0,$40         ; { #UDGARRAY$02,attr=$47,scale=$04,step=$02($839A-$83A4-$01-$08){$00,$00,$00,$18}(aaaa3-full) }
+ $83A0 DEFB $40,$00         ; UDGTABLE#
+ $83A2 DEFB $08,$00         ;
+ $83A4 DEFB $08,$00         ; }
+; Pixels:
+ $83A6 DEFB $01             ; Width: #N(#PEEK(#PC)) byte(s).
+ $83A7 DEFB $04             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $83A8 DEFB $40,$00         ; {Graphic data, arranged as:
+ $83AA DEFB $E0,$40         ; #UDGTABLE(default)
+ $83AC DEFB $40,$00         ; { #UDGARRAY$02,attr=$47,scale=$04,step=$02($83A8-$83AE-$01-$08){$00,$00,$00,$10}(aaaa4-full) }
+ $83AE DEFB $10,$00         ; UDGTABLE#}
 
-; Graphics:
-b$83B0 DEFB $03,$0E,$00,$00,$7E,$00,$00,$00
- $83B8 DEFB $03,$00,$FF,$5E,$C0,$00,$0F,$03
- $83C0 DEFB $FF,$9F,$F0,$C0,$3F,$0E,$FF,$3F
- $83C8 DEFB $FC,$F0,$7F,$38,$FF,$7F,$FE,$FC
- $83D0 DEFB $FF,$70,$FF,$FF,$FF,$FE,$FF,$61
- $83D8 DEFB $FF,$FF,$FF,$FE,$7F,$00,$FF,$00
- $83E0 DEFB $FE,$00,$FF,$79,$FF,$E7,$FF,$9E
- $83E8 DEFB $FF,$79,$FF,$E7,$FF,$9E,$FF,$79
- $83F0 DEFB $FF,$E7,$FF,$9E,$7F,$00,$FF,$00
- $83F8 DEFB $FE,$00,$FF,$7F,$FF,$DF,$FF,$FE
- $8400 DEFB $7F,$00,$FF,$00,$FE,$00
- $8406 DEFB $03,$0F,$00,$00,$00,$00,$00,$00
- $840E DEFB $00,$00,$7E,$00,$00,$00,$03,$00
- $8416 DEFB $FF,$3E,$C0,$00,$0F,$03,$FF,$3F
- $841E DEFB $F0,$C0,$3F,$0E,$FF,$7F,$FC,$F0
- $8426 DEFB $7F,$38,$FF,$7F,$FE,$FC,$FF,$70
- $842E DEFB $FF,$FF,$FF,$FE,$7F,$00,$FF,$00
- $8436 DEFB $FE,$00,$7F,$3C,$FF,$F3,$FF,$CE
- $843E DEFB $7F,$3C,$FF,$F3,$FF,$CE,$7F,$3C
- $8446 DEFB $FF,$F3,$FF,$CE,$7F,$00,$FF,$00
- $844E DEFB $FE,$00,$FF,$7E,$FF,$7F,$FF,$FE
- $8456 DEFB $7F,$0F,$FF,$3F,$FE,$E0,$07,$00
- $845E DEFB $FF,$00,$E0,$00
- $8462 DEFB $03,$10,$00,$00,$00,$00,$00,$00
- $846A DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $8472 DEFB $7E,$00,$00,$00,$03,$00,$FF,$3E
- $847A DEFB $C0,$00,$1F,$03,$FF,$3F,$F8,$C0
- $8482 DEFB $7F,$1E,$FF,$3F,$FE,$F8,$FF,$78
- $848A DEFB $FF,$7F,$FF,$FE,$7F,$00,$FF,$00
- $8492 DEFB $FE,$00,$7F,$1E,$FF,$79,$FF,$E6
- $849A DEFB $7F,$1E,$FF,$79,$FF,$E6,$7F,$1E
- $84A2 DEFB $FF,$79,$FF,$E6,$7F,$00,$FF,$00
- $84AA DEFB $FE,$00,$FF,$7C,$FF,$FF,$FF,$FE
- $84B2 DEFB $7F,$1E,$FF,$7F,$FE,$F8,$1F,$01
- $84BA DEFB $FF,$7F,$F8,$80,$01,$00,$FF,$00
- $84C2 DEFB $80,$00
- $84C4 DEFB $03,$11,$00,$00,$00,$00,$00,$00
- $84CC DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $84D4 DEFB $00,$00,$00,$00,$01,$00,$FF,$00
- $84DC DEFB $80,$00,$1F,$01,$FF,$7F,$F8,$80
- $84E4 DEFB $7F,$1E,$FF,$7F,$FE,$F8,$FF,$7C
- $84EC DEFB $FF,$FF,$FF,$FE,$7F,$00,$FF,$00
- $84F4 DEFB $FE,$00,$FF,$4F,$FF,$3C,$FF,$F2
- $84FC DEFB $FF,$4F,$FF,$3C,$FF,$F2,$FF,$4F
- $8504 DEFB $FF,$3C,$FF,$F2,$7F,$00,$FF,$00
- $850C DEFB $FE,$00,$FF,$78,$FF,$7F,$FF,$FE
- $8514 DEFB $7F,$1E,$FF,$3F,$FE,$F8,$1F,$03
- $851C DEFB $FF,$3F,$F8,$C0,$03,$00,$FF,$3F
- $8524 DEFB $C0,$00,$00,$00,$7E,$00,$00,$00
- $852C DEFB $03,$12,$00,$00,$00,$00,$00,$00
- $8534 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $853C DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $8544 DEFB $00,$00,$07,$00,$FF,$00,$E0,$00
- $854C DEFB $7F,$07,$FF,$3F,$FE,$E0,$FF,$7E
- $8554 DEFB $FF,$7F,$FF,$FE,$7F,$00,$FF,$00
- $855C DEFB $FE,$00,$FF,$67,$FF,$9E,$FE,$78
- $8564 DEFB $FF,$67,$FF,$9E,$FE,$78,$FF,$67
- $856C DEFB $FF,$9E,$FE,$78,$7F,$00,$FF,$00
- $8574 DEFB $FE,$00,$FF,$70,$FF,$FF,$FF,$FE
- $857C DEFB $7F,$38,$FF,$7F,$FE,$FC,$3F,$0E
- $8584 DEFB $FF,$7F,$FC,$F0,$0F,$03,$FF,$3F
- $858C DEFB $F0,$C0,$03,$00,$FF,$3E,$C0,$00
- $8594 DEFB $00,$00,$7E,$00,$00,$00
- $859A DEFB $03,$13,$00,$00,$00,$00,$00,$00
- $85A2 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $85AA DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $85B2 DEFB $00,$00,$00,$00,$00,$00,$00,$00
- $85BA DEFB $7F,$00,$FF,$00,$FE,$00,$FF,$7F
- $85C2 DEFB $FF,$DF,$FF,$FE,$7F,$00,$FF,$00
- $85CA DEFB $FE,$00,$FF,$73,$FF,$CF,$FE,$3C
- $85D2 DEFB $FF,$73,$FF,$CF,$FE,$3C,$FF,$73
- $85DA DEFB $FF,$CF,$FE,$3C,$7F,$00,$FF,$00
- $85E2 DEFB $FE,$00,$FF,$61,$FF,$FF,$FF,$FE
- $85EA DEFB $FF,$70,$FF,$FF,$FF,$FE,$7F,$38
- $85F2 DEFB $FF,$7F,$FE,$FC,$3F,$0E,$FF,$3F
- $85FA DEFB $FC,$F0,$0F,$03,$FF,$9F,$F0,$C0
- $8602 DEFB $03,$00,$FF,$5E,$C0,$00,$00,$00
- $860A DEFB $7E,$00,$00,$00
+; Graphics: UFO
+;
+; #UDGTABLE(default,centre,centre,centre,centre,centre,centre,centre)
+; { =h,r2 Type | =h,c6 Frame }
+; { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 | =h #N$06 }
+; { =h Mask |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($83B2-$8400-$02-$30){$00,$00,$00,$38}(ufo1-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8408-$845C-$02-$30){$00,$00,$00,$3C}(ufo2-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8464-$84BE-$02-$30)(ufo3-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($84C6-$8526-$02-$30){$00,$00,$00,$44}(ufo4-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($852E-$8594-$02-$30){$00,$00,$00,$48}(ufo5-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($859C-$8608-$02-$30){$00,$00,$00,$4C}(ufo6-mask)
+; }
+; { =h Graphic |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($83B3-$8401-$02-$30){$00,$00,$00,$38}(ufo1) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8409-$845D-$02-$30){$00,$00,$00,$3C}(ufo2) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8465-$84BF-$02-$30)(ufo3) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($84C7-$8527-$02-$30){$00,$00,$00,$44}(ufo4) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($852F-$8595-$02-$30){$00,$00,$00,$48}(ufo5) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($859D-$8609-$02-$30){$00,$00,$00,$4C}(ufo6)
+; }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_UFO
+b$83B0 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $83B1 DEFB $0E                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $83B2 DEFB $00,$00,$7E,$00,$00,$00 ; {Graphic data, arranged as:
+ $83B8 DEFB $03,$00,$FF,$5E,$C0,$00 ; #UDGTABLE(default)
+ $83BE DEFB $0F,$03,$FF,$9F,$F0,$C0 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($83B2-$8400-$01-$30){$00,$00,$00,$38}(ufo1-full) }
+ $83C4 DEFB $3F,$0E,$FF,$3F,$FC,$F0 ; UDGTABLE#
+ $83CA DEFB $7F,$38,$FF,$7F,$FE,$FC ;
+ $83D0 DEFB $FF,$70,$FF,$FF,$FF,$FE ;
+ $83D6 DEFB $FF,$61,$FF,$FF,$FF,$FE ;
+ $83DC DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $83E2 DEFB $FF,$79,$FF,$E7,$FF,$9E ;
+ $83E8 DEFB $FF,$79,$FF,$E7,$FF,$9E ;
+ $83EE DEFB $FF,$79,$FF,$E7,$FF,$9E ;
+ $83F4 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $83FA DEFB $FF,$7F,$FF,$DF,$FF,$FE ;
+ $8400 DEFB $7F,$00,$FF,$00,$FE,$00 ; }
+; Pixels:
+ $8406 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8407 DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8408 DEFB $00,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $840E DEFB $00,$00,$7E,$00,$00,$00 ; #UDGTABLE(default)
+ $8414 DEFB $03,$00,$FF,$3E,$C0,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8408-$845C-$01-$30){$00,$00,$00,$3C}(ufo2-full) }
+ $841A DEFB $0F,$03,$FF,$3F,$F0,$C0 ; UDGTABLE#
+ $8420 DEFB $3F,$0E,$FF,$7F,$FC,$F0 ;
+ $8426 DEFB $7F,$38,$FF,$7F,$FE,$FC ;
+ $842C DEFB $FF,$70,$FF,$FF,$FF,$FE ;
+ $8432 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $8438 DEFB $7F,$3C,$FF,$F3,$FF,$CE ;
+ $843E DEFB $7F,$3C,$FF,$F3,$FF,$CE ;
+ $8444 DEFB $7F,$3C,$FF,$F3,$FF,$CE ;
+ $844A DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $8450 DEFB $FF,$7E,$FF,$7F,$FF,$FE ;
+ $8456 DEFB $7F,$0F,$FF,$3F,$FE,$E0 ;
+ $845C DEFB $07,$00,$FF,$00,$E0,$00 ; }
+; Pixels:
+ $8462 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8463 DEFB $10                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8464 DEFB $00,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $846A DEFB $00,$00,$00,$00,$00,$00 ; #UDGTABLE(default)
+ $8470 DEFB $00,$00,$7E,$00,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8464-$84BE-$01-$30)(ufo3-full) }
+ $8476 DEFB $03,$00,$FF,$3E,$C0,$00 ; UDGTABLE#
+ $847C DEFB $1F,$03,$FF,$3F,$F8,$C0 ;
+ $8482 DEFB $7F,$1E,$FF,$3F,$FE,$F8 ;
+ $8488 DEFB $FF,$78,$FF,$7F,$FF,$FE ;
+ $848E DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $8494 DEFB $7F,$1E,$FF,$79,$FF,$E6 ;
+ $849A DEFB $7F,$1E,$FF,$79,$FF,$E6 ;
+ $84A0 DEFB $7F,$1E,$FF,$79,$FF,$E6 ;
+ $84A6 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $84AC DEFB $FF,$7C,$FF,$FF,$FF,$FE ;
+ $84B2 DEFB $7F,$1E,$FF,$7F,$FE,$F8 ;
+ $84B8 DEFB $1F,$01,$FF,$7F,$F8,$80 ;
+ $84BE DEFB $01,$00,$FF,$00,$80,$00 ; }
+; Pixels:
+ $84C4 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $84C5 DEFB $11                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $84C6 DEFB $00,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $84CC DEFB $00,$00,$00,$00,$00,$00 ; #UDGTABLE(default)
+ $84D2 DEFB $00,$00,$00,$00,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($84C6-$8526-$01-$30){$00,$00,$00,$44}(ufo4-full) }
+ $84D8 DEFB $01,$00,$FF,$00,$80,$00 ; UDGTABLE#
+ $84DE DEFB $1F,$01,$FF,$7F,$F8,$80 ;
+ $84E4 DEFB $7F,$1E,$FF,$7F,$FE,$F8 ;
+ $84EA DEFB $FF,$7C,$FF,$FF,$FF,$FE ;
+ $84F0 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $84F6 DEFB $FF,$4F,$FF,$3C,$FF,$F2 ;
+ $84FC DEFB $FF,$4F,$FF,$3C,$FF,$F2 ;
+ $8502 DEFB $FF,$4F,$FF,$3C,$FF,$F2 ;
+ $8508 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $850E DEFB $FF,$78,$FF,$7F,$FF,$FE ;
+ $8514 DEFB $7F,$1E,$FF,$3F,$FE,$F8 ;
+ $851A DEFB $1F,$03,$FF,$3F,$F8,$C0 ;
+ $8520 DEFB $03,$00,$FF,$3F,$C0,$00 ;
+ $8526 DEFB $00,$00,$7E,$00,$00,$00 ; }
+; Pixels:
+ $852C DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $852D DEFB $12                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $852E DEFB $00,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $8534 DEFB $00,$00,$00,$00,$00,$00 ; #UDGTABLE(default)
+ $853A DEFB $00,$00,$00,$00,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($852E-$8594-$01-$30){$00,$00,$00,$48}(ufo5-full) }
+ $8540 DEFB $00,$00,$00,$00,$00,$00 ; UDGTABLE#
+ $8546 DEFB $07,$00,$FF,$00,$E0,$00 ;
+ $854C DEFB $7F,$07,$FF,$3F,$FE,$E0 ;
+ $8552 DEFB $FF,$7E,$FF,$7F,$FF,$FE ;
+ $8558 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $855E DEFB $FF,$67,$FF,$9E,$FE,$78 ;
+ $8564 DEFB $FF,$67,$FF,$9E,$FE,$78 ;
+ $856A DEFB $FF,$67,$FF,$9E,$FE,$78 ;
+ $8570 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $8576 DEFB $FF,$70,$FF,$FF,$FF,$FE ;
+ $857C DEFB $7F,$38,$FF,$7F,$FE,$FC ;
+ $8582 DEFB $3F,$0E,$FF,$7F,$FC,$F0 ;
+ $8588 DEFB $0F,$03,$FF,$3F,$F0,$C0 ;
+ $858E DEFB $03,$00,$FF,$3E,$C0,$00 ;
+ $8594 DEFB $00,$00,$7E,$00,$00,$00 ; }
+; Pixels:
+ $859A DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $859B DEFB $13                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $859C DEFB $00,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $85A2 DEFB $00,$00,$00,$00,$00,$00 ; #UDGTABLE(default)
+ $85A8 DEFB $00,$00,$00,$00,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($859C-$8608-$01-$30){$00,$00,$00,$4C}(ufo6-full) }
+ $85AE DEFB $00,$00,$00,$00,$00,$00 ; UDGTABLE#
+ $85B4 DEFB $00,$00,$00,$00,$00,$00 ;
+ $85BA DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $85C0 DEFB $FF,$7F,$FF,$DF,$FF,$FE ;
+ $85C6 DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $85CC DEFB $FF,$73,$FF,$CF,$FE,$3C ;
+ $85D2 DEFB $FF,$73,$FF,$CF,$FE,$3C ;
+ $85D8 DEFB $FF,$73,$FF,$CF,$FE,$3C ;
+ $85DE DEFB $7F,$00,$FF,$00,$FE,$00 ;
+ $85E4 DEFB $FF,$61,$FF,$FF,$FF,$FE ;
+ $85EA DEFB $FF,$70,$FF,$FF,$FF,$FE ;
+ $85F0 DEFB $7F,$38,$FF,$7F,$FE,$FC ;
+ $85F6 DEFB $3F,$0E,$FF,$3F,$FC,$F0 ;
+ $85FC DEFB $0F,$03,$FF,$9F,$F0,$C0 ;
+ $8602 DEFB $03,$00,$FF,$5E,$C0,$00 ;
+ $8608 DEFB $00,$00,$7E,$00,$00,$00 ; }
 
-; Graphics:
-b$860E DEFB $03,$0F,$F0,$00,$18,$00,$0E,$00
- $8616 DEFB $FE,$70,$3C,$18,$7F,$0E,$7F,$3E
- $861E DEFB $7E,$3C,$FE,$7C,$3F,$1F,$FF,$5A
- $8626 DEFB $FC,$F8,$1F,$07,$FF,$66,$F8,$E0
- $862E DEFB $07,$01,$FF,$99,$E1,$80,$29,$00
- $8636 DEFB $FF,$5A,$8A,$00,$15,$00,$FF,$99
- $863E DEFB $94,$00,$09,$00,$FF,$91,$A8,$00
- $8646 DEFB $03,$01,$95,$00,$D0,$80,$01,$00
- $864E DEFB $2A,$00,$A0,$00,$00,$00,$15,$00
- $8656 DEFB $50,$00,$00,$00,$08,$00,$08,$00
- $865E DEFB $00,$00,$10,$00,$10,$00,$00,$00
- $8666 DEFB $08,$00,$08,$00
- $866A DEFB $03,$0F,$00,$00,$18,$00,$00,$00
- $8672 DEFB $00,$00,$3C,$18,$00,$00,$00,$00
- $867A DEFB $7E,$3C,$00,$00,$01,$00,$FF,$5A
- $8682 DEFB $80,$00,$1F,$01,$FF,$7E,$F8,$80
- $868A DEFB $3F,$1F,$FF,$A5,$FC,$F8,$7F,$3F
- $8692 DEFB $FF,$5A,$FE,$FC,$FF,$60,$FF,$5A
- $869A DEFB $FF,$06,$64,$00,$FF,$4A,$56,$00
- $86A2 DEFB $0B,$00,$CB,$81,$AA,$00,$14,$00
- $86AA DEFB $95,$00,$55,$00,$02,$00,$AA,$00
- $86B2 DEFB $4A,$00,$01,$00,$11,$00,$20,$00
- $86BA DEFB $00,$00,$00,$00,$40,$00,$00,$00
- $86C2 DEFB $10,$00,$20,$00
- $86C6 DEFB $03,$0F,$00,$00,$18,$00,$00,$00
- $86CE DEFB $00,$00,$3C,$18,$00,$00,$00,$00
- $86D6 DEFB $7E,$3C,$00,$00,$01,$00,$FF,$5A
- $86DE DEFB $80,$00,$07,$01,$FF,$7E,$E0,$80
- $86E6 DEFB $0F,$07,$FF,$A5,$F0,$E0,$1F,$0F
- $86EE DEFB $FF,$18,$F8,$F0,$3F,$1C,$FF,$5A
- $86F6 DEFB $FC,$38,$3C,$18,$FF,$4A,$BC,$18
- $86FE DEFB $79,$30,$CB,$81,$9E,$0C,$34,$00
- $8706 DEFB $95,$00,$4C,$00,$0A,$00,$AA,$00
- $870E DEFB $AA,$00,$15,$00,$55,$00,$55,$00
- $8716 DEFB $00,$00,$20,$00,$80,$00,$00,$00
- $871E DEFB $20,$00,$80,$00
- $8722 DEFB $03,$0F,$00,$00,$18,$00,$00,$00
- $872A DEFB $03,$00,$3C,$18,$C0,$00,$07,$03
- $8732 DEFB $FF,$3C,$E0,$C0,$0F,$07,$FF,$5A
- $873A DEFB $F0,$E0,$1F,$0E,$FF,$A5,$FA,$70
- $8742 DEFB $1E,$0C,$FF,$18,$79,$30,$1E,$0C
- $874A DEFB $FF,$5A,$7A,$30,$3E,$1C,$FF,$52
- $8752 DEFB $7D,$38,$3D,$18,$D3,$81,$BE,$18
- $875A DEFB $3A,$10,$95,$00,$5D,$08,$15,$00
- $8762 DEFB $2A,$00,$AA,$00,$0A,$00,$45,$00
- $876A DEFB $51,$00,$04,$00,$20,$00,$20,$00
- $8772 DEFB $00,$00,$10,$00,$40,$00
- $8778 DEFB $03,$12,$30,$00,$00,$00,$0C,$00
- $8780 DEFB $78,$30,$00,$00,$1E,$0C,$3C,$18
- $8788 DEFB $00,$00,$3C,$18,$1E,$0C,$18,$00
- $8790 DEFB $78,$30,$1F,$0E,$3C,$18,$F9,$70
- $8798 DEFB $2F,$07,$FF,$3C,$F2,$E0,$17,$03
- $87A0 DEFB $FF,$5A,$E5,$C0,$2F,$03,$FF,$7E
- $87A8 DEFB $EA,$C0,$13,$01,$FF,$A5,$D4,$80
- $87B0 DEFB $09,$00,$FF,$5A,$A8,$00,$05,$00
- $87B8 DEFB $7E,$18,$50,$00,$02,$00,$FF,$52
- $87C0 DEFB $28,$00,$01,$00,$D3,$81,$D0,$00
- $87C8 DEFB $01,$00,$D7,$81,$A0,$00,$00,$00
- $87D0 DEFB $A9,$00,$40,$00,$00,$00,$00,$00
- $87D8 DEFB $00,$00,$00,$00,$20,$00,$40,$00
- $87E0 DEFB $00,$00,$10,$00,$20,$00
+; Graphics: Bird
+;
+; #UDGTABLE(default,centre,centre,centre,centre,centre,centre)
+; { =h,r2 Type | =h,c5 Frame }
+; { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 }
+; { =h Mask |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8610-$8664-$02-$30){$00,$00,$00,$3C}(bird1-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($866C-$86C0-$02-$30){$00,$00,$00,$3C}(bird2-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($86C8-$871C-$02-$30){$00,$00,$00,$3C}(bird3-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8724-$8772-$02-$30){$00,$00,$00,$38}(bird4-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($877A-$87E0-$02-$30){$00,$00,$00,$48}(bird5-mask)
+; }
+; { =h Graphic |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8611-$8665-$02-$30){$00,$00,$00,$3C}(bird1) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($866D-$86C1-$02-$30){$00,$00,$00,$3C}(bird2) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($86C9-$871D-$02-$30){$00,$00,$00,$3C}(bird3) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($8725-$8773-$02-$30){$00,$00,$00,$38}(bird4) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($877B-$87E1-$02-$30){$00,$00,$00,$48}(bird5)
+; }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Bird
+b$860E DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $860F DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8610 DEFB $F0,$00,$18,$00,$0E,$00 ; {Graphic data, arranged as:
+ $8616 DEFB $FE,$70,$3C,$18,$7F,$0E ; #UDGTABLE(default)
+ $861C DEFB $7F,$3E,$7E,$3C,$FE,$7C ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8610-$8664-$01-$30){$00,$00,$00,$3C}(bird1-full) }
+ $8622 DEFB $3F,$1F,$FF,$5A,$FC,$F8 ; UDGTABLE#
+ $8628 DEFB $1F,$07,$FF,$66,$F8,$E0 ;
+ $862E DEFB $07,$01,$FF,$99,$E1,$80 ;
+ $8634 DEFB $29,$00,$FF,$5A,$8A,$00 ;
+ $863A DEFB $15,$00,$FF,$99,$94,$00 ;
+ $8640 DEFB $09,$00,$FF,$91,$A8,$00 ;
+ $8646 DEFB $03,$01,$95,$00,$D0,$80 ;
+ $864C DEFB $01,$00,$2A,$00,$A0,$00 ;
+ $8652 DEFB $00,$00,$15,$00,$50,$00 ;
+ $8658 DEFB $00,$00,$08,$00,$08,$00 ;
+ $865E DEFB $00,$00,$10,$00,$10,$00 ;
+ $8664 DEFB $00,$00,$08,$00,$08,$00 ; }
+; Pixels:
+ $866A DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $866B DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $866C DEFB $00,$00,$18,$00,$00,$00 ; {Graphic data, arranged as:
+ $8672 DEFB $00,$00,$3C,$18,$00,$00 ; #UDGTABLE(default)
+ $8678 DEFB $00,$00,$7E,$3C,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($866C-$86C0-$01-$30){$00,$00,$00,$3C}(bird2-full) }
+ $867E DEFB $01,$00,$FF,$5A,$80,$00 ; UDGTABLE#
+ $8684 DEFB $1F,$01,$FF,$7E,$F8,$80 ;
+ $868A DEFB $3F,$1F,$FF,$A5,$FC,$F8 ;
+ $8690 DEFB $7F,$3F,$FF,$5A,$FE,$FC ;
+ $8696 DEFB $FF,$60,$FF,$5A,$FF,$06 ;
+ $869C DEFB $64,$00,$FF,$4A,$56,$00 ;
+ $86A2 DEFB $0B,$00,$CB,$81,$AA,$00 ;
+ $86A8 DEFB $14,$00,$95,$00,$55,$00 ;
+ $86AE DEFB $02,$00,$AA,$00,$4A,$00 ;
+ $86B4 DEFB $01,$00,$11,$00,$20,$00 ;
+ $86BA DEFB $00,$00,$00,$00,$40,$00 ;
+ $86C0 DEFB $00,$00,$10,$00,$20,$00 ; }
+; Pixels:
+ $86C6 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $86C7 DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $86C8 DEFB $00,$00,$18,$00,$00,$00 ; {Graphic data, arranged as:
+ $86CE DEFB $00,$00,$3C,$18,$00,$00 ; #UDGTABLE(default)
+ $86D4 DEFB $00,$00,$7E,$3C,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($86C8-$871C-$01-$30){$00,$00,$00,$3C}(bird3-full) }
+ $86DA DEFB $01,$00,$FF,$5A,$80,$00 ; UDGTABLE#
+ $86E0 DEFB $07,$01,$FF,$7E,$E0,$80 ;
+ $86E6 DEFB $0F,$07,$FF,$A5,$F0,$E0 ;
+ $86EC DEFB $1F,$0F,$FF,$18,$F8,$F0 ;
+ $86F2 DEFB $3F,$1C,$FF,$5A,$FC,$38 ;
+ $86F8 DEFB $3C,$18,$FF,$4A,$BC,$18 ;
+ $86FE DEFB $79,$30,$CB,$81,$9E,$0C ;
+ $8704 DEFB $34,$00,$95,$00,$4C,$00 ;
+ $870A DEFB $0A,$00,$AA,$00,$AA,$00 ;
+ $8710 DEFB $15,$00,$55,$00,$55,$00 ;
+ $8716 DEFB $00,$00,$20,$00,$80,$00 ;
+ $871C DEFB $00,$00,$20,$00,$80,$00 ; }
+; Pixels:
+ $8722 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8723 DEFB $0E                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8724 DEFB $00,$00,$18,$00,$00,$00 ; {Graphic data, arranged as:
+ $872A DEFB $03,$00,$3C,$18,$C0,$00 ; #UDGTABLE(default)
+ $8730 DEFB $07,$03,$FF,$3C,$E0,$C0 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8724-$8772-$01-$30){$00,$00,$00,$38}(bird4-full) }
+ $8736 DEFB $0F,$07,$FF,$5A,$F0,$E0 ; UDGTABLE#
+ $873C DEFB $1F,$0E,$FF,$A5,$FA,$70 ;
+ $8742 DEFB $1E,$0C,$FF,$18,$79,$30 ;
+ $8748 DEFB $1E,$0C,$FF,$5A,$7A,$30 ;
+ $874E DEFB $3E,$1C,$FF,$52,$7D,$38 ;
+ $8754 DEFB $3D,$18,$D3,$81,$BE,$18 ;
+ $875A DEFB $3A,$10,$95,$00,$5D,$08 ;
+ $8760 DEFB $15,$00,$2A,$00,$AA,$00 ;
+ $8766 DEFB $0A,$00,$45,$00,$51,$00 ;
+ $876C DEFB $04,$00,$20,$00,$20,$00 ;
+ $8772 DEFB $00,$00,$10,$00,$40,$00 ; }
+; Pixels:
+ $8778 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8779 DEFB $12                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $877A DEFB $30,$00,$00,$00,$0C,$00 ; {Graphic data, arranged as:
+ $8780 DEFB $78,$30,$00,$00,$1E,$0C ; #UDGTABLE(default)
+ $8786 DEFB $3C,$18,$00,$00,$3C,$18 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($877A-$87E0-$01-$30){$00,$00,$00,$48}(bird5-full) }
+ $878C DEFB $1E,$0C,$18,$00,$78,$30 ; UDGTABLE#
+ $8792 DEFB $1F,$0E,$3C,$18,$F9,$70 ;
+ $8798 DEFB $2F,$07,$FF,$3C,$F2,$E0 ;
+ $879E DEFB $17,$03,$FF,$5A,$E5,$C0 ;
+ $87A4 DEFB $2F,$03,$FF,$7E,$EA,$C0 ;
+ $87AA DEFB $13,$01,$FF,$A5,$D4,$80 ;
+ $87B0 DEFB $09,$00,$FF,$5A,$A8,$00 ;
+ $87B6 DEFB $05,$00,$7E,$18,$50,$00 ;
+ $87BC DEFB $02,$00,$FF,$52,$28,$00 ;
+ $87C2 DEFB $01,$00,$D3,$81,$D0,$00 ;
+ $87C8 DEFB $01,$00,$D7,$81,$A0,$00 ;
+ $87CE DEFB $00,$00,$A9,$00,$40,$00 ;
+ $87D4 DEFB $00,$00,$00,$00,$00,$00 ;
+ $87DA DEFB $00,$00,$20,$00,$40,$00 ;
+ $87E0 DEFB $00,$00,$10,$00,$20,$00 ; }
 
-; Graphics:
-b$87E6 DEFB $02,$0D,$00,$00,$00,$00,$00,$00
- $87EE DEFB $00,$00,$00,$00,$00,$00,$02,$00
- $87F6 DEFB $40,$00,$0C,$00,$E8,$40,$1F,$0C
- $87FE DEFB $E0,$C0,$1F,$0F,$F0,$C0,$0F,$07
- $8806 DEFB $F8,$70,$17,$02,$FC,$38,$0F,$07
- $880E DEFB $F8,$E0,$1F,$0E,$F0,$C0,$0E,$00
- $8816 DEFB $E0,$40,$01,$00,$40,$00
- $881C DEFB $02,$0D,$00,$00,$00,$00,$00,$00
- $8824 DEFB $00,$00,$02,$00,$40,$00,$18,$00
- $882C DEFB $E8,$40,$3F,$18,$E0,$C0,$3F,$1E
- $8834 DEFB $FC,$E0,$1F,$0F,$FE,$BC,$0F,$06
- $883C DEFB $FC,$38,$27,$03,$F8,$70,$0F,$07
- $8844 DEFB $F4,$E0,$0F,$07,$F8,$70,$1F,$0C
- $884C DEFB $78,$30,$0C,$00,$B0,$00,$02,$0E
- $8854 DEFB $00,$00,$20,$00,$08,$00,$70,$20
- $885C DEFB $00,$00
- $885E DEFB $F4,$60,$1F,$00,$F0,$E0,$3F,$1F
- $8866 DEFB $F2,$E0,$1F,$0F,$FC,$30,$0F,$06
- $886E DEFB $FE,$5C,$17,$02,$FC,$38,$0F,$07
- $8876 DEFB $F8,$A0,$5F,$0F,$F4,$E0,$1F,$0E
- $887E DEFB $F8,$70,$3E,$18,$7A,$30,$19,$00
- $8886 DEFB $38,$10,$00,$00,$10,$00
- $888C DEFB $02,$10,$00,$00,$80,$00,$49,$00
- $8894 DEFB $D2,$80,$03,$01,$E4,$C0,$7F,$03
- $889C DEFB $E0,$C0,$FF,$7B,$FE,$60,$7F,$3E
- $88A4 DEFB $FF,$7E,$7F,$38,$FE,$9C,$3F,$15
- $88AC DEFB $FC,$38,$BF,$1A,$F8,$70,$1F,$0C
- $88B4 DEFB $FA,$B0,$5F,$0D,$FC,$B8,$3F,$1F
- $88BC DEFB $FC,$F8,$3F,$1E,$FE,$FC,$7E,$3C
- $88C4 DEFB $FE,$3C,$7D,$30,$3E,$0C,$30,$00
- $88CC DEFB $0C,$00
- $88CE DEFB $02,$13,$40,$00,$40,$00,$00,$00
- $88D6 DEFB $E4,$40,$11,$00,$E1,$C0,$43,$01
- $88DE DEFB $F4,$E0,$13,$01,$F0,$E0,$7F,$03
- $88E6 DEFB $F8,$60,$FF,$7F,$FE,$78,$FF,$7E
- $88EE DEFB $FF,$7E,$7F,$32,$FE,$8C,$7F,$39
- $88F6 DEFB $FC,$58,$3F,$1E,$FD,$B8,$9F,$0D
- $88FE DEFB $FA,$70,$1F,$0A,$FC,$B8,$3F,$1B
- $8906 DEFB $FC,$D8,$7F,$3F,$FE,$7C,$7F,$3E
- $890E DEFB $7F,$3E,$FE,$78,$3F,$0E,$F9,$60
- $8916 DEFB $4F,$02,$60,$00,$02,$00
+; Graphics: Blast
+;
+; #UDGTABLE(default,centre,centre,centre,centre,centre,centre)
+; { =h,r2 Type | =h,c5 Frame }
+; { =h #N$01 | =h #N$02 | =h #N$03 | =h #N$04 | =h #N$05 }
+; { =h Mask |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($87E8-$8818-$02-$20){$00,$00,$00,$34}(blast1-mask) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($881E-$884E-$02-$20){$00,$00,$00,$34}(blast2-mask) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($8854-$8888-$02-$20){$00,$00,$00,$38}(blast3-mask) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($888E-$88CA-$02-$20)(blast4-mask) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($88D0-$8918-$02-$20){$00,$00,$00,$4C}(blast5-mask)
+; }
+; { =h Graphic |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($87E9-$8819-$02-$20){$00,$00,$00,$34}(blast1) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($881F-$884F-$02-$20){$00,$00,$00,$34}(blast2) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($8855-$8889-$02-$20){$00,$00,$00,$38}(blast3) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($888F-$88CB-$02-$20)(blast4) |
+; #UDGARRAY$02,attr=$47,scale=$04,step=$04($88D1-$8919-$02-$20){$00,$00,$00,$4C}(blast5)
+; }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Blast
+b$87E6 DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $87E7 DEFB $0D             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $87E8 DEFB $00,$00,$00,$00 ; {Graphic data, arranged as:
+ $87EC DEFB $00,$00,$00,$00 ; #UDGTABLE(default)
+ $87F0 DEFB $00,$00,$00,$00 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($87E8-$8818-$01-$20){$00,$00,$00,$34}(blast1-full) }
+ $87F4 DEFB $02,$00,$40,$00 ; UDGTABLE#
+ $87F8 DEFB $0C,$00,$E8,$40 ;
+ $87FC DEFB $1F,$0C,$E0,$C0 ;
+ $8800 DEFB $1F,$0F,$F0,$C0 ;
+ $8804 DEFB $0F,$07,$F8,$70 ;
+ $8808 DEFB $17,$02,$FC,$38 ;
+ $880C DEFB $0F,$07,$F8,$E0 ;
+ $8810 DEFB $1F,$0E,$F0,$C0 ;
+ $8814 DEFB $0E,$00,$E0,$40 ;
+ $8818 DEFB $01,$00,$40,$00 ; }
+; Pixels:
+ $881C DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $881D DEFB $0D             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $881E DEFB $00,$00,$00,$00 ; {Graphic data, arranged as:
+ $8822 DEFB $00,$00,$00,$00 ; #UDGTABLE(default)
+ $8826 DEFB $02,$00,$40,$00 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($881E-$884E-$01-$20){$00,$00,$00,$34}(blast2-full) }
+ $882A DEFB $18,$00,$E8,$40 ; UDGTABLE#
+ $882E DEFB $3F,$18,$E0,$C0 ;
+ $8832 DEFB $3F,$1E,$FC,$E0 ;
+ $8836 DEFB $1F,$0F,$FE,$BC ;
+ $883A DEFB $0F,$06,$FC,$38 ;
+ $883E DEFB $27,$03,$F8,$70 ;
+ $8842 DEFB $0F,$07,$F4,$E0 ;
+ $8846 DEFB $0F,$07,$F8,$70 ;
+ $884A DEFB $1F,$0C,$78,$30 ;
+ $884E DEFB $0C,$00,$B0,$00 ; }
+; Pixels:
+ $8852 DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $8853 DEFB $0E             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8854 DEFB $00,$00,$20,$00 ; {Graphic data, arranged as:
+ $8858 DEFB $08,$00,$70,$20 ; #UDGTABLE(default)
+ $885C DEFB $00,$00,$F4,$60 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($8854-$8888-$01-$20){$00,$00,$00,$38}(blast3-full) }
+ $8860 DEFB $1F,$00,$F0,$E0 ; UDGTABLE#
+ $8864 DEFB $3F,$1F,$F2,$E0 ;
+ $8868 DEFB $1F,$0F,$FC,$30 ;
+ $886C DEFB $0F,$06,$FE,$5C ;
+ $8870 DEFB $17,$02,$FC,$38 ;
+ $8874 DEFB $0F,$07,$F8,$A0 ;
+ $8878 DEFB $5F,$0F,$F4,$E0 ;
+ $887C DEFB $1F,$0E,$F8,$70 ;
+ $8880 DEFB $3E,$18,$7A,$30 ;
+ $8884 DEFB $19,$00,$38,$10 ;
+ $8888 DEFB $00,$00,$10,$00 ; }
+; Pixels:
+ $888C DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $888D DEFB $10             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $888E DEFB $00,$00,$80,$00 ; {Graphic data, arranged as:
+ $8892 DEFB $49,$00,$D2,$80 ; #UDGTABLE(default)
+ $8896 DEFB $03,$01,$E4,$C0 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($888E-$88CA-$01-$20)(blast4-full) }
+ $889A DEFB $7F,$03,$E0,$C0 ; UDGTABLE#
+ $889E DEFB $FF,$7B,$FE,$60 ;
+ $88A2 DEFB $7F,$3E,$FF,$7E ;
+ $88A6 DEFB $7F,$38,$FE,$9C ;
+ $88AA DEFB $3F,$15,$FC,$38 ;
+ $88AE DEFB $BF,$1A,$F8,$70 ;
+ $88B2 DEFB $1F,$0C,$FA,$B0 ;
+ $88B6 DEFB $5F,$0D,$FC,$B8 ;
+ $88BA DEFB $3F,$1F,$FC,$F8 ;
+ $88BE DEFB $3F,$1E,$FE,$FC ;
+ $88C2 DEFB $7E,$3C,$FE,$3C ;
+ $88C6 DEFB $7D,$30,$3E,$0C ;
+ $88CA DEFB $30,$00,$0C,$00 ; }
+; Pixels:
+ $88CE DEFB $02             ; Width: #N(#PEEK(#PC)) byte(s).
+ $88CF DEFB $13             ; Height: #N(#PEEK(#PC)) pixel(s).
+ $88D0 DEFB $40,$00,$40,$00 ; {Graphic data, arranged as:
+ $88D4 DEFB $00,$00,$E4,$40 ; #UDGTABLE(default)
+ $88D8 DEFB $11,$00,$E1,$C0 ; { #UDGARRAY$04,attr=$47,scale=$04,step=$04($88D0-$8918-$01-$20){$00,$00,$00,$4C}(blast5-full) }
+ $88DC DEFB $43,$01,$F4,$E0 ; UDGTABLE#
+ $88E0 DEFB $13,$01,$F0,$E0 ;
+ $88E4 DEFB $7F,$03,$F8,$60 ;
+ $88E8 DEFB $FF,$7F,$FE,$78 ;
+ $88EC DEFB $FF,$7E,$FF,$7E ;
+ $88F0 DEFB $7F,$32,$FE,$8C ;
+ $88F4 DEFB $7F,$39,$FC,$58 ;
+ $88F8 DEFB $3F,$1E,$FD,$B8 ;
+ $88FC DEFB $9F,$0D,$FA,$70 ;
+ $8900 DEFB $1F,$0A,$FC,$B8 ;
+ $8904 DEFB $3F,$1B,$FC,$D8 ;
+ $8908 DEFB $7F,$3F,$FE,$7C ;
+ $890C DEFB $7F,$3E,$7F,$3E ;
+ $8910 DEFB $FE,$78,$3F,$0E ;
+ $8914 DEFB $F9,$60,$4F,$02 ;
+ $8918 DEFB $60,$00,$02,$00 ; }
 
-; Graphics:
-b$891C DEFB $03,$1B,$0C,$00,$01,$00,$80,$00
- $8924 DEFB $1E,$04,$FB,$00,$C0,$80,$3F,$16
- $892C DEFB $FF,$FA,$E0,$C0,$7F,$27,$FF,$74
- $8934 DEFB $F0,$E0,$7F,$27,$FF,$04,$F0,$E0
- $893C DEFB $FF,$47,$DF,$88,$F8,$F0,$FF,$4F
- $8944 DEFB $FF,$89,$F8,$F0,$FF,$4F,$FF,$A9
- $894C DEFB $F8,$F0,$7F,$30,$FF,$26,$F0,$00
- $8954 DEFB $FF,$4F,$FF,$89,$F8,$F0,$FF,$4F
- $895C DEFB $DF,$89,$F8,$F0,$7F,$00,$8F,$00
- $8964 DEFB $F0,$00,$1C,$00,$01,$00,$80,$00
- $896C DEFB $3E,$1C,$03,$01,$C0,$80,$7F,$1E
- $8974 DEFB $03,$01,$E0,$40,$7F,$36,$07,$02
- $897C DEFB $E0,$80,$7F,$2B,$87,$00,$F0,$20
- $8984 DEFB $FF,$53,$87,$02,$E0,$80,$7F,$09
- $898C DEFB $83,$00,$E0,$40,$7F,$22,$83,$01
- $8994 DEFB $C0,$00,$7F,$10,$81,$00,$C0,$80
- $899C DEFB $7F,$29,$81,$00,$C0,$00,$3F,$00
- $89A4 DEFB $81,$00,$C0,$80,$3F,$15,$80,$00
- $89AC DEFB $80,$00,$1F,$00,$00,$00,$00,$00
- $89B4 DEFB $1F,$04,$00,$00,$00,$00,$0E,$00
- $89BC DEFB $00,$00,$00,$00
- $89C0 DEFB $03,$1C,$0C,$00,$01,$00,$80,$00
- $89C8 DEFB $1E,$04,$FB,$00,$C0,$80,$3F,$16
- $89D0 DEFB $FF,$FA,$E0,$C0,$7F,$27,$FF,$74
- $89D8 DEFB $F0,$E0,$7F,$27,$FF,$04,$F0,$E0
- $89E0 DEFB $FF,$47,$DF,$88,$F8,$F0,$FF,$4F
- $89E8 DEFB $FF,$89,$F8,$F0,$FF,$4F,$FF,$A9
- $89F0 DEFB $F8,$F0,$7F,$30,$FF,$26,$F0,$00
- $89F8 DEFB $FF,$4F,$FF,$89,$F8,$F0,$FF,$4F
- $8A00 DEFB $DF,$89,$F8,$F0,$7F,$00,$8F,$00
- $8A08 DEFB $F0,$00,$0C,$00,$01,$00,$C0,$00
- $8A10 DEFB $1E,$0C,$03,$01,$E0,$C0,$3E,$14
- $8A18 DEFB $07,$02,$F0,$A0,$3F,$0A,$07,$01
- $8A20 DEFB $F8,$70,$7F,$20,$0F,$06,$F8,$A0
- $8A28 DEFB $7F,$0A,$0F,$02,$F8,$80,$3E,$10
- $8A30 DEFB $0F,$04,$F8,$50,$3E,$04,$0F,$01
- $8A38 DEFB $F0,$00,$1C,$08,$0F,$04,$F0,$40
- $8A40 DEFB $1C,$00,$0F,$00,$F0,$A0,$1C,$08
- $8A48 DEFB $07,$01,$E0,$00,$08,$00,$07,$00
- $8A50 DEFB $E0,$40,$00,$00,$03,$01,$E0,$00
- $8A58 DEFB $00,$00,$03,$00,$C0,$00,$00,$00
- $8A60 DEFB $01,$00,$C0,$80,$00,$00,$00,$00
- $8A68 DEFB $80,$00
+; Graphics: Rocket
+;
+; #UDGTABLE(default,centre,centre,centre)
+; { =h,r2 Type | =h,c5 Frame }
+; { =h #N$01 | =h #N$02 }
+; { =h Mask |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($891E-$89BA-$02-$30){$00,$00,$00,$6C}(rocket1-mask) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($89C2-$8A64-$02-$30){$00,$00,$00,$70}(rocket2-mask)
+; }
+; { =h Graphic |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($891F-$89BB-$02-$30){$00,$00,$00,$6C}(rocket1) |
+; #UDGARRAY$03,attr=$47,scale=$04,step=$06($89C3-$8A65-$02-$30){$00,$00,$00,$70}(rocket2)
+; }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Rocket
+b$891C DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $891D DEFB $1B                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $891E DEFB $0C,$00,$01,$00,$80,$00 ; {Graphic data, arranged as:
+ $8924 DEFB $1E,$04,$FB,$00,$C0,$80 ; #UDGTABLE(default)
+ $892A DEFB $3F,$16,$FF,$FA,$E0,$C0 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($891E-$89BA-$01-$30){$00,$00,$00,$6C}(rocket1-full) }
+ $8930 DEFB $7F,$27,$FF,$74,$F0,$E0 ; UDGTABLE#
+ $8936 DEFB $7F,$27,$FF,$04,$F0,$E0 ;
+ $893C DEFB $FF,$47,$DF,$88,$F8,$F0 ;
+ $8942 DEFB $FF,$4F,$FF,$89,$F8,$F0 ;
+ $8948 DEFB $FF,$4F,$FF,$A9,$F8,$F0 ;
+ $894E DEFB $7F,$30,$FF,$26,$F0,$00 ;
+ $8954 DEFB $FF,$4F,$FF,$89,$F8,$F0 ;
+ $895A DEFB $FF,$4F,$DF,$89,$F8,$F0 ;
+ $8960 DEFB $7F,$00,$8F,$00,$F0,$00 ;
+ $8966 DEFB $1C,$00,$01,$00,$80,$00 ;
+ $896C DEFB $3E,$1C,$03,$01,$C0,$80 ;
+ $8972 DEFB $7F,$1E,$03,$01,$E0,$40 ;
+ $8978 DEFB $7F,$36,$07,$02,$E0,$80 ;
+ $897E DEFB $7F,$2B,$87,$00,$F0,$20 ;
+ $8984 DEFB $FF,$53,$87,$02,$E0,$80 ;
+ $898A DEFB $7F,$09,$83,$00,$E0,$40 ;
+ $8990 DEFB $7F,$22,$83,$01,$C0,$00 ;
+ $8996 DEFB $7F,$10,$81,$00,$C0,$80 ;
+ $899C DEFB $7F,$29,$81,$00,$C0,$00 ;
+ $89A2 DEFB $3F,$00,$81,$00,$C0,$80 ;
+ $89A8 DEFB $3F,$15,$80,$00,$80,$00 ;
+ $89AE DEFB $1F,$00,$00,$00,$00,$00 ;
+ $89B4 DEFB $1F,$04,$00,$00,$00,$00 ;
+ $89BA DEFB $0E,$00,$00,$00,$00,$00 ; }
+; Pixels:
+ $89C0 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $89C1 DEFB $1C                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $89C2 DEFB $0C,$00,$01,$00,$80,$00 ; {Graphic data, arranged as:
+ $89C8 DEFB $1E,$04,$FB,$00,$C0,$80 ; #UDGTABLE(default)
+ $89CE DEFB $3F,$16,$FF,$FA,$E0,$C0 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($89C2-$8A64-$01-$30){$00,$00,$00,$70}(rocket2-full) }
+ $89D4 DEFB $7F,$27,$FF,$74,$F0,$E0 ; UDGTABLE#
+ $89DA DEFB $7F,$27,$FF,$04,$F0,$E0 ;
+ $89E0 DEFB $FF,$47,$DF,$88,$F8,$F0 ;
+ $89E6 DEFB $FF,$4F,$FF,$89,$F8,$F0 ;
+ $89EC DEFB $FF,$4F,$FF,$A9,$F8,$F0 ;
+ $89F2 DEFB $7F,$30,$FF,$26,$F0,$00 ;
+ $89F8 DEFB $FF,$4F,$FF,$89,$F8,$F0 ;
+ $89FE DEFB $FF,$4F,$DF,$89,$F8,$F0 ;
+ $8A04 DEFB $7F,$00,$8F,$00,$F0,$00 ;
+ $8A0A DEFB $0C,$00,$01,$00,$C0,$00 ;
+ $8A10 DEFB $1E,$0C,$03,$01,$E0,$C0 ;
+ $8A16 DEFB $3E,$14,$07,$02,$F0,$A0 ;
+ $8A1C DEFB $3F,$0A,$07,$01,$F8,$70 ;
+ $8A22 DEFB $7F,$20,$0F,$06,$F8,$A0 ;
+ $8A28 DEFB $7F,$0A,$0F,$02,$F8,$80 ;
+ $8A2E DEFB $3E,$10,$0F,$04,$F8,$50 ;
+ $8A34 DEFB $3E,$04,$0F,$01,$F0,$00 ;
+ $8A3A DEFB $1C,$08,$0F,$04,$F0,$40 ;
+ $8A40 DEFB $1C,$00,$0F,$00,$F0,$A0 ;
+ $8A46 DEFB $1C,$08,$07,$01,$E0,$00 ;
+ $8A4C DEFB $08,$00,$07,$00,$E0,$40 ;
+ $8A52 DEFB $00,$00,$03,$01,$E0,$00 ;
+ $8A58 DEFB $00,$00,$03,$00,$C0,$00 ;
+ $8A5E DEFB $00,$00,$01,$00,$C0,$80 ;
+ $8A64 DEFB $00,$00,$00,$00,$80,$00 ; }
 
-; Graphics:
-b$8A6A DEFB $03,$0F,$00,$00,$00,$00,$70,$00
- $8A72 DEFB $38,$00,$20,$00,$F8,$70,$7C,$38
- $8A7A DEFB $71,$20,$FC,$98,$FF,$4C,$FB,$31
- $8A82 DEFB $FE,$3C,$FF,$5D,$FF,$F9,$FE,$7C
- $8A8A DEFB $FF,$7C,$FB,$31,$FE,$FC,$7C,$38
- $8A92 DEFB $71,$20,$FC,$F8,$38,$00,$20,$00
- $8A9A DEFB $F8,$70,$7F,$00,$DD,$00,$FC,$00
- $8AA2 DEFB $FF,$77,$FF,$DD,$FE,$D4,$FF,$45
- $8AAA DEFB $FF,$55,$FE,$14,$FF,$75,$FF,$5D
- $8AB2 DEFB $FE,$DC,$7F,$15,$FF,$54,$FE,$54
- $8ABA DEFB $FF,$74,$FF,$55,$FE,$D4,$74,$00
- $8AC2 DEFB $55,$00,$D4,$00
+; Graphics: Smash
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8A6C-$8AC0-$02-$30){$00,$00,$00,$3C}(smash-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8A6D-$8AC1-$02-$30){$00,$00,$00,$3C}(smash) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Smash
+b$8A6A DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8A6B DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8A6C DEFB $00,$00,$00,$00,$70,$00 ; {Graphic data, arranged as:
+ $8A72 DEFB $38,$00,$20,$00,$F8,$70 ; #UDGTABLE(default)
+ $8A78 DEFB $7C,$38,$71,$20,$FC,$98 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8A6C-$8AC0-$01-$30){$00,$00,$00,$3C}(smash-full) }
+ $8A7E DEFB $FF,$4C,$FB,$31,$FE,$3C ; UDGTABLE#
+ $8A84 DEFB $FF,$5D,$FF,$F9,$FE,$7C ;
+ $8A8A DEFB $FF,$7C,$FB,$31,$FE,$FC ;
+ $8A90 DEFB $7C,$38,$71,$20,$FC,$F8 ;
+ $8A96 DEFB $38,$00,$20,$00,$F8,$70 ;
+ $8A9C DEFB $7F,$00,$DD,$00,$FC,$00 ;
+ $8AA2 DEFB $FF,$77,$FF,$DD,$FE,$D4 ;
+ $8AA8 DEFB $FF,$45,$FF,$55,$FE,$14 ;
+ $8AAE DEFB $FF,$75,$FF,$5D,$FE,$DC ;
+ $8AB4 DEFB $7F,$15,$FF,$54,$FE,$54 ;
+ $8ABA DEFB $FF,$74,$FF,$55,$FE,$D4 ;
+ $8AC0 DEFB $74,$00,$55,$00,$D4,$00 ; }
 
-; Graphics:
-b$8AC6 DEFB $03,$0F,$0F,$00,$FF,$00,$F0,$00
- $8ACE DEFB $1F,$0F,$FF,$FF,$F8,$F0,$1F,$0D
- $8AD6 DEFB $FF,$AB,$F8,$70,$3F,$1D,$FF,$6B
- $8ADE DEFB $FC,$78,$3F,$1C,$FF,$EB,$FC,$78
- $8AE6 DEFB $7F,$3D,$FF,$6B,$FE,$7C,$7F,$3D
- $8AEE DEFB $FF,$A9,$FE,$3C,$FF,$7F,$FF,$FF
- $8AF6 DEFB $FF,$FE,$FF,$45,$FF,$A2,$FF,$22
- $8AFE DEFB $FF,$55,$FF,$AE,$FF,$AE,$FF,$45
- $8B06 DEFB $FF,$A2,$FF,$A2,$FF,$55,$FF,$AE
- $8B0E DEFB $FF,$BA,$FF,$54,$FF,$A2,$FF,$A2
- $8B16 DEFB $FF,$7F,$FF,$FF,$FF,$FE,$7F,$00
- $8B1E DEFB $FF,$00,$FE,$00
+; Graphics: Kill Aliens
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8AC8-$8B1C-$02-$30){$00,$00,$00,$3C}(kill-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8AC9-$8B1D-$02-$30){$00,$00,$00,$3C}(kill) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_KillAliens
+b$8AC6 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8AC7 DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8AC8 DEFB $0F,$00,$FF,$00,$F0,$00 ; {Graphic data, arranged as:
+ $8ACE DEFB $1F,$0F,$FF,$FF,$F8,$F0 ; #UDGTABLE(default)
+ $8AD4 DEFB $1F,$0D,$FF,$AB,$F8,$70 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8AC8-$8B1C-$01-$30){$00,$00,$00,$3C}(kill-full) }
+ $8ADA DEFB $3F,$1D,$FF,$6B,$FC,$78 ; UDGTABLE#
+ $8AE0 DEFB $3F,$1C,$FF,$EB,$FC,$78 ;
+ $8AE6 DEFB $7F,$3D,$FF,$6B,$FE,$7C ;
+ $8AEC DEFB $7F,$3D,$FF,$A9,$FE,$3C ;
+ $8AF2 DEFB $FF,$7F,$FF,$FF,$FF,$FE ;
+ $8AF8 DEFB $FF,$45,$FF,$A2,$FF,$22 ;
+ $8AFE DEFB $FF,$55,$FF,$AE,$FF,$AE ;
+ $8B04 DEFB $FF,$45,$FF,$A2,$FF,$A2 ;
+ $8B0A DEFB $FF,$55,$FF,$AE,$FF,$BA ;
+ $8B10 DEFB $FF,$54,$FF,$A2,$FF,$A2 ;
+ $8B16 DEFB $FF,$7F,$FF,$FF,$FF,$FE ;
+ $8B1C DEFB $7F,$00,$FF,$00,$FE,$00 ; }
 
-; Graphics:
-b$8B22 DEFB $03,$0C,$00,$00,$00,$00,$60,$00
- $8B2A DEFB $00,$00,$30,$00,$F0,$60,$00,$00
- $8B32 DEFB $F9,$30,$F8,$70,$03,$00,$FF,$F1
- $8B3A DEFB $FC,$B8,$07,$03,$FF,$E6,$FC,$D8
- $8B42 DEFB $7F,$07,$FF,$83,$FC,$58,$FF,$6F
- $8B4A DEFB $FF,$FC,$FC,$38,$FF,$0F,$FF,$FF
- $8B52 DEFB $F8,$F0,$FF,$6F,$FF,$FF,$F0,$E0
- $8B5A DEFB $FF,$6F,$FF,$FF,$E0,$C0,$FF,$6F
- $8B62 DEFB $FF,$FE,$C0,$00,$6F,$00,$FE,$00
- $8B6A DEFB $00,$00
+; Graphics: Hand
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B24-$8B66-$02-$30){$00,$00,$00,$30}(hand-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B25-$8B67-$02-$30){$00,$00,$00,$30}(hand) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Hand
+b$8B22 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8B23 DEFB $0C                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8B24 DEFB $00,$00,$00,$00,$60,$00 ; {Graphic data, arranged as:
+ $8B2A DEFB $00,$00,$30,$00,$F0,$60 ; #UDGTABLE(default)
+ $8B30 DEFB $00,$00,$F9,$30,$F8,$70 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8B24-$8B66-$01-$30){$00,$00,$00,$30}(hand-full) }
+ $8B36 DEFB $03,$00,$FF,$F1,$FC,$B8 ; UDGTABLE#
+ $8B3C DEFB $07,$03,$FF,$E6,$FC,$D8 ;
+ $8B42 DEFB $7F,$07,$FF,$83,$FC,$58 ;
+ $8B48 DEFB $FF,$6F,$FF,$FC,$FC,$38 ;
+ $8B4E DEFB $FF,$0F,$FF,$FF,$F8,$F0 ;
+ $8B54 DEFB $FF,$6F,$FF,$FF,$F0,$E0 ;
+ $8B5A DEFB $FF,$6F,$FF,$FF,$E0,$C0 ;
+ $8B60 DEFB $FF,$6F,$FF,$FE,$C0,$00 ;
+ $8B66 DEFB $6F,$00,$FE,$00,$00,$00 ; }
 
-; Graphics:
-b$8B6C DEFB $03,$0B,$3F,$00,$FF,$00,$F0,$00
- $8B74 DEFB $7F,$37,$FF,$FF,$F8,$B0,$FF,$48
- $8B7C DEFB $FF,$00,$FC,$48,$FF,$48,$FF,$00
- $8B84 DEFB $FC,$48,$7F,$17,$FF,$FF,$F8,$A0
- $8B8C DEFB $7F,$30,$FF,$FC,$F8,$30,$FF,$7F
- $8B94 DEFB $FF,$7B,$FC,$F8,$7F,$30,$FF,$FC
- $8B9C DEFB $F8,$30,$3F,$17,$FF,$FF,$F0,$A0
- $8BA4 DEFB $1F,$0F,$FF,$FF,$E0,$C0,$0F,$00
- $8BAC DEFB $FF,$00,$C0,$00
+; Graphics: Bonus Size
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B6E-$8BAA-$02-$30){$00,$00,$00,$2C}(bonus-size-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8B6F-$8BAB-$02-$30){$00,$00,$00,$2C}(bonus-size) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_BonusSize
+b$8B6C DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8B6D DEFB $0B                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8B6E DEFB $3F,$00,$FF,$00,$F0,$00 ; {Graphic data, arranged as:
+ $8B74 DEFB $7F,$37,$FF,$FF,$F8,$B0 ; #UDGTABLE(default)
+ $8B7A DEFB $FF,$48,$FF,$00,$FC,$48 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8B6E-$8BAA-$01-$30){$00,$00,$00,$2C}(bonus-size-full) }
+ $8B80 DEFB $FF,$48,$FF,$00,$FC,$48 ; UDGTABLE#
+ $8B86 DEFB $7F,$17,$FF,$FF,$F8,$A0 ;
+ $8B8C DEFB $7F,$30,$FF,$FC,$F8,$30 ;
+ $8B92 DEFB $FF,$7F,$FF,$7B,$FC,$F8 ;
+ $8B98 DEFB $7F,$30,$FF,$FC,$F8,$30 ;
+ $8B9E DEFB $3F,$17,$FF,$FF,$F0,$A0 ;
+ $8BA4 DEFB $1F,$0F,$FF,$FF,$E0,$C0 ;
+ $8BAA DEFB $0F,$00,$FF,$00,$C0,$00 ; }
 
-; Graphics:
-b$8BB0 DEFB $03,$0F,$1C,$00,$00,$00,$00,$00
- $8BB8 DEFB $3E,$1C,$00,$00,$00,$00,$7F,$22
- $8BC0 DEFB $08,$00,$00,$00,$FF,$4F,$9C,$08
- $8BC8 DEFB $00,$00,$FF,$5F,$9C,$08,$80,$00
- $8BD0 DEFB $FF,$5F,$9D,$08,$C0,$80,$7F,$3E
- $8BD8 DEFB $39,$10,$C8,$80,$3E,$1C,$39,$10
- $8BE0 DEFB $DC,$88,$3C,$00,$13,$01,$9C,$08
- $8BE8 DEFB $7F,$3C,$01,$00,$38,$10,$7F,$21
- $8BF0 DEFB $9C,$00,$10,$00,$7F,$3D,$BF,$1C
- $8BF8 DEFB $F0,$00,$3F,$05,$FF,$15,$F8,$50
- $8C00 DEFB $7F,$3D,$FF,$DD,$F8,$F0,$3F,$00
- $8C08 DEFB $FF,$00,$F0,$00
+; Graphics: Bonus Slow
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8BB2-$8C06-$02-$30){$00,$00,$00,$3C}(bonus-slow-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8BB3-$8C07-$02-$30){$00,$00,$00,$3C}(bonus-slow) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_BonusSlow
+b$8BB0 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8BB1 DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8BB2 DEFB $1C,$00,$00,$00,$00,$00 ; {Graphic data, arranged as:
+ $8BB8 DEFB $3E,$1C,$00,$00,$00,$00 ; #UDGTABLE(default)
+ $8BBE DEFB $7F,$22,$08,$00,$00,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8BB2-$8C06-$01-$30){$00,$00,$00,$3C}(bonus-slow-full) }
+ $8BC4 DEFB $FF,$4F,$9C,$08,$00,$00 ; UDGTABLE#
+ $8BCA DEFB $FF,$5F,$9C,$08,$80,$00 ;
+ $8BD0 DEFB $FF,$5F,$9D,$08,$C0,$80 ;
+ $8BD6 DEFB $7F,$3E,$39,$10,$C8,$80 ;
+ $8BDC DEFB $3E,$1C,$39,$10,$DC,$88 ;
+ $8BE2 DEFB $3C,$00,$13,$01,$9C,$08 ;
+ $8BE8 DEFB $7F,$3C,$01,$00,$38,$10 ;
+ $8BEE DEFB $7F,$21,$9C,$00,$10,$00 ;
+ $8BF4 DEFB $7F,$3D,$BF,$1C,$F0,$00 ;
+ $8BFA DEFB $3F,$05,$FF,$15,$F8,$50 ;
+ $8C00 DEFB $7F,$3D,$FF,$DD,$F8,$F0 ;
+ $8C06 DEFB $3F,$00,$FF,$00,$F0,$00 ; }
 
-; Graphics:
-b$8C0C DEFB $03,$09,$3F,$00,$FF,$00,$C0,$00
- $8C14 DEFB $7F,$3E,$FF,$B7,$E0,$C0,$FF,$41
- $8C1C DEFB $FF,$38,$F0,$20,$FF,$42,$FF,$7C
- $8C24 DEFB $F0,$20,$7F,$3C,$FF,$03,$E0,$C0
- $8C2C DEFB $7F,$3F,$FF,$FF,$E0,$C0,$3F,$1F
- $8C34 DEFB $FF,$FF,$C0,$80,$1F,$0F,$FF,$FF
- $8C3C DEFB $80,$00,$0F,$00,$FF,$00,$00,$00
+; Graphics: Bonus Gun
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C0E-$8C3E-$02-$30){$00,$00,$00,$24}(bonus-gun-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C0F-$8C3F-$02-$30){$00,$00,$00,$24}(bonus-gun) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_BonusGun
+b$8C0C DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8C0D DEFB $09                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8C0E DEFB $3F,$00,$FF,$00,$C0,$00 ; {Graphic data, arranged as:
+ $8C14 DEFB $7F,$3E,$FF,$B7,$E0,$C0 ; #UDGTABLE(default)
+ $8C1A DEFB $FF,$41,$FF,$38,$F0,$20 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C0E-$8C3E-$01-$30){$00,$00,$00,$24}(bonus-gun-full) }
+ $8C20 DEFB $FF,$42,$FF,$7C,$F0,$20 ; UDGTABLE#
+ $8C26 DEFB $7F,$3C,$FF,$03,$E0,$C0 ;
+ $8C2C DEFB $7F,$3F,$FF,$FF,$E0,$C0 ;
+ $8C32 DEFB $3F,$1F,$FF,$FF,$C0,$80 ;
+ $8C38 DEFB $1F,$0F,$FF,$FF,$80,$00 ;
+ $8C3E DEFB $0F,$00,$FF,$00,$00,$00 ; }
 
-; Graphics:
-b$8C44 DEFB $03,$0D,$3F,$00,$FF,$00,$80,$00
- $8C4C DEFB $7F,$37,$FF,$FD,$C0,$80,$FF,$40
- $8C54 DEFB $FF,$01,$E0,$C0,$FF,$37,$FF,$FD
- $8C5C DEFB $E0,$C0,$FF,$77,$FF,$FD,$E0,$C0
- $8C64 DEFB $7F,$37,$FF,$FD,$C0,$80,$3F,$00
- $8C6C DEFB $FF,$00,$80,$00,$02,$00,$1C,$08
- $8C74 DEFB $00,$00,$07,$02,$3E,$18,$00,$00
- $8C7C DEFB $0F,$07,$9C,$08,$00,$00,$07,$02
- $8C84 DEFB $1C,$08,$00,$00,$02,$00,$3E,$1C
- $8C8C DEFB $00,$00,$00,$00,$1C,$00,$00,$00
+; Graphics: Bonus Life
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C46-$8C8E-$02-$30){$00,$00,$00,$34}(bonus-life-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C47-$8C8F-$02-$30){$00,$00,$00,$34}(bonus-life) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_BonusLife
+b$8C44 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8C45 DEFB $0D                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8C46 DEFB $3F,$00,$FF,$00,$80,$00 ; {Graphic data, arranged as:
+ $8C4C DEFB $7F,$37,$FF,$FD,$C0,$80 ; #UDGTABLE(default)
+ $8C52 DEFB $FF,$40,$FF,$01,$E0,$C0 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C46-$8C8E-$01-$30){$00,$00,$00,$34}(bonus-live-full) }
+ $8C58 DEFB $FF,$37,$FF,$FD,$E0,$C0 ; UDGTABLE#
+ $8C5E DEFB $FF,$77,$FF,$FD,$E0,$C0 ;
+ $8C64 DEFB $7F,$37,$FF,$FD,$C0,$80 ;
+ $8C6A DEFB $3F,$00,$FF,$00,$80,$00 ;
+ $8C70 DEFB $02,$00,$1C,$08,$00,$00 ;
+ $8C76 DEFB $07,$02,$3E,$18,$00,$00 ;
+ $8C7C DEFB $0F,$07,$9C,$08,$00,$00 ;
+ $8C82 DEFB $07,$02,$1C,$08,$00,$00 ;
+ $8C88 DEFB $02,$00,$3E,$1C,$00,$00 ;
+ $8C8E DEFB $00,$00,$1C,$00,$00,$00 ; }
 
-; Graphics:
-b$8C94 DEFB $03,$0E,$7F,$00,$FF,$00,$FC,$00
- $8C9C DEFB $FF,$7F,$FF,$FF,$FE,$FC,$FF,$42
- $8CA4 DEFB $FF,$10,$FE,$84,$FF,$5E,$FF,$D6
- $8CAC DEFB $FE,$B4,$FF,$42,$FF,$D6,$FE,$B4
- $8CB4 DEFB $FF,$7A,$FF,$D6,$FE,$B4,$FF,$42
- $8CBC DEFB $FF,$10,$FE,$84,$FF,$7F,$FF,$FF
- $8CC4 DEFB $FE,$FC,$7F,$1F,$FF,$FF,$FC,$F0
- $8CCC DEFB $1F,$07,$FF,$FF,$F0,$C0,$07,$01
- $8CD4 DEFB $FF,$FF,$C0,$00,$01,$00,$FF,$7C
- $8CDC DEFB $00,$00,$00,$00,$7C,$10,$00,$00
- $8CE4 DEFB $00,$00,$10,$00,$00,$00
+; Graphics: Bonus 5000 Points
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C96-$8CE4-$02-$30){$00,$00,$00,$38}(bonus-5000-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8C97-$8CE5-$02-$30){$00,$00,$00,$38}(bonus-5000) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_Bonus5000
+b$8C94 DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8C95 DEFB $0E                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8C96 DEFB $7F,$00,$FF,$00,$FC,$00 ; {Graphic data, arranged as:
+ $8C9C DEFB $FF,$7F,$FF,$FF,$FE,$FC ; #UDGTABLE(default)
+ $8CA2 DEFB $FF,$42,$FF,$10,$FE,$84 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8C96-$8CE4-$01-$30){$00,$00,$00,$38}(bonus-5000-full) }
+ $8CA8 DEFB $FF,$5E,$FF,$D6,$FE,$B4 ; UDGTABLE#
+ $8CAE DEFB $FF,$42,$FF,$D6,$FE,$B4 ;
+ $8CB4 DEFB $FF,$7A,$FF,$D6,$FE,$B4 ;
+ $8CBA DEFB $FF,$42,$FF,$10,$FE,$84 ;
+ $8CC0 DEFB $FF,$7F,$FF,$FF,$FE,$FC ;
+ $8CC6 DEFB $7F,$1F,$FF,$FF,$FC,$F0 ;
+ $8CCC DEFB $1F,$07,$FF,$FF,$F0,$C0 ;
+ $8CD2 DEFB $07,$01,$FF,$FF,$C0,$00 ;
+ $8CD8 DEFB $01,$00,$FF,$7C,$00,$00 ;
+ $8CDE DEFB $00,$00,$7C,$10,$00,$00 ;
+ $8CE4 DEFB $00,$00,$10,$00,$00,$00 ; }
 
-; Graphics:
-b$8CEA DEFB $03,$0F,$00,$00,$20,$00,$00,$00
- $8CF2 DEFB $00,$00,$70,$20,$00,$00,$1F,$00
- $8CFA DEFB $FF,$70,$C0,$00,$3F,$1E,$FF,$FB
- $8D02 DEFB $E0,$C0,$3F,$1C,$FF,$21,$E0,$C0
- $8D0A DEFB $3F,$1C,$FF,$21,$E0,$C0,$3F,$12
- $8D12 DEFB $FF,$22,$E0,$40,$1B,$01,$FE,$04
- $8D1A DEFB $40,$00,$01,$00,$FC,$00,$00,$00
- $8D22 DEFB $00,$00,$F8,$70,$00,$00,$01,$00
- $8D2A DEFB $FC,$98,$00,$00,$01,$00,$FC,$B8
- $8D32 DEFB $00,$00,$01,$00,$FC,$B8,$00,$00
- $8D3A DEFB $00,$00,$F8,$70,$00,$00,$00,$00
- $8D42 DEFB $70,$00,$00,$00
+; Graphics: Bonus Multi-Ball
+;
+; #UDGTABLE(default,centre,centre)
+; { =h Mask | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8CEC-$8D40-$02-$30){$00,$00,$00,$3C}(bonus-multi-mask) }
+; { =h Graphic | #UDGARRAY$03,attr=$47,scale=$04,step=$06($8CED-$8D41-$02-$30){$00,$00,$00,$3C}(bonus-multi) }
+; UDGTABLE#
+;
+; .
+;
+; Pixels:
+@label=Graphics_BonusMultiBall
+b$8CEA DEFB $03                     ; Width: #N(#PEEK(#PC)) byte(s).
+ $8CEB DEFB $0F                     ; Height: #N(#PEEK(#PC)) pixel(s).
+ $8CEC DEFB $00,$00,$20,$00,$00,$00 ; {Graphic data, arranged as:
+ $8CF2 DEFB $00,$00,$70,$20,$00,$00 ; #UDGTABLE(default)
+ $8CF8 DEFB $1F,$00,$FF,$70,$C0,$00 ; { #UDGARRAY$06,attr=$47,scale=$04,step=$06($8CEC-$8D40-$01-$30){$00,$00,$00,$3C}(bonus-multi-full) }
+ $8CFE DEFB $3F,$1E,$FF,$FB,$E0,$C0 ; UDGTABLE#
+ $8D04 DEFB $3F,$1C,$FF,$21,$E0,$C0 ;
+ $8D0A DEFB $3F,$1C,$FF,$21,$E0,$C0 ;
+ $8D10 DEFB $3F,$12,$FF,$22,$E0,$40 ;
+ $8D16 DEFB $1B,$01,$FE,$04,$40,$00 ;
+ $8D1C DEFB $01,$00,$FC,$00,$00,$00 ;
+ $8D22 DEFB $00,$00,$F8,$70,$00,$00 ;
+ $8D28 DEFB $01,$00,$FC,$98,$00,$00 ;
+ $8D2E DEFB $01,$00,$FC,$B8,$00,$00 ;
+ $8D34 DEFB $01,$00,$FC,$B8,$00,$00 ;
+ $8D3A DEFB $00,$00,$F8,$70,$00,$00 ;
+ $8D40 DEFB $00,$00,$70,$00,$00,$00 ; }
 
 ; Data block at 8D46
 w$8D46 DEFW $0000
@@ -9164,6 +9578,8 @@ w$C0DB DEFW $C0F3
  $C0F1 DEFW $C241
 
 ; Sounds: Normal Brick
+;
+; #AUDIO(normal.wav)(#INCLUDE(NormalBrick))
 @label=Sounds_Brick_Normal
 c$C0F3 LD DE,$0844     ; #REGde=#N($0844,$04,$04).
  $C0F6 CALL $C25C      ; Call #R$C25C.
@@ -9173,7 +9589,7 @@ c$C0F3 LD DE,$0844     ; #REGde=#N($0844,$04,$04).
 
 ; Sounds: Metal Brick
 ;
-; Used by the routine at #R$B717.
+; #AUDIO(metal.wav)(#INCLUDE(MetalBrick))
 @label=Sounds_Brick_Metal
 c$C101 LD D,$18        ; #REGd=#N$18.
  $C103 LD E,$30        ; #REGe=#N$30.
@@ -9187,6 +9603,8 @@ c$C101 LD D,$18        ; #REGd=#N$18.
  $C115 RET             ; Return.
 
 ; Sounds: Start Game
+;
+; #AUDIO(start.wav)(#INCLUDE(Start))
 @label=Sounds_StartGame
 c$C116 LD C,$09        ; #REGc=#N$09.
  $C118 LD E,$14        ; #REGe=#N$14.
